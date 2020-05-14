@@ -1,2 +1,2 @@
 # bookdown-testing
-testing for publication workflow
+testing bookdown and custom domain name

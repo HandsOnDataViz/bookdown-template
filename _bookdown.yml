@@ -1,0 +1,6 @@
+output_dir: "docs"
+book_filename: "bookdown-testing"
+language:
+  label:
+    fig: "Figure "
+chapter_name: "Chapter "

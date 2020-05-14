@@ -1,0 +1,61 @@
+---
+lang: "en"
+title: "Bookdown testing"
+subtitle: "subtitle here"
+author: ["Jack Dougherty", "Ilya Ilyankou"]
+date: "`r Sys.Date()`"
+knit: "bookdown::render_book"
+site: bookdown::bookdown_site
+documentclass: book
+
+url: 'http\://handsondataviz.github.io/bookdown-testing'
+github-repo: handsondataviz/bookdown-testing
+description: 'This is a test book'
+
+output:
+  bookdown::gitbook:
+    dev: svglite
+    css: css/style.css
+    split_by: section
+    number_sections: true
+    split_bib: true
+    config:
+      toc:
+        scroll_highlight: yes
+        collapse: section
+        before: |
+            <li><strong><a href="./">Bookdown testing</a></strong></li>
+        after: |
+            <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+      download: [pdf]
+      view: https://github.com/handsondataviz/bookdown-testing/edit/master/%s
+      search: yes
+      sharing:
+        facebook: yes
+        github: yes
+        twitter: yes
+
+  bookdown::pdf_book:
+    default
+
+  bookdown::word_document2:
+    default
+
+  bookdown::markdown_document2:
+    default
+
+---
+# Preface {-}
+<!-- R global options: each R chunk image to display without code (no echo); display PDF version over JPG/PNG when available -->
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(knitr.graphics.auto_pdf = TRUE)
+```
+This is a test book
+
+
+## Authors and Contributors {-}
+
+Info about each author
+
+Info about each author
