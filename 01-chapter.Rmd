@@ -1,16 +1,7 @@
-# Title of Chapter Here {#chapter}
+# Goals {#chapter}
 
-### Goals {-}
-The broad goal is to create one efficient workflow for the authors to produce three versions of the book: HTML pages; PDF/MS Word; AsciiDoc.
+Our broad goal is to create one efficient workflow to produce three versions of the book: HTML pages; PDF/MS Word; AsciiDoc.
 
-1. Authors will compose chapters and sections of the book manuscript as individual R-flavored Markdown files, and use Bookdown to build our open-source web edition as a set of static HTML pages, one for each chapter and each section. Readers of the web edition prefer shorter web pages (one per book section) rather than longer ones (one per book chapter).
-2. Also, authors will set Bookdown to build the book as one PDF file and also one MS Word file, to allow the editor to easily comment on the manuscript.
-3. Also, authors have the option to set Bookdown to build the book as one large Markdown file, and use [Pandoc](https://pandoc.org/try/) to convert it into one large AsciiDoc file, to enable easier importing into the [O'Reilly Atlas platform](https://docs.atlas.oreilly.com/writing_in_asciidoc.html).
-
-### Structure of the book files {-}
-We have organized our [book repository](http://github.com/handsondataviz/book) as a set of individual files for each chapter and each section. Chapter files are named 01-topic, 02-topic, etc., and section files are named 01.1-subtopic, 01.2-subtopic, etc. As co-authors, this structure gives us maximum flexibility as we create different pieces of the book, since it allows us to add, remove, and edit different sections of the same chapter at the same time.
-
-Reminder: Our preferred file structure (multiple section files for each chapter) works in Bookdown but produces this warning message, which we ignore: `You have 4 Rmd input file(s) but only 3 first-level heading(s). Did you forget first-level headings in certain Rmd files?`
-
-- should we keep `number_sections: true` and use `{-}` after 3-hashtag headers to avoid numbering those, or set to false and insert all numbers manually?
-- keep `chapter_name: "Chapter "` -- or make blank and insert manually?
+1. As co-authors, we compose the book manuscript as individual R-flavored Markdown files (.Rmd), and use Bookdown to build as a set of HTML pages. We upload the files to our [GitHub repository](https://github.com/handsondataviz) and publish open-access web edition at https://HandsOnDataViz.
+2. We also use Bookdown to build the book as a PDF file and as a MS Word file, and upload these to the `docs` folder of our GitHub repository, which our editor may download to comment on the manuscript as we revise.
+3. We also have the option to use Bookdown to build one large Markdown file (.md), and use [Pandoc](https://pandoc.org/try/) to convert it into one large AsciiDoc file (.asciidoc), for easier importing into the [O'Reilly Atlas platform](https://docs.atlas.oreilly.com/writing_in_asciidoc.html) if desired.

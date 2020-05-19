@@ -1,14 +1,39 @@
 ## Style Guide {#style-guide}
-Header list (always insert blank line unless directly after hashtag header)
+
+### File organization {-}
+We organized our [book repository](http://github.com/handsondataviz/book) as a set of individual .Rmd files, one for each chapter and each section. Chapter files are named 01-topic, 02-topic, etc., and section files are named 01.1-subtopic, 01.2-subtopic, etc. The non-numbered portion of the file name also serves as the unique name in the chapter/section header: `{#unique-name}`. This file structure gives us co-authors maximum flexibility to add and edit different sections of the book at the same time.
+
+Our current Bookdown `index.Rmd` settings auto-number each chapter and section in the table of contents. Alternatively, we could set auto-numbering to false, and manually number of title of each chapter only.   
+
+```
+output:
+  bookdown::gitbook:
+    dev: svglite
+    css: css/style.css
+    toc_depth: 2
+    split_by: section
+    number_sections: true
+    split_bib: true
+```
+
+### Headers {-}
 
 - top-level chapter title (A) = 1 hashtag followed by `{#unique-name}`
 - second-level section title (B) = 2 hashtags followed by `{#unique-name}`
-- third-level header (C) = 3 hashtags followed by `{-}` to avoid numbering
-- fourth-level header (D) = 4 hashtags followed by `{-}` to avoid numbering
+- third-level header (C) = 3 hashtags followed by `{-}` to avoid auto-number
+- fourth-level header (D) = 4 hashtags followed by `{-}` to avoid auto-number
 
 Each paragraph begins on a separate line. O'Reilly style guide prefers *italics* rather than bold. Use single back tics to display a monospaced `code` word.
 
 Insert an embedded link to [O'Reilly](https://www.oreilly.com/). This appears as a colored clickable link in HTML and Word editions, and a non-colored but clickable link in the PDF edition. According to O'Reilly Atlas documentation, the AsciiDoc version should automatically unfurl for the printed edition.
+
+Lists: always insert a blank line before items, unless directly after hashtag header.
+
+- unordered
+- list
+
+1. ordered
+2. list
 
 Insert three back tics to insert a code block. Check character line length limits in [O'Reilly style guide](http://oreillymedia.github.io/production-resources/styleguide/#line-length):
 
@@ -18,28 +43,26 @@ Insert three back tics to insert a code block. Check character line length limit
 ```
 
 ### Cross-references {-}
-The cross-reference strategies below require unique names to be assigned to each chapter, section, figure, and table.
+For Bookdown cross-references, assign a unique name to each chapter, section, figure, and table. Make sure the unique name (aka R code-chunk label) only contains _alphanumeric_ characters (a-z, A-Z, 0-9), slashes (/), or dashes (-).
 
-- All cross-refs are clickable and auto-numbered (except chapter) in HTML.
-- All (except chapter) are clickable and auto-numbered in PDF.
-- All are auto-numbered (except chapter) in Word, but none are clickable.
+- In HTML, all cross-refs are clickable and auto-numbered (except to chapter).
+- In PDF, all cross-refs (except chapter) are clickable and auto-numbered.
+- In Word, all cross-refs are auto-numbered (except chapter), but none are clickable.
 - TBA with AsciiDoc.
 
 Demos:
 
-- To another *chapter* with HTML link: See [chapter 2](chapter2.html).
-- To another *section* with Bookdown ID ref: See section \@ref(style-guide).
-- To figure in any chapter/section with Bookdown ID ref: Figure \@ref(fig:sample-interactive-map), or Figure \@ref(fig:sample-static-image2).
-- To table in any chapter/section with Bookdown ID ref: Table \@ref(tab:unique1).
-
-Bookdown: If you want to cross-reference figures or tables generated from a code chunk, please make sure the chunk label only contains _alphanumeric_ characters (a-z, A-Z, 0-9), slashes (/), or dashes (-).
+- To another *chapter*, use HTML link: See [chapter 2](chapter2.html).
+- To another *section*, use Bookdown ID ref: See section \@ref(style-guide).
+- To figure in any chapter/section, use Bookdown ID ref: Figure \@ref(fig:sample-interactive-map), or Figure \@ref(fig:sample-static-image2).
+- To table in any chapter/section, use Bookdown ID ref: Table \@ref(tab:unique1).
 
 [O'Reilly Style Guide](http://oreillymedia.github.io/production-resources/styleguide/#considering_electronic_formats): Using live cross references (e.g., "see Figure 2-1") is best, but when that’s not possible, use "preceding" or "following," as the physical placement of elements could be different in reflowable formats. *Avoid* using "above" or "below." See also http://oreillymedia.github.io/production-resources/styleguide/#cross_references
 
 ### Conditional Formatting {-}
 Conditional formatting offers the option to display text or images in some editions, but not other editions.
 
-Demo: Simple HTML code comment in .Rmd file (does *not* appear in MS Word or PDF or AsciiDoc):
+Demo: Simple HTML code comment in .Rmd file (appears as commented-out text in HTML and .md, but does *not* appear in any way in PDF or MS Word or AsciiDoc):
 
 <!-- Insert comments that are visible in the source text (.Rmd and .md), but not HTML or PDF or AsciiDoc. -->
 

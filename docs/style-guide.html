@@ -25,7 +25,7 @@
 <meta name="author" content="Ilya Ilyankou" />
 
 
-<meta name="date" content="2020-05-18" />
+<meta name="date" content="2020-05-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -72,7 +72,7 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="chapter.html"><a href="chapter.html"><i class="fa fa-check"></i><b>1</b> Title of Chapter Here</a>
+<li class="chapter" data-level="1" data-path="chapter.html"><a href="chapter.html"><i class="fa fa-check"></i><b>1</b> Goals</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="style-guide.html"><a href="style-guide.html"><i class="fa fa-check"></i><b>1.1</b> Style Guide</a></li>
 </ul></li>
@@ -99,41 +99,64 @@
             <section class="normal" id="section-">
 <div id="style-guide" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Style Guide</h2>
-<p>Header list (always insert blank line unless directly after hashtag header)</p>
+<div id="file-organization" class="section level3 unnumbered" number="">
+<h3>File organization</h3>
+<p>We organized our <a href="http://github.com/handsondataviz/book">book repository</a> as a set of individual .Rmd files, one for each chapter and each section. Chapter files are named 01-topic, 02-topic, etc., and section files are named 01.1-subtopic, 01.2-subtopic, etc. The non-numbered portion of the file name also serves as the unique name in the chapter/section header: <code>{#unique-name}</code>. This file structure gives us co-authors maximum flexibility to add and edit different sections of the book at the same time.</p>
+<p>Our current Bookdown <code>index.Rmd</code> settings auto-number each chapter and section in the table of contents. Alternatively, we could set auto-numbering to false, and manually number of title of each chapter only.</p>
+<pre><code>output:
+  bookdown::gitbook:
+    dev: svglite
+    css: css/style.css
+    toc_depth: 2
+    split_by: section
+    number_sections: true
+    split_bib: true</code></pre>
+</div>
+<div id="headers" class="section level3 unnumbered" number="">
+<h3>Headers</h3>
 <ul>
 <li>top-level chapter title (A) = 1 hashtag followed by <code>{#unique-name}</code></li>
 <li>second-level section title (B) = 2 hashtags followed by <code>{#unique-name}</code></li>
-<li>third-level header (C) = 3 hashtags followed by <code>{-}</code> to avoid numbering</li>
-<li>fourth-level header (D) = 4 hashtags followed by <code>{-}</code> to avoid numbering</li>
+<li>third-level header (C) = 3 hashtags followed by <code>{-}</code> to avoid auto-number</li>
+<li>fourth-level header (D) = 4 hashtags followed by <code>{-}</code> to avoid auto-number</li>
 </ul>
 <p>Each paragraph begins on a separate line. O’Reilly style guide prefers <em>italics</em> rather than bold. Use single back tics to display a monospaced <code>code</code> word.</p>
 <p>Insert an embedded link to <a href="https://www.oreilly.com/">O’Reilly</a>. This appears as a colored clickable link in HTML and Word editions, and a non-colored but clickable link in the PDF edition. According to O’Reilly Atlas documentation, the AsciiDoc version should automatically unfurl for the printed edition.</p>
+<p>Lists: always insert a blank line before items, unless directly after hashtag header.</p>
+<ul>
+<li>unordered</li>
+<li>list</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>ordered</li>
+<li>list</li>
+</ol>
 <p>Insert three back tics to insert a code block. Check character line length limits in <a href="http://oreillymedia.github.io/production-resources/styleguide/#line-length">O’Reilly style guide</a>:</p>
 <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/leaflet@1.6.0/dist/leaflet.css&quot; /&gt;
 &lt;script src=&quot;https://unpkg.com/leaflet@1.6.0/dist/leaflet.js&quot;&gt;&lt;/script&gt;</code></pre>
+</div>
 <div id="cross-references" class="section level3 unnumbered" number="">
 <h3>Cross-references</h3>
-<p>The cross-reference strategies below require unique names to be assigned to each chapter, section, figure, and table.</p>
+<p>For Bookdown cross-references, assign a unique name to each chapter, section, figure, and table. Make sure the unique name (aka R code-chunk label) only contains <em>alphanumeric</em> characters (a-z, A-Z, 0-9), slashes (/), or dashes (-).</p>
 <ul>
-<li>All cross-refs are clickable and auto-numbered (except chapter) in HTML.</li>
-<li>All (except chapter) are clickable and auto-numbered in PDF.</li>
-<li>All are auto-numbered (except chapter) in Word, but none are clickable.</li>
+<li>In HTML, all cross-refs are clickable and auto-numbered (except to chapter).</li>
+<li>In PDF, all cross-refs (except chapter) are clickable and auto-numbered.</li>
+<li>In Word, all cross-refs are auto-numbered (except chapter), but none are clickable.</li>
 <li>TBA with AsciiDoc.</li>
 </ul>
 <p>Demos:</p>
 <ul>
-<li>To another <em>chapter</em> with HTML link: See <a href="chapter2.html">chapter 2</a>.</li>
-<li>To another <em>section</em> with Bookdown ID ref: See section <a href="style-guide.html#style-guide">1.1</a>.</li>
-<li>To figure in any chapter/section with Bookdown ID ref: Figure <a href="style-guide.html#fig:sample-interactive-map">1.2</a>, or Figure <a href="chapter2.html#fig:sample-static-image2">2.1</a>.</li>
-<li>To table in any chapter/section with Bookdown ID ref: Table <a href="style-guide.html#tab:unique1">1.1</a>.</li>
+<li>To another <em>chapter</em>, use HTML link: See <a href="chapter2.html">chapter 2</a>.</li>
+<li>To another <em>section</em>, use Bookdown ID ref: See section <a href="style-guide.html#style-guide">1.1</a>.</li>
+<li>To figure in any chapter/section, use Bookdown ID ref: Figure <a href="style-guide.html#fig:sample-interactive-map">1.2</a>, or Figure <a href="chapter2.html#fig:sample-static-image2">2.1</a>.</li>
+<li>To table in any chapter/section, use Bookdown ID ref: Table <a href="style-guide.html#tab:unique1">1.1</a>.</li>
 </ul>
-<p>Bookdown: If you want to cross-reference figures or tables generated from a code chunk, please make sure the chunk label only contains <em>alphanumeric</em> characters (a-z, A-Z, 0-9), slashes (/), or dashes (-).</p>
 <p><a href="http://oreillymedia.github.io/production-resources/styleguide/#considering_electronic_formats">O’Reilly Style Guide</a>: Using live cross references (e.g., “see Figure 2-1”) is best, but when that’s not possible, use “preceding” or “following,” as the physical placement of elements could be different in reflowable formats. <em>Avoid</em> using “above” or “below.” See also <a href="http://oreillymedia.github.io/production-resources/styleguide/#cross_references" class="uri">http://oreillymedia.github.io/production-resources/styleguide/#cross_references</a></p>
 </div>
 <div id="conditional-formatting" class="section level3 unnumbered" number="">
 <h3>Conditional Formatting</h3>
 <p>Conditional formatting offers the option to display text or images in some editions, but not other editions.</p>
-<p>Demo: Simple HTML code comment in .Rmd file (does <em>not</em> appear in MS Word or PDF or AsciiDoc):</p>
+<p>Demo: Simple HTML code comment in .Rmd file (appears as commented-out text in HTML and .md, but does <em>not</em> appear in any way in PDF or MS Word or AsciiDoc):</p>
 <!-- Insert comments that are visible in the source text (.Rmd and .md), but not HTML or PDF or AsciiDoc. -->
 <p>The R package function <code>is_[html/latex]_output</code> allows authors to produce conditional output for different book products, such as text that should appear in the HTML edition but not the PDF edition, or vice versa.</p>
 <p>Demos:</p>
@@ -267,7 +290,7 @@ Figure 1.2: Insert caption here, with embedded link to explore the <a href="http
 <li>TODO: Ask Ilya about my Pandoc PATH and/or overwriting older version</li>
 <li>Set Bookdown to build the book as one large Markdown file (docs folder, suffix .md)</li>
 <li>Use command line to navigate to subfolder with <code>pwd</code> and <code>cd</code>.</li>
-<li>Convert with: <code>pandoc bookdown-testing.md --from markdown --to asciidoc --standalone --output bookdown-testing.asciidoc</code></li>
+<li>Convert with: <code>pandoc bookdown-testing.md --from markdown --to asciidoc --standalone --output bookdown-testing-MMDD.asciidoc</code></li>
 <li>Confirm if AsciiDoc file matches <a href="https://docs.atlas.oreilly.com/writing_in_asciidoc.html">O’Reilly Atlas import style</a>.</li>
 </ul>
 

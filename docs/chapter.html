@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Title of Chapter Here | Bookdown testing</title>
+  <title>Chapter 1 Goals | Bookdown testing</title>
   <meta name="description" content="This is a test book" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Title of Chapter Here | Bookdown testing" />
+  <meta property="og:title" content="Chapter 1 Goals | Bookdown testing" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://handsondataviz.github.io/bookdown-testing" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="handsondataviz/bookdown-testing" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Title of Chapter Here | Bookdown testing" />
+  <meta name="twitter:title" content="Chapter 1 Goals | Bookdown testing" />
   
   <meta name="twitter:description" content="This is a test book" />
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Ilya Ilyankou" />
 
 
-<meta name="date" content="2020-05-18" />
+<meta name="date" content="2020-05-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -72,7 +72,7 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="chapter.html"><a href="chapter.html"><i class="fa fa-check"></i><b>1</b> Title of Chapter Here</a>
+<li class="chapter" data-level="1" data-path="chapter.html"><a href="chapter.html"><i class="fa fa-check"></i><b>1</b> Goals</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="style-guide.html"><a href="style-guide.html"><i class="fa fa-check"></i><b>1.1</b> Style Guide</a></li>
 </ul></li>
@@ -98,26 +98,14 @@
 
             <section class="normal" id="section-">
 <div id="chapter" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Title of Chapter Here</h1>
-<div id="goals" class="section level3 unnumbered" number="">
-<h3>Goals</h3>
-<p>The broad goal is to create one efficient workflow for the authors to produce three versions of the book: HTML pages; PDF/MS Word; AsciiDoc.</p>
+<h1><span class="header-section-number">Chapter 1</span> Goals</h1>
+<p>Our broad goal is to create one efficient workflow to produce three versions of the book: HTML pages; PDF/MS Word; AsciiDoc.</p>
 <ol style="list-style-type: decimal">
-<li>Authors will compose chapters and sections of the book manuscript as individual R-flavored Markdown files, and use Bookdown to build our open-source web edition as a set of static HTML pages, one for each chapter and each section. Readers of the web edition prefer shorter web pages (one per book section) rather than longer ones (one per book chapter).</li>
-<li>Also, authors will set Bookdown to build the book as one PDF file and also one MS Word file, to allow the editor to easily comment on the manuscript.</li>
-<li>Also, authors have the option to set Bookdown to build the book as one large Markdown file, and use <a href="https://pandoc.org/try/">Pandoc</a> to convert it into one large AsciiDoc file, to enable easier importing into the <a href="https://docs.atlas.oreilly.com/writing_in_asciidoc.html">O’Reilly Atlas platform</a>.</li>
+<li>As co-authors, we compose the book manuscript as individual R-flavored Markdown files (.Rmd), and use Bookdown to build as a set of HTML pages. We upload the files to our <a href="https://github.com/handsondataviz">GitHub repository</a> and publish open-access web edition at <a href="https://HandsOnDataViz" class="uri">https://HandsOnDataViz</a>.</li>
+<li>We also use Bookdown to build the book as a PDF file and as a MS Word file, and upload these to the <code>docs</code> folder of our GitHub repository, which our editor may download to comment on the manuscript as we revise.</li>
+<li>We also have the option to use Bookdown to build one large Markdown file (.md), and use <a href="https://pandoc.org/try/">Pandoc</a> to convert it into one large AsciiDoc file (.asciidoc), for easier importing into the <a href="https://docs.atlas.oreilly.com/writing_in_asciidoc.html">O’Reilly Atlas platform</a> if desired.</li>
 </ol>
-</div>
-<div id="structure-of-the-book-files" class="section level3 unnumbered" number="">
-<h3>Structure of the book files</h3>
-<p>We have organized our <a href="http://github.com/handsondataviz/book">book repository</a> as a set of individual files for each chapter and each section. Chapter files are named 01-topic, 02-topic, etc., and section files are named 01.1-subtopic, 01.2-subtopic, etc. As co-authors, this structure gives us maximum flexibility as we create different pieces of the book, since it allows us to add, remove, and edit different sections of the same chapter at the same time.</p>
-<p>Reminder: Our preferred file structure (multiple section files for each chapter) works in Bookdown but produces this warning message, which we ignore: <code>You have 4 Rmd input file(s) but only 3 first-level heading(s). Did you forget first-level headings in certain Rmd files?</code></p>
-<ul>
-<li>should we keep <code>number_sections: true</code> and use <code>{-}</code> after 3-hashtag headers to avoid numbering those, or set to false and insert all numbers manually?</li>
-<li>keep <code>chapter_name: "Chapter "</code> – or make blank and insert manually?</li>
-</ul>
-
-</div>
+<!--chapter:end:01-chapter.Rmd-->
 </div>
             </section>
 
@@ -164,7 +152,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/handsondataviz/bookdown-testing/edit/master/01-chapter.Rmd",
+"link": "https://github.com/handsondataviz/bookdown-testing/edit/master/01.1-style-guide.Rmd",
 "text": null
 },
 "download": ["bookdown-testing.pdf"],

@@ -3,7 +3,7 @@ Preface
 
 <!-- R global options: each R chunk image to display without code (no echo); display PDF version over JPG/PNG when available -->
 
-This test book was last updated on 18 May 2020
+This test book was last updated on 19 May 2020
 
 Insert additional preface items below (acknowledgements, etc.) to ensure
 that the first chapter is properly numbered as chapter one. If
@@ -15,65 +15,69 @@ which serves as a “preface” file.
 
 <!--chapter:end:index.Rmd-->
 
-Title of Chapter Here
-=====================
+Goals
+=====
 
-### Goals
+Our broad goal is to create one efficient workflow to produce three
+versions of the book: HTML pages; PDF/MS Word; AsciiDoc.
 
-The broad goal is to create one efficient workflow for the authors to
-produce three versions of the book: HTML pages; PDF/MS Word; AsciiDoc.
-
-1.  Authors will compose chapters and sections of the book manuscript as
-    individual R-flavored Markdown files, and use Bookdown to build our
-    open-source web edition as a set of static HTML pages, one for each
-    chapter and each section. Readers of the web edition prefer shorter
-    web pages (one per book section) rather than longer ones (one per
-    book chapter).
-2.  Also, authors will set Bookdown to build the book as one PDF file
-    and also one MS Word file, to allow the editor to easily comment on
-    the manuscript.
-3.  Also, authors have the option to set Bookdown to build the book as
-    one large Markdown file, and use [Pandoc](https://pandoc.org/try/)
-    to convert it into one large AsciiDoc file, to enable easier
-    importing into the [O’Reilly Atlas
-    platform](https://docs.atlas.oreilly.com/writing_in_asciidoc.html).
-
-### Structure of the book files
-
-We have organized our [book
-repository](http://github.com/handsondataviz/book) as a set of
-individual files for each chapter and each section. Chapter files are
-named 01-topic, 02-topic, etc., and section files are named
-01.1-subtopic, 01.2-subtopic, etc. As co-authors, this structure gives
-us maximum flexibility as we create different pieces of the book, since
-it allows us to add, remove, and edit different sections of the same
-chapter at the same time.
-
-Reminder: Our preferred file structure (multiple section files for each
-chapter) works in Bookdown but produces this warning message, which we
-ignore:
-`You have 4 Rmd input file(s) but only 3 first-level heading(s). Did you forget first-level headings in certain Rmd files?`
-
--   should we keep `number_sections: true` and use `{-}` after 3-hashtag
-    headers to avoid numbering those, or set to false and insert all
-    numbers manually?
--   keep `chapter_name: "Chapter "` – or make blank and insert manually?
+1.  As co-authors, we compose the book manuscript as individual
+    R-flavored Markdown files (.Rmd), and use Bookdown to build as a set
+    of HTML pages. We upload the files to our [GitHub
+    repository](https://github.com/handsondataviz) and publish
+    open-access web edition at
+    <a href="https://HandsOnDataViz" class="uri">https://HandsOnDataViz</a>.
+2.  We also use Bookdown to build the book as a PDF file and as a MS
+    Word file, and upload these to the `docs` folder of our GitHub
+    repository, which our editor may download to comment on the
+    manuscript as we revise.
+3.  We also have the option to use Bookdown to build one large Markdown
+    file (.md), and use [Pandoc](https://pandoc.org/try/) to convert it
+    into one large AsciiDoc file (.asciidoc), for easier importing into
+    the [O’Reilly Atlas
+    platform](https://docs.atlas.oreilly.com/writing_in_asciidoc.html)
+    if desired.
 
 <!--chapter:end:01-chapter.Rmd-->
 
 Style Guide
 -----------
 
-Header list (always insert blank line unless directly after hashtag
-header)
+### File organization
+
+We organized our [book
+repository](http://github.com/handsondataviz/book) as a set of
+individual .Rmd files, one for each chapter and each section. Chapter
+files are named 01-topic, 02-topic, etc., and section files are named
+01.1-subtopic, 01.2-subtopic, etc. The non-numbered portion of the file
+name also serves as the unique name in the chapter/section header:
+`{#unique-name}`. This file structure gives us co-authors maximum
+flexibility to add and edit different sections of the book at the same
+time.
+
+Our current Bookdown `index.Rmd` settings auto-number each chapter and
+section in the table of contents. Alternatively, we could set
+auto-numbering to false, and manually number of title of each chapter
+only.
+
+    output:
+      bookdown::gitbook:
+        dev: svglite
+        css: css/style.css
+        toc_depth: 2
+        split_by: section
+        number_sections: true
+        split_bib: true
+
+### Headers
 
 -   top-level chapter title (A) = 1 hashtag followed by `{#unique-name}`
 -   second-level section title (B) = 2 hashtags followed by
     `{#unique-name}`
 -   third-level header (C) = 3 hashtags followed by `{-}` to avoid
-    numbering
+    auto-number
 -   fourth-level header (D) = 4 hashtags followed by `{-}` to avoid
-    numbering
+    auto-number
 
 Each paragraph begins on a separate line. O’Reilly style guide prefers
 *italics* rather than bold. Use single back tics to display a monospaced
@@ -85,6 +89,15 @@ non-colored but clickable link in the PDF edition. According to O’Reilly
 Atlas documentation, the AsciiDoc version should automatically unfurl
 for the printed edition.
 
+Lists: always insert a blank line before items, unless directly after
+hashtag header.
+
+-   unordered
+-   list
+
+1.  ordered
+2.  list
+
 Insert three back tics to insert a code block. Check character line
 length limits in [O’Reilly style
 guide](http://oreillymedia.github.io/production-resources/styleguide/#line-length):
@@ -94,30 +107,29 @@ guide](http://oreillymedia.github.io/production-resources/styleguide/#line-lengt
 
 ### Cross-references
 
-The cross-reference strategies below require unique names to be assigned
-to each chapter, section, figure, and table.
+For Bookdown cross-references, assign a unique name to each chapter,
+section, figure, and table. Make sure the unique name (aka R code-chunk
+label) only contains *alphanumeric* characters (a-z, A-Z, 0-9), slashes
+(/), or dashes (-).
 
--   All cross-refs are clickable and auto-numbered (except chapter) in
-    HTML.
--   All (except chapter) are clickable and auto-numbered in PDF.
--   All are auto-numbered (except chapter) in Word, but none are
-    clickable.
+-   In HTML, all cross-refs are clickable and auto-numbered (except to
+    chapter).
+-   In PDF, all cross-refs (except chapter) are clickable and
+    auto-numbered.
+-   In Word, all cross-refs are auto-numbered (except chapter), but none
+    are clickable.
 -   TBA with AsciiDoc.
 
 Demos:
 
--   To another *chapter* with HTML link: See [chapter 2](chapter2.html).
--   To another *section* with Bookdown ID ref: See section
+-   To another *chapter*, use HTML link: See [chapter 2](chapter2.html).
+-   To another *section*, use Bookdown ID ref: See section
     <a href="#style-guide">1.1</a>.
--   To figure in any chapter/section with Bookdown ID ref: Figure
+-   To figure in any chapter/section, use Bookdown ID ref: Figure
     <a href="#fig:sample-interactive-map">2</a>, or Figure
     <a href="#fig:sample-static-image2">3</a>.
--   To table in any chapter/section with Bookdown ID ref: Table
+-   To table in any chapter/section, use Bookdown ID ref: Table
     <a href="#tab:unique1">1</a>.
-
-Bookdown: If you want to cross-reference figures or tables generated
-from a code chunk, please make sure the chunk label only contains
-*alphanumeric* characters (a-z, A-Z, 0-9), slashes (/), or dashes (-).
 
 [O’Reilly Style
 Guide](http://oreillymedia.github.io/production-resources/styleguide/#considering_electronic_formats):
@@ -132,8 +144,9 @@ using “above” or “below.” See also
 Conditional formatting offers the option to display text or images in
 some editions, but not other editions.
 
-Demo: Simple HTML code comment in .Rmd file (does *not* appear in MS
-Word or PDF or AsciiDoc):
+Demo: Simple HTML code comment in .Rmd file (appears as commented-out
+text in HTML and .md, but does *not* appear in any way in PDF or MS Word
+or AsciiDoc):
 
 <!-- Insert comments that are visible in the source text (.Rmd and .md), but not HTML or PDF or AsciiDoc. -->
 
@@ -232,56 +245,20 @@ potential later use.
 Add the Markdown table code shown below to auto-number (Table x) in
 HTML, PDF, Word.
 
-<table>
-<caption>Table 1: Left-justify content, remember blank Line</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Much Much Longer Header</th>
-<th style="text-align: left;">Short Header</th>
-<th style="text-align: left;">Short Header</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Left-justify text content with left-colons</td>
-<td style="text-align: left;">Less</td>
-<td style="text-align: left;">Here</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Use more hyphens to grant more space to some columns</td>
-<td style="text-align: left;">Less</td>
-<td style="text-align: left;">Here</td>
-</tr>
-</tbody>
-</table>
+Table: (\#tab:unique1) Left-justify content, remember blank Line
 
-<table>
-<caption>Table 2: Right-justify content, remember blank line</caption>
-<thead>
-<tr class="header">
-<th style="text-align: right;">Header1</th>
-<th style="text-align: right;">Header2</th>
-<th style="text-align: right;">Header3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">123</td>
-<td style="text-align: right;">456</td>
-<td style="text-align: right;">789</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">Right-justify</td>
-<td style="text-align: right;">numerical content</td>
-<td style="text-align: right;">with right-colons</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">Use equal hyphens</td>
-<td style="text-align: right;">to make equal space</td>
-<td style="text-align: right;">for all columns</td>
-</tr>
-</tbody>
-</table>
+| Much Much Longer Header | Short Header | Short Header |
+|:---------|:---|:---|
+| Left-justify text content with left-colons | Less  | Here |
+| Use more hyphens to grant more space to some columns | Less | Here |
+
+Table: (\#tab:unique2) Right-justify content, remember blank line
+
+| Header1 | Header2 | Header3 |
+|-----:|-----:|-----:|
+| 123 | 456 | 789 |
+| Right-justify | numerical content  | with right-colons |
+| Use equal hyphens | to make equal space | for all columns |
 
 Workaround: Currently, our attempt to use Pandoc to directly convert a
 Bookdown-generated Markdown file to AsciiDoc fails because Bookdown
@@ -303,7 +280,7 @@ guide)
     folder, suffix .md)
 -   Use command line to navigate to subfolder with `pwd` and `cd`.
 -   Convert with:
-    `pandoc bookdown-testing.md --from markdown --to asciidoc --standalone --output bookdown-testing.asciidoc`
+    `pandoc bookdown-testing-modified.md --from markdown --to asciidoc --standalone --output bookdown-testing-modified.asciidoc`
 -   Confirm if AsciiDoc file matches [O’Reilly Atlas import
     style](https://docs.atlas.oreilly.com/writing_in_asciidoc.html).
 
