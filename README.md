@@ -1,2 +1,4 @@
 # bookdown-testing
-testing bookdown and custom domain name
+bookdown testing for publication workflow
+
+https://handsondataviz.github.io/bookdown-testing/
