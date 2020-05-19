@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Authors and Contributors | Bookdown testing</title>
+  <title>Chapter 1 Title of Chapter Here | Bookdown testing</title>
   <meta name="description" content="This is a test book" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Authors and Contributors | Bookdown testing" />
+  <meta property="og:title" content="Chapter 1 Title of Chapter Here | Bookdown testing" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://handsondataviz.github.io/bookdown-testing" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="handsondataviz/bookdown-testing" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Authors and Contributors | Bookdown testing" />
+  <meta name="twitter:title" content="Chapter 1 Title of Chapter Here | Bookdown testing" />
   
   <meta name="twitter:description" content="This is a test book" />
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Ilya Ilyankou" />
 
 
-<meta name="date" content="2020-05-14" />
+<meta name="date" content="2020-05-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="sample.html"/>
+<link rel="next" href="style-guide.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -71,11 +71,12 @@
 <li><strong><a href="./">Bookdown testing</a></strong></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="chapter.html"><a href="chapter.html"><i class="fa fa-check"></i><b>1</b> Title of Chapter Here</a>
 <ul>
-<li class="chapter" data-level="" data-path="authors-and-contributors.html"><a href="authors-and-contributors.html"><i class="fa fa-check"></i>Authors and Contributors</a></li>
+<li class="chapter" data-level="1.1" data-path="style-guide.html"><a href="style-guide.html"><i class="fa fa-check"></i><b>1.1</b> Style Guide</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="sample.html"><a href="sample.html"><i class="fa fa-check"></i><b>1</b> Sample</a></li>
+<li class="chapter" data-level="2" data-path="chapter2.html"><a href="chapter2.html"><i class="fa fa-check"></i><b>2</b> Another Chapter Title</a></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
 
@@ -96,20 +97,35 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="authors-and-contributors" class="section level2 unnumbered" number="">
-<h2>Authors and Contributors</h2>
-<p>Info about each author</p>
-<p>Info about each author</p>
+<div id="chapter" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Title of Chapter Here</h1>
+<div id="goals" class="section level3 unnumbered" number="">
+<h3>Goals</h3>
+<p>The broad goal is to create one efficient workflow for the authors to produce three versions of the book: HTML pages; PDF/MS Word; AsciiDoc.</p>
+<ol style="list-style-type: decimal">
+<li>Authors will compose chapters and sections of the book manuscript as individual R-flavored Markdown files, and use Bookdown to build our open-source web edition as a set of static HTML pages, one for each chapter and each section. Readers of the web edition prefer shorter web pages (one per book section) rather than longer ones (one per book chapter).</li>
+<li>Also, authors will set Bookdown to build the book as one PDF file and also one MS Word file, to allow the editor to easily comment on the manuscript.</li>
+<li>Also, authors have the option to set Bookdown to build the book as one large Markdown file, and use <a href="https://pandoc.org/try/">Pandoc</a> to convert it into one large AsciiDoc file, to enable easier importing into the <a href="https://docs.atlas.oreilly.com/writing_in_asciidoc.html">O’Reilly Atlas platform</a>.</li>
+</ol>
+</div>
+<div id="structure-of-the-book-files" class="section level3 unnumbered" number="">
+<h3>Structure of the book files</h3>
+<p>We have organized our <a href="http://github.com/handsondataviz/book">book repository</a> as a set of individual files for each chapter and each section. Chapter files are named 01-topic, 02-topic, etc., and section files are named 01.1-subtopic, 01.2-subtopic, etc. As co-authors, this structure gives us maximum flexibility as we create different pieces of the book, since it allows us to add, remove, and edit different sections of the same chapter at the same time.</p>
+<p>Reminder: Our preferred file structure (multiple section files for each chapter) works in Bookdown but produces this warning message, which we ignore: <code>You have 4 Rmd input file(s) but only 3 first-level heading(s). Did you forget first-level headings in certain Rmd files?</code></p>
+<ul>
+<li>should we keep <code>number_sections: true</code> and use <code>{-}</code> after 3-hashtag headers to avoid numbering those, or set to false and insert all numbers manually?</li>
+<li>keep <code>chapter_name: "Chapter "</code> – or make blank and insert manually?</li>
+</ul>
 
 </div>
-<!-- </div> -->
+</div>
             </section>
 
           </div>
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sample.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="style-guide.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -148,7 +164,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/handsondataviz/bookdown-testing/edit/master/index.Rmd",
+"link": "https://github.com/handsondataviz/bookdown-testing/edit/master/01-chapter.Rmd",
 "text": null
 },
 "download": ["bookdown-testing.pdf"],

@@ -16,6 +16,7 @@ output:
   bookdown::gitbook:
     dev: svglite
     css: css/style.css
+    toc_depth: 2
     split_by: section
     number_sections: true
     split_bib: true
@@ -51,11 +52,8 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 options(knitr.graphics.auto_pdf = TRUE)
 ```
-This is a test book
+This test book was last updated on `r format (Sys.Date(), '%d %b %Y')`
 
+Insert additional preface items below (acknowledgements, etc.) to ensure that the first chapter is properly numbered as chapter one. If subheaders are used, they will appear as separate HTML files, which is fine.
 
-## Authors and Contributors {-}
-
-Info about each author
-
-Info about each author
+Reminder: Bookdown does not auto-number figures in the `index.Rmd` file, which serves as a "preface" file.

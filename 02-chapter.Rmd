@@ -1,0 +1,13 @@
+# Another Chapter Title {#chapter2}
+
+More text here
+
+### Another subheader {-}
+
+More text here
+
+(ref:sample-static-image2) Caption for sample static image using R code-chunk method. Auto-numbered as Figure x.x in HMTL and PDF, but as Figure x in Word. CHECK OTHERS. Note that image in PDF edition may "float" and appear before or after page, so needs cross-reference.
+
+```{r sample-static-image2, fig.cap="(ref:sample-static-image2)"}
+ knitr::include_graphics("images/tiger.png")
+```
