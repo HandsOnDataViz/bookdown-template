@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Goals | Bookdown testing</title>
+  <title>Copyright and Open-Access | Bookdown testing</title>
   <meta name="description" content="This is a test book" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Goals | Bookdown testing" />
+  <meta property="og:title" content="Copyright and Open-Access | Bookdown testing" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://handsondataviz.github.io/bookdown-testing" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="handsondataviz/bookdown-testing" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Goals | Bookdown testing" />
+  <meta name="twitter:title" content="Copyright and Open-Access | Bookdown testing" />
   
   <meta name="twitter:description" content="This is a test book" />
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Ilya Ilyankou" />
 
 
-<meta name="date" content="2020-05-19" />
+<meta name="date" content="2020-05-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="style-guide.html"/>
+<link rel="next" href="chapter1.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,6 +52,15 @@
 
 
 
+<script>
+  // adjust web edition height or width of iframe for specific figure references, using tilde (~iframe)
+$(document).ready(function() {
+  $("#fig\\:sample-map~iframe").attr("height", "600px");
+  $("#fig\\:sample-map~iframe").attr("width", "100%");
+  $("#fig\\:excel-drag~iframe").attr("height", "450px");
+  $("#fig\\:excel-drag~iframe").attr("width", "50%");
+})
+</script>
 
 
 
@@ -71,12 +80,19 @@
 <li><strong><a href="./">Bookdown testing</a></strong></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="chapter.html"><a href="chapter.html"><i class="fa fa-check"></i><b>1</b> Goals</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="style-guide.html"><a href="style-guide.html"><i class="fa fa-check"></i><b>1.1</b> Style Guide</a></li>
+<li class="chapter" data-level="" data-path="copyright-and-open-access.html"><a href="copyright-and-open-access.html"><i class="fa fa-check"></i>Copyright and Open-Access</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="chapter2.html"><a href="chapter2.html"><i class="fa fa-check"></i><b>2</b> Another Chapter Title</a></li>
+<li class="chapter" data-level="1" data-path="chapter1.html"><a href="chapter1.html"><i class="fa fa-check"></i><b>1</b> Publishing with Bookdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="file-organization.html"><a href="file-organization.html"><i class="fa fa-check"></i>File Organization and Headers</a></li>
+<li class="chapter" data-level="" data-path="style-guide.html"><a href="style-guide.html"><i class="fa fa-check"></i>Style Guide</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chapter2.html"><a href="chapter2.html"><i class="fa fa-check"></i><b>2</b> Supplements</a>
+<ul>
+<li class="chapter" data-level="" data-path="section-header.html"><a href="section-header.html"><i class="fa fa-check"></i>Section Header</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
 
@@ -97,23 +113,19 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chapter" class="section level1" number="1">
-<h1><span class="header-section-number">Chapter 1</span> Goals</h1>
-<p>Our broad goal is to create one efficient workflow to produce three versions of the book: HTML pages; PDF/MS Word; AsciiDoc.</p>
-<ol style="list-style-type: decimal">
-<li>As co-authors, we compose the book manuscript as individual R-flavored Markdown files (.Rmd), and use Bookdown to build as a set of HTML pages. We upload the files to our <a href="https://github.com/handsondataviz">GitHub repository</a> and publish open-access web edition at <a href="https://HandsOnDataViz" class="uri">https://HandsOnDataViz</a>.</li>
-<li>We also use Bookdown to build the book as a PDF file and as a MS Word file, and upload these to the <code>docs</code> folder of our GitHub repository, which our editor may download to comment on the manuscript as we revise.</li>
-<li>We also have the option to use Bookdown to build one large Markdown file (.md), and use <a href="https://pandoc.org/try/">Pandoc</a> to convert it into one large AsciiDoc file (.asciidoc), for easier importing into the <a href="https://docs.atlas.oreilly.com/writing_in_asciidoc.html">O’Reilly Atlas platform</a> if desired.</li>
-</ol>
-<!--chapter:end:01-chapter.Rmd-->
+<div id="copyright-and-open-access" class="section level2 unnumbered" number="">
+<h2>Copyright and Open-Access</h2>
+<p>Cupcake ipsum dolor sit amet jelly beans wafer pudding. Bear claw lemon drops carrot cake pie wafer chocolate jelly cheesecake. Chocolate cheesecake chocolate bar sugar plum sweet dessert tart. Tootsie roll bear claw chocolate bar wafer powder sugar plum tiramisu bear claw gummies. Tart macaroon pastry lemon drops candy tootsie roll chocolate candy canes lollipop. Pudding fruitcake bear claw sweet cake cupcake. Chupa chups pudding candy canes chupa chups powder jujubes chocolate cake cotton candy jelly.</p>
+
 </div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="style-guide.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="chapter1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -152,7 +164,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/handsondataviz/bookdown-testing/edit/master/01.1-style-guide.Rmd",
+"link": "https://github.com/handsondataviz/bookdown-testing/edit/master/index.Rmd",
 "text": null
 },
 "download": ["bookdown-testing.pdf"],

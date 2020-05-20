@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Bookdown testing</title>
+  <title>File Organization and Headers | Bookdown testing</title>
   <meta name="description" content="This is a test book" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Bookdown testing" />
+  <meta property="og:title" content="File Organization and Headers | Bookdown testing" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://handsondataviz.github.io/bookdown-testing" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="handsondataviz/bookdown-testing" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Bookdown testing" />
+  <meta name="twitter:title" content="File Organization and Headers | Bookdown testing" />
   
   <meta name="twitter:description" content="This is a test book" />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="copyright-and-open-access.html"/>
+<link rel="prev" href="chapter1.html"/>
+<link rel="next" href="style-guide.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -113,31 +113,57 @@ $(document).ready(function() {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Bookdown testing</h1>
-<h2 class="subtitle"><em>subtitle here</em></h2>
-<p class="author"><em>Jack Dougherty</em></p>
-<p class="author"><em>Ilya Ilyankou</em></p>
-<p class="date"><em>2020-05-20</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered" number="">
-<h1>Preface</h1>
-<!-- R global options: each R chunk image to display without code (no echo)-->
-<p>This test book was last updated on 20 May 2020</p>
-<p>Insert additional preface items below (acknowledgements, etc.), with non-numbering symbols <code>{-}</code> to ensure that the preface is not numbered, and the first chapter is properly numbered as chapter one.</p>
-<p>Reminder: Bookdown does not auto-number figures in the <code>index.Rmd</code> file, which serves as a “preface” file.</p>
-<div id="acknowledgements" class="section level3 unnumbered" number="">
-<h3>Acknowledgements</h3>
-<p>Cupcake ipsum dolor sit amet jelly beans wafer pudding. Bear claw lemon drops carrot cake pie wafer chocolate jelly cheesecake. Chocolate cheesecake chocolate bar sugar plum sweet dessert tart. Tootsie roll bear claw chocolate bar wafer powder sugar plum tiramisu bear claw gummies. Tart macaroon pastry lemon drops candy tootsie roll chocolate candy canes lollipop. Pudding fruitcake bear claw sweet cake cupcake. Chupa chups pudding candy canes chupa chups powder jujubes chocolate cake cotton candy jelly.</p>
-</div>
+<div id="file-organization" class="section level2 unnumbered" number="">
+<h2>File Organization and Headers</h2>
+<p>We organized our <a href="http://github.com/handsondataviz/book">book repository</a> as a set of .Rmd files, one for each chapter. As co-authors, we are careful to work on different chapters of the book, and to regularly push our commits to the repo. Only one of us builds the book to avoid code merge conflicts.</p>
+<p>Bookdown assigns a default ID to each header, which can be used for cross-references. The default label for <code># Introduction</code> is <code>{#introduction}</code>, and the default label for <code>## Part One</code> is <code>{#part-one}</code>, where spaces are replaced by dashes. But we do <em>not</em> rely on default IDs because they might change due to editing or contain duplicates across the book.</p>
+<p>Instead, we <em>manually assign a unique ID</em> to each first- and second-level header in the following way. Note that the <code>{-}</code> symbol, used alone or in combination <em>with a space</em> and a unique ID, prevents auto-numbering in the second- thru fourth-level headers:</p>
+<pre><code># Top-level chapter title {#unique-name}
+## Second-level section title {- #unique-name}
+### Third-level subhead {-}
+#### Fourth-level subhead {-}</code></pre>
+<p>Also, we match the unique ID keyword to the file name for top-level chapters this way: <code>08-embed.Rmd</code>. Unique names should contain only <em>alphanumeric</em> characters (a-z, A-Z, 0-9) or dashes (-).</p>
+<p>In the Bookdown <code>index.Rmd</code> for the GitBook-style HTML book output and the PDF output, the <code>toc_depth: 2</code> setting displays chapter and section headers down to the second level in the Table of Contents.</p>
+<p>The <code>split_by: section</code> setting divides web pages at the second-level header, which creates shorter web pages with reduced scrolling for readers. For each web page, the unique ID becomes the file name, and is stored in the <code>docs</code> subfolder.</p>
+<p>The <code>number_sections</code> setting is true for the HTML and PDF editions, and given the <code>toc_depth: 2</code>, this means that they will display two-level chapter-section numbering (1.1, 1.2, etc.) in the Table of Contents. Note that <code>number_sections</code> must be true to display Figure and Table numbers in x.x format, which is desired for this book. See the following excerpt for relevant settings in <code>index.Rmd</code>:</p>
+<pre><code>output:
+  bookdown::gitbook:
+    dev: svglite
+    css: css/style.css
+    includes:
+      in_header: [custom-scripts.html]
+    toc_depth: 2
+    split_by: section
+    number_sections: true
+    split_bib: true
+
+... (continued)
+
+bookdown::pdf_book:
+  toc_depth: 2
+  number_sections: true</code></pre>
+<p>Note that chapter and section numbering do <em>not</em> appear automatically in the MS Word output unless you supply a reference.docx file:</p>
+<ul>
+<li><a href="https://bookdown.org/yihui/rmarkdown/word-document.html" class="uri">https://bookdown.org/yihui/rmarkdown/word-document.html</a></li>
+<li><a href="https://stackoverflow.com/questions/52924766/numbering-and-referring-sections-in-bookdown" class="uri">https://stackoverflow.com/questions/52924766/numbering-and-referring-sections-in-bookdown</a></li>
+<li><a href="https://stackoverflow.com/questions/50609212/caption-styles-for-word-document2-in-bookdown" class="uri">https://stackoverflow.com/questions/50609212/caption-styles-for-word-document2-in-bookdown</a></li>
+</ul>
+<p>In the <code>_bookdown.yml</code> settings, all book outputs are built into the <code>docs</code> subfolder of our GitHub repo:</p>
+<pre><code>output_dir: &quot;docs&quot;
+book_filename: &quot;bookdown-testing&quot;
+language:
+  label:
+    fig: &quot;Figure &quot;
+chapter_name: &quot;Chapter &quot;</code></pre>
+<p>In our GitHub repo, we set GitHub Pages to publish to the web using <code>master/docs</code>, which means that visitors can browse the source files at the root level, and view the HTML web pages hosted in the <code>docs</code> subfolder. We use the GitHub Pages custom domain setting so that the HTML edition is available at <a href="https://HandsOnDataViz.org" class="uri">https://HandsOnDataViz.org</a>.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="copyright-and-open-access.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="chapter1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="style-guide.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -176,7 +202,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/handsondataviz/bookdown-testing/edit/master/index.Rmd",
+"link": "https://github.com/handsondataviz/bookdown-testing/edit/master/01-chapter.Rmd",
 "text": null
 },
 "download": ["bookdown-testing.pdf"],

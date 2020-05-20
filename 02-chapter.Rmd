@@ -1,13 +1,14 @@
-# Another Chapter Title {#chapter2}
+# Supplements {#chapter2}
+Cupcake ipsum dolor sit amet jelly beans wafer pudding. Bear claw lemon drops carrot cake pie wafer chocolate jelly cheesecake. Chocolate cheesecake chocolate bar sugar plum sweet dessert tart. Tootsie roll bear claw chocolate bar wafer powder sugar plum tiramisu bear claw gummies. Tart macaroon pastry lemon drops candy tootsie roll chocolate candy canes lollipop. Pudding fruitcake bear claw sweet cake cupcake. Chupa chups pudding candy canes chupa chups powder jujubes chocolate cake cotton candy jelly.
 
-More text here
+## Section Header {- #section-header}
+Cupcake ipsum dolor sit amet jelly beans wafer pudding. Bear claw lemon drops carrot cake pie wafer chocolate jelly cheesecake. Chocolate cheesecake chocolate bar sugar plum sweet dessert tart. Tootsie roll bear claw chocolate bar wafer powder sugar plum tiramisu bear claw gummies. Tart macaroon pastry lemon drops candy tootsie roll chocolate candy canes lollipop. Pudding fruitcake bear claw sweet cake cupcake. Chupa chups pudding candy canes chupa chups powder jujubes chocolate cake cotton candy jelly.
 
-### Another subheader {-}
+(ref:tiger2) Caption for sample static image using R code-chunk method. Auto-numbered as Figure x.x in HMTL and PDF, but as Figure x in Word. CHECK OTHERS. Note that image in PDF edition may "float" and appear before or after page, so needs cross-reference.
 
-More text here
-
-(ref:sample-static-image2) Caption for sample static image using R code-chunk method. Auto-numbered as Figure x.x in HMTL and PDF, but as Figure x in Word. CHECK OTHERS. Note that image in PDF edition may "float" and appear before or after page, so needs cross-reference.
-
-```{r sample-static-image2, fig.cap="(ref:sample-static-image2)"}
+```{r tiger2, fig.cap="(ref:tiger2)"}
  knitr::include_graphics("images/tiger.png")
 ```
+
+### A Third-Level Section {-}
+Cupcake ipsum dolor sit amet jelly beans wafer pudding. Bear claw lemon drops carrot cake pie wafer chocolate jelly cheesecake. Chocolate cheesecake chocolate bar sugar plum sweet dessert tart. Tootsie roll bear claw chocolate bar wafer powder sugar plum tiramisu bear claw gummies. Tart macaroon pastry lemon drops candy tootsie roll chocolate candy canes lollipop. Pudding fruitcake bear claw sweet cake cupcake. Chupa chups pudding candy canes chupa chups powder jujubes chocolate cake cotton candy jelly.

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Another Chapter Title | Bookdown testing</title>
+  <title>Chapter 2 Supplements | Bookdown testing</title>
   <meta name="description" content="This is a test book" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Another Chapter Title | Bookdown testing" />
+  <meta property="og:title" content="Chapter 2 Supplements | Bookdown testing" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://handsondataviz.github.io/bookdown-testing" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="handsondataviz/bookdown-testing" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Another Chapter Title | Bookdown testing" />
+  <meta name="twitter:title" content="Chapter 2 Supplements | Bookdown testing" />
   
   <meta name="twitter:description" content="This is a test book" />
   
@@ -25,7 +25,7 @@
 <meta name="author" content="Ilya Ilyankou" />
 
 
-<meta name="date" content="2020-05-19" />
+<meta name="date" content="2020-05-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="style-guide.html"/>
-
+<link rel="next" href="section-header.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -52,6 +52,15 @@
 
 
 
+<script>
+  // adjust web edition height or width of iframe for specific figure references, using tilde (~iframe)
+$(document).ready(function() {
+  $("#fig\\:sample-map~iframe").attr("height", "600px");
+  $("#fig\\:sample-map~iframe").attr("width", "100%");
+  $("#fig\\:excel-drag~iframe").attr("height", "450px");
+  $("#fig\\:excel-drag~iframe").attr("width", "50%");
+})
+</script>
 
 
 
@@ -71,12 +80,19 @@
 <li><strong><a href="./">Bookdown testing</a></strong></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="chapter.html"><a href="chapter.html"><i class="fa fa-check"></i><b>1</b> Goals</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="style-guide.html"><a href="style-guide.html"><i class="fa fa-check"></i><b>1.1</b> Style Guide</a></li>
+<li class="chapter" data-level="" data-path="copyright-and-open-access.html"><a href="copyright-and-open-access.html"><i class="fa fa-check"></i>Copyright and Open-Access</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="chapter2.html"><a href="chapter2.html"><i class="fa fa-check"></i><b>2</b> Another Chapter Title</a></li>
+<li class="chapter" data-level="1" data-path="chapter1.html"><a href="chapter1.html"><i class="fa fa-check"></i><b>1</b> Publishing with Bookdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="file-organization.html"><a href="file-organization.html"><i class="fa fa-check"></i>File Organization and Headers</a></li>
+<li class="chapter" data-level="" data-path="style-guide.html"><a href="style-guide.html"><i class="fa fa-check"></i>Style Guide</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chapter2.html"><a href="chapter2.html"><i class="fa fa-check"></i><b>2</b> Supplements</a>
+<ul>
+<li class="chapter" data-level="" data-path="section-header.html"><a href="section-header.html"><i class="fa fa-check"></i>Section Header</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
 
@@ -98,28 +114,16 @@
 
             <section class="normal" id="section-">
 <div id="chapter2" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Another Chapter Title</h1>
-<p>More text here</p>
-<div id="another-subheader" class="section level3 unnumbered" number="">
-<h3>Another subheader</h3>
-<p>More text here</p>
-
-<div class="figure"><span id="fig:sample-static-image2"></span>
-<img src="images/tiger.png" alt="Caption for sample static image using R code-chunk method. Auto-numbered as Figure x.x in HMTL and PDF, but as Figure x in Word. CHECK OTHERS. Note that image in PDF edition may “float” and appear before or after page, so needs cross-reference."  />
-<p class="caption">
-Figure 2.1: Caption for sample static image using R code-chunk method. Auto-numbered as Figure x.x in HMTL and PDF, but as Figure x in Word. CHECK OTHERS. Note that image in PDF edition may “float” and appear before or after page, so needs cross-reference.
-</p>
-</div>
-
-</div>
+<h1><span class="header-section-number">Chapter 2</span> Supplements</h1>
+<p>Cupcake ipsum dolor sit amet jelly beans wafer pudding. Bear claw lemon drops carrot cake pie wafer chocolate jelly cheesecake. Chocolate cheesecake chocolate bar sugar plum sweet dessert tart. Tootsie roll bear claw chocolate bar wafer powder sugar plum tiramisu bear claw gummies. Tart macaroon pastry lemon drops candy tootsie roll chocolate candy canes lollipop. Pudding fruitcake bear claw sweet cake cupcake. Chupa chups pudding candy canes chupa chups powder jujubes chocolate cake cotton candy jelly.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="style-guide.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="style-guide.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-header.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

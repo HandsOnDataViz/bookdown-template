@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.1 Style Guide | Bookdown testing</title>
+  <title>Style Guide | Bookdown testing</title>
   <meta name="description" content="This is a test book" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.1 Style Guide | Bookdown testing" />
+  <meta property="og:title" content="Style Guide | Bookdown testing" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://handsondataviz.github.io/bookdown-testing" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="handsondataviz/bookdown-testing" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.1 Style Guide | Bookdown testing" />
+  <meta name="twitter:title" content="Style Guide | Bookdown testing" />
   
   <meta name="twitter:description" content="This is a test book" />
   
@@ -25,14 +25,14 @@
 <meta name="author" content="Ilya Ilyankou" />
 
 
-<meta name="date" content="2020-05-19" />
+<meta name="date" content="2020-05-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="chapter.html"/>
+<link rel="prev" href="file-organization.html"/>
 <link rel="next" href="chapter2.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
@@ -52,6 +52,15 @@
 
 
 
+<script>
+  // adjust web edition height or width of iframe for specific figure references, using tilde (~iframe)
+$(document).ready(function() {
+  $("#fig\\:sample-map~iframe").attr("height", "600px");
+  $("#fig\\:sample-map~iframe").attr("width", "100%");
+  $("#fig\\:excel-drag~iframe").attr("height", "450px");
+  $("#fig\\:excel-drag~iframe").attr("width", "50%");
+})
+</script>
 
 
 
@@ -71,12 +80,19 @@
 <li><strong><a href="./">Bookdown testing</a></strong></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="chapter.html"><a href="chapter.html"><i class="fa fa-check"></i><b>1</b> Goals</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="style-guide.html"><a href="style-guide.html"><i class="fa fa-check"></i><b>1.1</b> Style Guide</a></li>
+<li class="chapter" data-level="" data-path="copyright-and-open-access.html"><a href="copyright-and-open-access.html"><i class="fa fa-check"></i>Copyright and Open-Access</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="chapter2.html"><a href="chapter2.html"><i class="fa fa-check"></i><b>2</b> Another Chapter Title</a></li>
+<li class="chapter" data-level="1" data-path="chapter1.html"><a href="chapter1.html"><i class="fa fa-check"></i><b>1</b> Publishing with Bookdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="file-organization.html"><a href="file-organization.html"><i class="fa fa-check"></i>File Organization and Headers</a></li>
+<li class="chapter" data-level="" data-path="style-guide.html"><a href="style-guide.html"><i class="fa fa-check"></i>Style Guide</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chapter2.html"><a href="chapter2.html"><i class="fa fa-check"></i><b>2</b> Supplements</a>
+<ul>
+<li class="chapter" data-level="" data-path="section-header.html"><a href="section-header.html"><i class="fa fa-check"></i>Section Header</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
 
@@ -97,32 +113,12 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="style-guide" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Style Guide</h2>
-<div id="file-organization" class="section level3 unnumbered" number="">
-<h3>File organization</h3>
-<p>We organized our <a href="http://github.com/handsondataviz/book">book repository</a> as a set of individual .Rmd files, one for each chapter and each section. Chapter files are named 01-topic, 02-topic, etc., and section files are named 01.1-subtopic, 01.2-subtopic, etc. The non-numbered portion of the file name also serves as the unique name in the chapter/section header: <code>{#unique-name}</code>. This file structure gives us co-authors maximum flexibility to add and edit different sections of the book at the same time.</p>
-<p>Our current Bookdown <code>index.Rmd</code> settings auto-number each chapter and section in the table of contents. Alternatively, we could set auto-numbering to false, and manually number of title of each chapter only.</p>
-<pre><code>output:
-  bookdown::gitbook:
-    dev: svglite
-    css: css/style.css
-    toc_depth: 2
-    split_by: section
-    number_sections: true
-    split_bib: true</code></pre>
-</div>
-<div id="headers" class="section level3 unnumbered" number="">
-<h3>Headers</h3>
-<ul>
-<li>top-level chapter title (A) = 1 hashtag followed by <code>{#unique-name}</code></li>
-<li>second-level section title (B) = 2 hashtags followed by <code>{#unique-name}</code></li>
-<li>third-level header (C) = 3 hashtags followed by <code>{-}</code> to avoid auto-number</li>
-<li>fourth-level header (D) = 4 hashtags followed by <code>{-}</code> to avoid auto-number</li>
-</ul>
+<div id="style-guide" class="section level2 unnumbered" number="">
+<h2>Style Guide</h2>
+<p>Since Bookdown is an R package, we composed the book in R-flavored Markdown (.Rmd).</p>
 <p>Each paragraph begins on a separate line. O’Reilly style guide prefers <em>italics</em> rather than bold. Use single back tics to display a monospaced <code>code</code> word.</p>
 <p>Insert an embedded link to <a href="https://www.oreilly.com/">O’Reilly</a>. This appears as a colored clickable link in HTML and Word editions, and a non-colored but clickable link in the PDF edition. According to O’Reilly Atlas documentation, the AsciiDoc version should automatically unfurl for the printed edition.</p>
-<p>Lists: always insert a blank line before items, unless directly after hashtag header.</p>
+<p>For lists, always insert a blank line <em>before</em> the items, unless they appear directly after hashtag header.</p>
 <ul>
 <li>unordered</li>
 <li>list</li>
@@ -131,97 +127,131 @@
 <li>ordered</li>
 <li>list</li>
 </ol>
+<p>Insert <code>TODO</code> to note items to finish or review with co-author or editor.</p>
 <p>Insert three back tics to insert a code block. Check character line length limits in <a href="http://oreillymedia.github.io/production-resources/styleguide/#line-length">O’Reilly style guide</a>:</p>
 <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/leaflet@1.6.0/dist/leaflet.css&quot; /&gt;
 &lt;script src=&quot;https://unpkg.com/leaflet@1.6.0/dist/leaflet.js&quot;&gt;&lt;/script&gt;</code></pre>
-</div>
-<div id="cross-references" class="section level3 unnumbered" number="">
-<h3>Cross-references</h3>
-<p>For Bookdown cross-references, assign a unique name to each chapter, section, figure, and table. Make sure the unique name (aka R code-chunk label) only contains <em>alphanumeric</em> characters (a-z, A-Z, 0-9), slashes (/), or dashes (-).</p>
-<ul>
-<li>In HTML, all cross-refs are clickable and auto-numbered (except to chapter).</li>
-<li>In PDF, all cross-refs (except chapter) are clickable and auto-numbered.</li>
-<li>In Word, all cross-refs are auto-numbered (except chapter), but none are clickable.</li>
-<li>TBA with AsciiDoc.</li>
-</ul>
-<p>Demos:</p>
-<ul>
-<li>To another <em>chapter</em>, use HTML link: See <a href="chapter2.html">chapter 2</a>.</li>
-<li>To another <em>section</em>, use Bookdown ID ref: See section <a href="style-guide.html#style-guide">1.1</a>.</li>
-<li>To figure in any chapter/section, use Bookdown ID ref: Figure <a href="style-guide.html#fig:sample-interactive-map">1.2</a>, or Figure <a href="chapter2.html#fig:sample-static-image2">2.1</a>.</li>
-<li>To table in any chapter/section, use Bookdown ID ref: Table <a href="style-guide.html#tab:unique1">1.1</a>.</li>
-</ul>
-<p><a href="http://oreillymedia.github.io/production-resources/styleguide/#considering_electronic_formats">O’Reilly Style Guide</a>: Using live cross references (e.g., “see Figure 2-1”) is best, but when that’s not possible, use “preceding” or “following,” as the physical placement of elements could be different in reflowable formats. <em>Avoid</em> using “above” or “below.” See also <a href="http://oreillymedia.github.io/production-resources/styleguide/#cross_references" class="uri">http://oreillymedia.github.io/production-resources/styleguide/#cross_references</a></p>
-</div>
 <div id="conditional-formatting" class="section level3 unnumbered" number="">
 <h3>Conditional Formatting</h3>
 <p>Conditional formatting offers the option to display text or images in some editions, but not other editions.</p>
-<p>Demo: Simple HTML code comment in .Rmd file (appears as commented-out text in HTML and .md, but does <em>not</em> appear in any way in PDF or MS Word or AsciiDoc):</p>
-<!-- Insert comments that are visible in the source text (.Rmd and .md), but not HTML or PDF or AsciiDoc. -->
-<p>The R package function <code>is_[html/latex]_output</code> allows authors to produce conditional output for different book products, such as text that should appear in the HTML edition but not the PDF edition, or vice versa.</p>
+<p>To show/hide a few lines of text, insert an HTML code comment <code>&lt;!-- Comment --&gt;</code> in the .Rmd file, which also appears as commented-out text in the HTML and .md formats, not visible in the HTML browser, and does not appear in any way in the PDF, MS Word or AsciiDoc formats.</p>
+<p>Demo:</p>
+<!-- This comment is visible in the source text, but not visible in the HTML or PDF or MSWord or AsciiDoc outputs. -->
+<p>Also, the R package function <code>is_[html/latex]_output</code> allows conditional output for different book products, such as text that should appear in the HTML edition but not the PDF edition, or vice versa.</p>
 <p>Demos:</p>
 <!--
 This line appears in the PDF and Word versions, and is commented-out in the HTML and Markdown and AsciiDoc versions.
 -->
 <p>This line appears in the HTML, Word, Markdown, and AsciiDoc versions, and is commented-out in the PDF version.</p>
-<p>See more complex syntax for conditional formatting at:</p>
+<p>TODO: Explore and add conditional formatting that displays <em>only</em> in the HTML edition, and includes R code-chunks to conditionally display images. See more complex conditional formatting ideas:</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/56808355/how-to-conditionally-process-sections-in-rmarkdown" class="uri">https://stackoverflow.com/questions/56808355/how-to-conditionally-process-sections-in-rmarkdown</a></li>
 <li><a href="https://bookdown.org/yihui/rmarkdown-cookbook/latex-html.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/latex-html.html</a></li>
 <li><a href="https://blog.earo.me/2019/10/26/reduce-frictions-rmd/" class="uri">https://blog.earo.me/2019/10/26/reduce-frictions-rmd/</a></li>
-<li><a href="https://stackoverflow.com/questions/53861244/html-specific-section-in-bookdown" class="uri">https://stackoverflow.com/questions/53861244/html-specific-section-in-bookdown</a> This hack no longer works, and was only a partial solution</li>
+<li><a href="https://stackoverflow.com/questions/53861244/html-specific-section-in-bookdown" class="uri">https://stackoverflow.com/questions/53861244/html-specific-section-in-bookdown</a></li>
 <li><a href="https://stackoverflow.com/questions/41084020/add-a-html-block-above-each-chapter-header" class="uri">https://stackoverflow.com/questions/41084020/add-a-html-block-above-each-chapter-header</a></li>
 <li><a href="https://stackoverflow.com/questions/45360998/code-folding-in-bookdown" class="uri">https://stackoverflow.com/questions/45360998/code-folding-in-bookdown</a></li>
 </ul>
 </div>
+<div id="cross-references" class="section level3 unnumbered" number="">
+<h3>Cross-references</h3>
+<p>In order to cross-reference in Bookdown, assign a unique name or R code-chunk label to each chapter, section, figure, and table. Unique names and labels should contain only <em>alphanumeric</em> characters (a-z, A-Z, 0-9) or dashes (-).</p>
+<p>To cross-reference any <em>chapter or section</em>, and allow readers to jump there, use a HTML link with the unique name, such as <code>chapter2.html</code> or <code>style-guide.html</code>. Demos:</p>
+<ul>
+<li>See <a href="style-guide.html">“Style Guide” in Chapter 1</a>.</li>
+<li>See <a href="chapter2.html">Chapter 2</a></li>
+</ul>
+<p>Contrary to the <a href="https://bookdown.org/yihui/bookdown/cross-references.html">Bookdown manual</a>, <em>avoid</em> using Bookdown unique ID links to cross-reference chapters or sections, because these create extraneous and imprecise URLs, such as this example: <a href="style-guide.html#style-guide">Chapter 1 “Style Guide”</a></p>
+<p>To cross-reference figures and tables, and display their auto-number and allow readers to jump there, write a call-out with a Bookdown reference to a code-chunk label, such as <code>See Figure \@ref(fig:sample-map)</code> or <code>See Table \@ref(tab:left-table)</code>. Demos:</p>
+<ul>
+<li>See Figure <a href="style-guide.html#fig:tiger">1.1</a>.</li>
+<li>See Table <a href="style-guide.html#tab:left-table">1.1</a>.</li>
+</ul>
+<p>Cross-reference interactivity varies by output:</p>
+<ul>
+<li>In HTML, all cross-refs are clickable.</li>
+<li>In PDF, all cross-refs are clickable (except chapter-level HTML links).</li>
+<li>In Word, no cross-refs are clickable (unless this varies with reference.docx).</li>
+<li>TBA with Markdown (.md) and AsciiDoc.</li>
+</ul>
+<p>When writing cross-references in the text, the <a href="http://oreillymedia.github.io/production-resources/styleguide/#considering_electronic_formats">O’Reilly Style Guide</a> prefers live cross references (e.g., “see Figure 2-1”), but if not feasible, use “preceding” or “following” because physical placement of elements may vary across print and digital formats. <em>Avoid</em> using “above” or “below.”</p>
+</div>
 <div id="images" class="section level3 unnumbered" number="">
 <h3>Images</h3>
-<p>TODO: Decide pros and cons of two methods, and probably use one method consistently (unless there’s a strong reason for hybrid usage). Note that auto-numbering may be a problem if we display different images for HTML versus O’Reilly products</p>
-<ol style="list-style-type: decimal">
-<li>Markdown formatting
-<ul>
-<li>Simple syntax</li>
-<li>Converts easily with Pandoc into AsciiDoc format</li>
-<li>No auto-numbering in HTML or Word editions</li>
-<li>Auto-numbering in PDF edition</li>
-<li>TODO: Can this be compatible with R code-chunk conditional formatting to make certain images appear only in HTML edition?</li>
-</ul></li>
-<li>R code-chunk formatting:
-<ul>
-<li>More complex syntax</li>
-<li>Handles conditional formatting to insert iframe into HMTL edition and static image for Word/PDF editions</li>
-<li>Image does <em>not</em> convert to AsciiDoc format, but caption and static number (Figure x) appears as placeholder.</li>
-<li>Figures are auto-numbered, but varies by format: Figure x.x in HTML, PDF, but Figure x in Word; static Figure x in AsciiDoc.</li>
-</ul></li>
-</ol>
-<div id="markdown-demo-for-static-image" class="section level4 unnumbered" number="">
-<h4>Markdown demo for static image</h4>
-<div class="figure">
-<img src="images/tiger.png" alt="" />
-<p class="caption">Caption in simple Markdown format. No auto-numbered reference in HMTL or Word, but auto-numbered as Figure x.x in PDF. Note that image in PDF edition may “float” and appear before after page, so PDF would need live cross-reference in text.</p>
-</div>
-</div>
-<div id="r-code-chunk-demo-for-static-image" class="section level4 unnumbered" number="">
-<h4>R code-chunk demo for static image</h4>
+<p>Create high-resolution color images that will appear in grayscale in print book. Organize static .jpg and .png files, and animated .gif files, into the <code>images</code> subfolder by chapter. Write file names in lowercase with dashes (not spaces) and begin with keyword of relevant section to keep related images grouped together. Despite being in separate folders, avoid duplicate image file names across the book. Avoid numbering images since they may not match the final sequence. When appropriate, make two image versions (with and without additional text or art) and add “raw” to the latter file name. Examples:</p>
+<pre><code>images/05-chart/design-no-junk.png
+images/05-chart/design-no-junk-raw.png</code></pre>
+<p>In this book, only use Markdown formatting for images that appear inside tables and do <em>not</em> require captions or figure numbering, and leave the caption field blank:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Co-Authors</th>
+<th>About Us</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="images/dougherty-jack.jpg" /></td>
+<td><a href="http://jackdougherty.org">Jack Dougherty</a></td>
+</tr>
+<tr class="even">
+<td><img src="images/ilyankou-ilya.jpg" /></td>
+<td><a href="https://github.com/ilyankou">Ilya Ilyankou</a></td>
+</tr>
+</tbody>
+</table>
+<p>Although Markdown formatting offers a simple syntax that easily converts into other formats with Bookdown/Pandoc, there is no auto-numbering in the HTML edition, while auto-numbering appears in the PDF edition, and numbered figures are required by the publisher. Furthermore, Markdown formatting does not allow conditional output.</p>
+<p>For these reasons, this book primarily uses R code-chunk formatting for images. The syntax is more complex but supports auto-numbering in HTML and PDF, and conditional output for interactive and static images. Note that R code-chunk images do <em>not</em> easily convert with Pandoc from Markdown to AsciiDoc, but “Figure x Caption” appears as a placeholder.</p>
+<p>Auto-numbering appears in <code>Figure x.x</code> format in HTML and PDF, but <code>Figure x</code> format in MS Word. TODO: Check if Word formatting can be changed with reference.docx.</p>
+<p>Note that images in PDF output will “float” by design and may appear before or after the desired page, so always add a cross-reference call-out.</p>
+<p>Write R code-chunk labels that follow the image file name, and avoid duplicate labels across the book:</p>
+<pre><code>ref:design-no-junk
 
-<div class="figure"><span id="fig:sample-static-image"></span>
-<img src="images/tiger.png" alt="Caption for sample static image using R code-chunk method. Auto-numbered as Figure x.x in HMTL and PDF, but as Figure x in Word. Note that image in PDF edition may “float” and appear before or after page, so needs cross-reference."  />
+images/05-chart/design-no-junk.png</code></pre>
+<div id="demo-r-code-chunk-for-static-image" class="section level4 unnumbered" number="">
+<h4>Demo: R code-chunk for static image</h4>
+<p>…as shown in Figure <a href="style-guide.html#fig:tiger">1.1</a>.</p>
+
+<div class="figure"><span id="fig:tiger"></span>
+<img src="images/tiger.png" alt="Caption here. Markdown embedded links are acceptable."  />
 <p class="caption">
-Figure 1.1: Caption for sample static image using R code-chunk method. Auto-numbered as Figure x.x in HMTL and PDF, but as Figure x in Word. Note that image in PDF edition may “float” and appear before or after page, so needs cross-reference.
+Figure 1.1: Caption here. Markdown embedded links are acceptable.
 </p>
 </div>
+<p>R code-chunks allow more complex conditional formatting, where an interactive map or animated GIF or YouTube video clip appears in the web version, and a static image with an embedded link appears in the PDF and MS Word outputs. Also note the option to change the default iframe height (400px) and width with settings in the <code>custom-scripts.html</code> file, with a code comment reminder.</p>
 </div>
-<div id="r-code-chunk-demo-for-sample-interactive-html-iframe-and-static-image" class="section level4 unnumbered" number="">
-<h4>R code-chunk demo for sample interactive HTML iframe and static image</h4>
+<div id="demo-r-code-chunk-for-html-iframe-and-static-image" class="section level4 unnumbered" number="">
+<h4>Demo: R code-chunk for HTML iframe and static image</h4>
+<p>…as shown in Figure <a href="style-guide.html#fig:sample-map">1.2</a>.</p>
 
-<!-- set iframe 640px height 100% width in custom-scripts.html -->
-<div class="figure"><span id="fig:sample-interactive-map"></span>
+<!-- set iframe 600px height 100% width in custom-scripts.html -->
+<div class="figure"><span id="fig:sample-map"></span>
 <iframe src="https://handsondataviz.github.io/leaflet-maps-with-google-sheets/" width="672" height="400px">
 </iframe>
 <p class="caption">
-Figure 1.2: Insert caption here, with embedded link to explore the <a href="https://handsondataviz.github.io/leaflet-maps-with-google-sheets/">full-screen interactive map</a> Auto-numbered as Figure x.x in HTML and PDF, but as Figure x in Word. Note that image in PDF edition may “float” and appear before or after page, so needs cross-reference.
+Figure 1.2: Caption here, and add embedded link to explore the <a href="https://handsondataviz.github.io/leaflet-maps-with-google-sheets/">full-screen interactive map</a>.
 </p>
 </div>
+</div>
+<div id="demo-r-code-chunk-for-gif-animation-and-static-image" class="section level4 unnumbered" number="">
+<h4>Demo: R code-chunk for GIF animation and static image</h4>
+<p>…as shown in Figure <a href="style-guide.html#fig:excel-drag">1.3</a>.</p>
+
+<!-- set iframe 450px height 50% width in custom-scripts.html -->
+<div class="figure"><span id="fig:excel-drag"></span>
+<iframe src="https://handsondataviz.org/images/02-spreadsheet/excel-drag-consec.gif" width="672" height="400px">
+</iframe>
+<p class="caption">
+Figure 1.3: Caption here, with embedded link to <a href="https://handsondataviz.org/images/02-spreadsheet/excel-drag-consec.gif">animated GIF</a>.
+</p>
+</div>
+<p>TODO: Test conditional formatting with GIF in HTML and static image elsewhere.</p>
+<p>TODO: Decide conditional formatting for YouTube video</p>
+<p>TODO: Test output size across editions</p>
+<p>TODO: Test quality of PDF images with adding R global option setting</p>
+<p>TODO: Describe R global option settings in <code>index.Rmd</code> to display each R code-chunk without a code echo</p>
+<pre><code>{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)</code></pre>
 </div>
 </div>
 <div id="tables" class="section level3 unnumbered" number="">
@@ -229,7 +259,7 @@ Figure 1.2: Insert caption here, with embedded link to explore the <a href="http
 <p>Create tables in Markdown format, since it produces good output for HTML, PDF, Word, and Markdown. Use a tool such as <a href="https://www.tablesgenerator.com/markdown_tables">Tables Generator</a> to import significant table data in CSV format, format the column alignment as desired, and press Generate button to create table in Markdown format. For significant table data, save the CSV version in a GitHub repo for potential later use.</p>
 <p>Add the Markdown table code shown below to auto-number (Table x) in HTML, PDF, Word.</p>
 <table>
-<caption><span id="tab:unique1">Table 1.1: </span> Left-justify content, remember blank Line</caption>
+<caption><span id="tab:left-table">Table 1.1: </span> Left-justify content, remember blank Line</caption>
 <thead>
 <tr class="header">
 <th align="left">Much Much Longer Header</th>
@@ -251,7 +281,7 @@ Figure 1.2: Insert caption here, with embedded link to explore the <a href="http
 </tbody>
 </table>
 <table>
-<caption><span id="tab:unique2">Table 1.2: </span> Right-justify content, remember blank line</caption>
+<caption><span id="tab:right-table">Table 1.2: </span> Right-justify content, remember blank line</caption>
 <thead>
 <tr class="header">
 <th align="right">Header1</th>
@@ -279,8 +309,8 @@ Figure 1.2: Insert caption here, with embedded link to explore the <a href="http
 </table>
 <p>Workaround: Currently, our attempt to use Pandoc to directly convert a Bookdown-generated Markdown file to AsciiDoc fails because Bookdown creates the .md file with tables in .html format, not Markdown. One workaround is to paste the individual Markdown-formatted tables directly from the .Rmd into the large .md file prior to converting with Pandoc to AsciiDoc.</p>
 </div>
-<div id="bibliographic-references" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> Bibliographic references</h3>
+<div id="bibliographic-references" class="section level3 unnumbered" number="">
+<h3>Bibliographic references</h3>
 <p>TODO: Set up Zotero to use Chicago-style footnotes (check O’Reilly style guide)</p>
 </div>
 <div id="pandoc-conversion" class="section level3 unnumbered" number="">
@@ -290,7 +320,7 @@ Figure 1.2: Insert caption here, with embedded link to explore the <a href="http
 <li>TODO: Ask Ilya about my Pandoc PATH and/or overwriting older version</li>
 <li>Set Bookdown to build the book as one large Markdown file (docs folder, suffix .md)</li>
 <li>Use command line to navigate to subfolder with <code>pwd</code> and <code>cd</code>.</li>
-<li>Convert with: <code>pandoc bookdown-testing.md --from markdown --to asciidoc --standalone --output bookdown-testing-MMDD.asciidoc</code></li>
+<li>Convert with: <code>pandoc bookdown-testing.md --from markdown --to asciidoc --standalone --output bookdown-testing-modified.asciidoc</code></li>
 <li>Confirm if AsciiDoc file matches <a href="https://docs.atlas.oreilly.com/writing_in_asciidoc.html">O’Reilly Atlas import style</a>.</li>
 </ul>
 
@@ -302,7 +332,7 @@ Figure 1.2: Insert caption here, with embedded link to explore the <a href="http
           </div>
         </div>
       </div>
-<a href="chapter.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="file-organization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="chapter2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -342,7 +372,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/handsondataviz/bookdown-testing/edit/master/01.1-style-guide.Rmd",
+"link": "https://github.com/handsondataviz/bookdown-testing/edit/master/01-chapter.Rmd",
 "text": null
 },
 "download": ["bookdown-testing.pdf"],

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Bookdown testing</title>
+  <title>Chapter 1 Publishing with Bookdown | Bookdown testing</title>
   <meta name="description" content="This is a test book" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Bookdown testing" />
+  <meta property="og:title" content="Chapter 1 Publishing with Bookdown | Bookdown testing" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://handsondataviz.github.io/bookdown-testing" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="handsondataviz/bookdown-testing" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Bookdown testing" />
+  <meta name="twitter:title" content="Chapter 1 Publishing with Bookdown | Bookdown testing" />
   
   <meta name="twitter:description" content="This is a test book" />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="copyright-and-open-access.html"/>
+<link rel="prev" href="copyright-and-open-access.html"/>
+<link rel="next" href="file-organization.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -113,31 +113,23 @@ $(document).ready(function() {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Bookdown testing</h1>
-<h2 class="subtitle"><em>subtitle here</em></h2>
-<p class="author"><em>Jack Dougherty</em></p>
-<p class="author"><em>Ilya Ilyankou</em></p>
-<p class="date"><em>2020-05-20</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered" number="">
-<h1>Preface</h1>
-<!-- R global options: each R chunk image to display without code (no echo)-->
-<p>This test book was last updated on 20 May 2020</p>
-<p>Insert additional preface items below (acknowledgements, etc.), with non-numbering symbols <code>{-}</code> to ensure that the preface is not numbered, and the first chapter is properly numbered as chapter one.</p>
-<p>Reminder: Bookdown does not auto-number figures in the <code>index.Rmd</code> file, which serves as a “preface” file.</p>
-<div id="acknowledgements" class="section level3 unnumbered" number="">
-<h3>Acknowledgements</h3>
-<p>Cupcake ipsum dolor sit amet jelly beans wafer pudding. Bear claw lemon drops carrot cake pie wafer chocolate jelly cheesecake. Chocolate cheesecake chocolate bar sugar plum sweet dessert tart. Tootsie roll bear claw chocolate bar wafer powder sugar plum tiramisu bear claw gummies. Tart macaroon pastry lemon drops candy tootsie roll chocolate candy canes lollipop. Pudding fruitcake bear claw sweet cake cupcake. Chupa chups pudding candy canes chupa chups powder jujubes chocolate cake cotton candy jelly.</p>
-</div>
+<div id="chapter1" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Publishing with Bookdown</h1>
+<!-- TODO: ADD LINK TO View the source code for this page on the GitHub repo to see the underlying code used for our Style Guide. -->
+<p>Our broad goal is to create one efficient workflow to produce three versions of the book: HTML pages; PDF/MS Word; AsciiDoc.</p>
+<ol style="list-style-type: decimal">
+<li>As co-authors, we composed the book manuscript as a set of R-flavored Markdown files (.Rmd) for each chapter, and use Bookdown to build as a set of HTML pages. We upload the files to our <a href="https://github.com/handsondataviz">GitHub repository</a> and publish open-access web edition at <a href="https://HandsOnDataViz" class="uri">https://HandsOnDataViz</a>.</li>
+<li>We also use Bookdown to build the book as a PDF file and as a MS Word file, and upload these to the <code>docs</code> folder of our GitHub repository, which our editor may download to comment on the manuscript as we revise.</li>
+<li>We also have the option to use Bookdown to build one large Markdown file (.md), and use <a href="https://pandoc.org/try/">Pandoc</a> to convert it into one large AsciiDoc file (.asciidoc), for easier importing into the <a href="https://docs.atlas.oreilly.com/writing_in_asciidoc.html">O’Reilly Atlas platform</a> if desired.</li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="copyright-and-open-access.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="copyright-and-open-access.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="file-organization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -176,7 +168,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/handsondataviz/bookdown-testing/edit/master/index.Rmd",
+"link": "https://github.com/handsondataviz/bookdown-testing/edit/master/01-chapter.Rmd",
 "text": null
 },
 "download": ["bookdown-testing.pdf"],
