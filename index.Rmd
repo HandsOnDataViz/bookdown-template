@@ -50,10 +50,12 @@ output:
 
 ---
 # Preface {-}
-<!-- R global options: each R chunk image to display without code (no echo)-->
+<!-- R global options: R chunk images display without code (no echo); show PDF image over JPG/PNG when available -->
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+options(knitr.graphics.auto_pdf = TRUE)
 ```
+
 This test book was last updated on `r format (Sys.Date(), '%d %b %Y')`
 
 Insert additional preface items below (acknowledgements, etc.), with non-numbering symbols `{-}` to ensure that the preface is not numbered, and the first chapter is properly numbered as chapter one.

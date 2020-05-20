@@ -1,7 +1,7 @@
 Preface
 =======
 
-<!-- R global options: each R chunk image to display without code (no echo)-->
+<!-- R global options: R chunk images display without code (no echo); show PDF image over JPG/PNG when available -->
 
 This test book was last updated on 20 May 2020
 
@@ -267,7 +267,8 @@ feasible, use “preceding” or “following” because physical placement of
 elements may vary across print and digital formats. *Avoid* using
 “above” or “below.”
 
-### Images
+Images
+------
 
 Create high-resolution color images that will appear in grayscale in
 print book. Organize static .jpg and .png files, and animated .gif
@@ -277,10 +278,27 @@ section to keep related images grouped together. Despite being in
 separate folders, avoid duplicate image file names across the book.
 Avoid numbering images since they may not match the final sequence. When
 appropriate, make two image versions (with and without additional text
-or art) and add “raw” to the latter file name. Examples:
+or art) and add “raw” to the latter file name.
 
-    images/05-chart/design-no-junk.png
-    images/05-chart/design-no-junk-raw.png
+For larger .jpg or .png images (taller than 400px?), use a photo-editing
+tool (*not Preview*) to create a .pdf version with smaller dimensions
+but resampled at a higher resolution, and save with same name in the
+same folder. We inserted global R code-chunk settings immediately after
+the first header in the `index.Rmd` file, to display each code-chunk
+image without a code echo, and to automatically substitute PDF images
+over PNG/JPG with the same file name, when available, *for the PDF book
+output only*, to improve its general appearance for the editing process:
+
+    {r setup, include=FALSE}
+    knitr::opts_chunk$set(echo = FALSE)
+    options(knitr.graphics.auto_pdf = TRUE)
+
+Sample set of file names for JPG, smaller high-res PDF, and JPG without
+text or art:
+
+    images/05-chart/design-no-junk.jpg
+    images/05-chart/design-no-junk.pdf
+    images/05-chart/design-no-junk-raw.jpg
 
 In this book, only use Markdown formatting for images that appear inside
 tables and do *not* require captions or figure numbering, and leave the
@@ -296,14 +314,18 @@ caption field blank:
 <tbody>
 <tr class="odd">
 <td><img src="images/dougherty-jack.jpg" /></td>
-<td><a href="http://jackdougherty.org">Jack Dougherty</a></td>
+<td>See <a href="http://jackdougherty.org">Jack Dougherty</a></td>
 </tr>
 <tr class="even">
 <td><img src="images/ilyankou-ilya.jpg" /></td>
-<td><a href="https://github.com/ilyankou">Ilya Ilyankou</a></td>
+<td>See <a href="https://github.com/ilyankou">Ilya Ilyankou</a></td>
 </tr>
 </tbody>
 </table>
+
+TODO: Fix resolution of images above. Maybe use conditional formatting,
+or add higher-resolution images under different file name for
+substitution by publisher?
 
 Although Markdown formatting offers a simple syntax that easily converts
 into other formats with Bookdown/Pandoc, there is no auto-numbering in
@@ -332,7 +354,7 @@ duplicate labels across the book:
 
     images/05-chart/design-no-junk.png
 
-#### Demo: R code-chunk for static image
+### Demo: R code-chunk for static image
 
 …as shown in Figure <a href="#fig:tiger">1</a>.
 
@@ -348,7 +370,7 @@ MS Word outputs. Also note the option to change the default iframe
 height (400px) and width with settings in the `custom-scripts.html`
 file, with a code comment reminder.
 
-#### Demo: R code-chunk for HTML iframe and static image
+### Demo: R code-chunk for HTML iframe and static image
 
 …as shown in Figure <a href="#fig:sample-map">2</a>.
 
@@ -362,7 +384,7 @@ Figure 2: Caption here, and add embedded link to explore the
 map](https://handsondataviz.github.io/leaflet-maps-with-google-sheets/).
 </p>
 
-#### Demo: R code-chunk for GIF animation and static image
+### Demo: R code-chunk for GIF animation and static image
 
 …as shown in Figure <a href="#fig:excel-drag">3</a>.
 
@@ -375,20 +397,7 @@ Figure 3: Caption here, with embedded link to [animated
 GIF](https://handsondataviz.org/images/02-spreadsheet/excel-drag-consec.gif).
 </p>
 
-TODO: Test conditional formatting with GIF in HTML and static image
-elsewhere.
-
-TODO: Decide conditional formatting for YouTube video
-
-TODO: Test output size across editions
-
-TODO: Test quality of PDF images with adding R global option setting
-
-TODO: Describe R global option settings in `index.Rmd` to display each R
-code-chunk without a code echo
-
-    {r setup, include=FALSE}
-    knitr::opts_chunk$set(echo = FALSE)
+TODO: Decide and add conditional formatting for YouTube video
 
 ### Tables
 
@@ -504,16 +513,9 @@ candy canes lollipop. Pudding fruitcake bear claw sweet cake cupcake.
 Chupa chups pudding candy canes chupa chups powder jujubes chocolate
 cake cotton candy jelly.
 
-&lt;img src=“images/tiger.png” alt=“Caption for sample static image
-using R code-chunk method. Auto-numbered as Figure x.x in HMTL and PDF,
-but as Figure x in Word. CHECK OTHERS. Note that image in PDF edition
-may”float" and appear before or after page, so needs cross-reference."
-/&gt;
+<img src="images/tiger.png" alt="Caption for sample static image using R code-chunk method."  />
 <p class="caption">
 Figure 4: Caption for sample static image using R code-chunk method.
-Auto-numbered as Figure x.x in HMTL and PDF, but as Figure x in Word.
-CHECK OTHERS. Note that image in PDF edition may “float” and appear
-before or after page, so needs cross-reference.
 </p>
 
 ### A Third-Level Section
