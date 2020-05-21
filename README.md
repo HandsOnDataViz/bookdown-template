@@ -1,4 +1,6 @@
-# bookdown-testing
-bookdown testing for publication workflow
+# bookdown-template
+Bookdown template for Hands-On Data Visualization book <https://HandsOnDataViz>
 
-https://handsondataviz.github.io/bookdown-testing/
+## Template demo
+https://handsondataviz.github.io/bookdown-template/
+
