@@ -77,7 +77,7 @@ output:
 ```
 
 ## Style Guide {- #style-guide}
-<!-- TODO: ADD LINK TO View the source code for this page on the GitHub repo to see the underlying code used for our Style Guide. -->
+View the source code to better understand how this page was composed at: https://github.com/HandsOnDataViz/bookdown-template/blob/master/01-bookdown.Rmd
 
 This book is composed in R-flavored Markdown (.Rmd), and each paragraph begins on a separate line. O'Reilly style guide prefers *italics* rather than bold. Use single back tics to display a monospaced `code` word.
 
@@ -174,36 +174,31 @@ Cross-reference interactivity varies by output:
 When writing cross-references in the text, the [O'Reilly Style Guide](http://oreillymedia.github.io/production-resources/styleguide/#considering_electronic_formats) prefers live cross references (e.g., "see Figure 2-1"), but if not feasible, use "preceding" or "following" because physical placement of elements may vary across print and digital formats. *Avoid* using "above" or "below."
 
 ## Images {- #images}
-Create high-resolution color images that will appear in grayscale in print book. Organize static .jpg and .png files, and animated .gif files, into the `images` subfolder by chapter. Write file names in lowercase with dashes (not spaces) and begin with keyword of relevant section to keep related images grouped together. Despite being in separate folders, avoid duplicate image file names across the book. Avoid numbering images since they may not match the final sequence. When appropriate, make two image versions (with and without additional text or art) and add "raw" to the latter file name.
+Create high-resolution color static images in .jpg or .png format, and animated .gif files, and save them into the `images` subfolder by chapter. Make sure that color images can be rendered into grayscale by the publisher for the print book. Write file names in lowercase with dashes (not spaces) and begin with keyword of relevant section to keep related images grouped together. Despite being in separate folders, avoid duplicate image file names across the book. Avoid numbering images since they may not match the final sequence. Add `-original` to the end of the file name prior to resizing or adding more text or artwork.
 
-For larger .jpg or .png images (taller than 400px?), use a photo-editing tool (*not Preview*) to create a .pdf version with smaller dimensions but resampled at a higher resolution, and save with same name in the same folder. We inserted global R code-chunk settings immediately after the first header in the `index.Rmd` file, to display each code-chunk image without a code echo, and to automatically substitute PDF images over PNG/JPG with the same file name, when available, *for the PDF book output only*, to improve its general appearance for the editing process:
-
-```
-{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-options(knitr.graphics.auto_pdf = TRUE)
-```
-
-Sample set of file names for JPG, smaller high-res PDF, and JPG without text or art:
+Use Photoshop or a similar photo-editing tool (*not* Preview) to add any additional text or artwork if desired. Try to maintain a high resolution (300 dpi) and reduce size if desired to fit into the HTML book (measured in pixels) and PDF book (measured in inches). Save into the same folder with the same file name, minus `-original`, like this:
 
 ```
-images/05-chart/design-no-junk.jpg
-images/05-chart/design-no-junk.pdf
-images/05-chart/design-no-junk-raw.jpg
+images/05-chart/design-no-junk-original.png
+images/05-chart/design-no-junk.png
 ```
 
-In this book, only use Markdown formatting for images that appear inside tables and do *not* require captions or figure numbering, and leave the caption field blank:
+When inserting image filenames into the text, use the version minus `-original`. If creating images to appear as the same size in sequence, add a code-comment with the image width, height, and resolution as a reminder to make others match up, like this:
+
+`<!-- Images below are 200x200 at 300 resolution -->`
+
+In this book, use *Markdown formatting only for images that appear inside tables* or *do not require captions or figure numbering*, and leave the caption field blank, like this example:
+
+<!-- Images below are 200x200 at 300 resolution -->
 
 | Co-Authors      | About Us      |
 | --------------- | ------------- |
-| ![](images/dougherty-jack.jpg) | See [Jack Dougherty](http://jackdougherty.org) |
-| ![](images/ilyankou-ilya.jpg) | See [Ilya Ilyankou](https://github.com/ilyankou) |   
-
-TODO: Fix resolution of images above. Maybe use conditional formatting, or add higher-resolution images under different file name for substitution by publisher?
+| ![](images/dougherty-jack.jpg) | About [Jack Dougherty](http://jackdougherty.org) |
+| ![](images/ilyankou-ilya.jpg) | About [Ilya Ilyankou](https://github.com/ilyankou) |   
 
 Although Markdown formatting offers a simple syntax that easily converts into other formats with Bookdown/Pandoc, there is no auto-numbering in the HTML edition, while auto-numbering appears in the PDF edition, and numbered figures are required by the publisher. Furthermore, Markdown formatting does not allow conditional output.
 
-For these reasons, this book primarily uses R code-chunk formatting for images. The syntax is more complex but supports auto-numbering in HTML and PDF, and conditional output for interactive and static images. Note that R code-chunk images do *not* easily convert with Pandoc from Markdown to AsciiDoc, but "Figure x Caption" appears as a placeholder.
+For these reasons, this book *primarily uses R code-chunk formatting for images*. The syntax is more complex but supports auto-numbering in HTML and PDF, and conditional output for interactive and static images. Note that R code-chunk images do *not* easily convert with Pandoc from Markdown to AsciiDoc, but "Figure x Caption" appears as a placeholder.
 
 Auto-numbering appears in `Figure x.x` format in HTML and PDF, but `Figure x` format in MS Word. TODO: Check if Word formatting can be changed with reference.docx.
 
@@ -250,8 +245,21 @@ if(knitr::is_html_output()) knitr::include_url("https://handsondataviz.github.io
 if(knitr::is_html_output()) knitr::include_url("https://handsondataviz.org/images/02-spreadsheet/excel-drag-consec.gif") else knitr::include_graphics("images/excel-drag.png")
 ```
 
-TODO: Option to add conditional formatting to display YouTube video
+### Demo: R code-chunk for Youtube video and static image {-}
+...as shown in the video \@ref(fig:video-sample).
 
+(ref:video-sample) Caption here, with embedded link to [YouTube video](https://youtu.be/-nGdrzMuUnI).
+
+```{r video-sample, fig.cap="(ref:video-sample)"}
+if(knitr::is_html_output()) knitr::include_url("https://youtu.be/-nGdrzMuUnI") else knitr::include_graphics("images/video-sample.png")
+```
+
+This Bookdown `index.Rmd` file includes an R code-chunk setting immediately after the first header, which displays each code-chunk image without a code echo. Read more about this feature and related options in this [Bookdown chapter](https://bookdown.org/yihui/bookdown/figures.html).
+
+```
+{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
 
 ## Tables {- #tables}
 Create tables in Markdown format, since it produces good output for HTML, PDF, Word, and Markdown. Use a tool such as [Tables Generator](https://www.tablesgenerator.com/markdown_tables) to import significant table data in CSV format, format the column alignment as desired, and press Generate button to create table in Markdown format. For significant table data, save the CSV version in a GitHub repo for potential later use.
