@@ -236,7 +236,7 @@ if(knitr::is_html_output()) knitr::include_url("https://handsondataviz.github.io
 ```
 
 ### Demo: R code-chunk for GIF animation and static image {-}
-TODO: FIX to make this appear consistently in all browsers; shorter pathname.
+TODO: FIX to make sizing appear consistently across browsers (FFox vs Chrome).
 
 ...as shown in Figure \@ref(fig:excel-drag).
 

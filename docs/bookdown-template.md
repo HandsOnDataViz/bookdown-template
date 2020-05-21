@@ -421,8 +421,8 @@ map](https://handsondataviz.github.io/leaflet-maps-with-google-sheets/).
 
 ### Demo: R code-chunk for GIF animation and static image
 
-TODO: FIX to make this appear consistently in all browsers; shorter
-pathname.
+TODO: FIX to make sizing appear consistently across browsers (FFox vs
+Chrome).
 
 …as shown in Figure <a href="#fig:excel-drag">3</a>.
 
