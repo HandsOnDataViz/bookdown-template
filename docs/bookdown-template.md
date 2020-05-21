@@ -421,18 +421,17 @@ map](https://handsondataviz.github.io/leaflet-maps-with-google-sheets/).
 
 ### Demo: R code-chunk for GIF animation and static image
 
-TODO: FIX: the custom script 50% width setting works in Chrome, but not
-FFox, perhaps because it’s not really an iframe?
+TODO: FIX to make this appear consistently in all browsers.
 
 …as shown in Figure <a href="#fig:excel-drag">3</a>.
 
-<!-- set iframe 450px height 50% width in custom-scripts.html -->
+<!-- set iframe 450px height in custom-scripts.html -->
 
-<iframe src="https://handsondataviz.org/images/02-spreadsheet/excel-drag-consec.gif" width="100%" height="400px">
+<iframe src="https://handsondataviz.github.io/bookdown-template/excel-drag.gif" width="100%" height="400px">
 </iframe>
 <p class="caption">
 Figure 3: Caption here, with embedded link to [animated
-GIF](https://handsondataviz.org/images/02-spreadsheet/excel-drag-consec.gif).
+GIF](https://handsondataviz.github.io/bookdown-template/excel-drag.gif).
 </p>
 
 ### Demo: R code-chunk for Youtube video and static image
