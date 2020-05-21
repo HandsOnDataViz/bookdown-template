@@ -7,6 +7,8 @@ date: "`r Sys.Date()`"
 knit: "bookdown::render_book"
 site: bookdown::bookdown_site
 documentclass: book
+bibliography: dataviz.bib
+citation-style: chicago-fullnote-bibliography.csl
 
 url: 'http\://handsondataviz.github.io/bookdown-testing'
 github-repo: handsondataviz/bookdown-testing
@@ -41,6 +43,8 @@ output:
   bookdown::pdf_book:
     toc_depth: 2
     number_sections: true
+    citation_package: none
+    pandoc_args: [ "--csl", "chicago-fullnote-bibliography.csl" ]
 
   bookdown::word_document2:
     default
