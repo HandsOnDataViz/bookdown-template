@@ -236,6 +236,8 @@ if(knitr::is_html_output()) knitr::include_url("https://handsondataviz.github.io
 ```
 
 ### Demo: R code-chunk for GIF animation and static image {-}
+TODO: FIX: the custom script 50% width setting works in Chrome, but not FFox, perhaps because it's not really an iframe?
+
 ...as shown in Figure \@ref(fig:excel-drag).
 
 (ref:excel-drag) Caption here, with embedded link to [animated GIF](https://handsondataviz.org/images/02-spreadsheet/excel-drag-consec.gif).
@@ -246,12 +248,14 @@ if(knitr::is_html_output()) knitr::include_url("https://handsondataviz.org/image
 ```
 
 ### Demo: R code-chunk for Youtube video and static image {-}
+Be sure to use the *embed* link from the YouTube *share* button.
+
 ...as shown in the video \@ref(fig:video-sample).
 
-(ref:video-sample) Caption here, with embedded link to [YouTube video](https://youtu.be/-nGdrzMuUnI).
+(ref:video-sample) Caption here, with embedded link to the [YouTube video](https://youtu.be/-nGdrzMuUnI).
 
 ```{r video-sample, fig.cap="(ref:video-sample)"}
-if(knitr::is_html_output()) knitr::include_url("https://youtu.be/-nGdrzMuUnI") else knitr::include_graphics("images/video-sample.png")
+if(knitr::is_html_output()) knitr::include_url("https://www.youtube.com/embed/-nGdrzMuUnI") else knitr::include_graphics("images/video-sample.png")
 ```
 
 This Bookdown `index.Rmd` file includes an R code-chunk setting immediately after the first header, which displays each code-chunk image without a code echo. Read more about this feature and related options in this [Bookdown chapter](https://bookdown.org/yihui/bookdown/figures.html).
