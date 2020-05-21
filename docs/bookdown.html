@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Publishing with Bookdown | Bookdown Template</title>
+  <meta name="description" content="This is a book template" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Publishing with Bookdown | Bookdown Template" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="http://handsondataviz.github.io/bookdown-template" />
+  
+  <meta property="og:description" content="This is a book template" />
+  <meta name="github-repo" content="handsondataviz/bookdown-template" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Publishing with Bookdown | Bookdown Template" />
+  
+  <meta name="twitter:description" content="This is a book template" />
+  
+
+<meta name="author" content="Jack Dougherty" />
+<meta name="author" content="Ilya Ilyankou" />
+
+
+<meta name="date" content="2020-05-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="style-guide.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script>
+  // adjust web edition height or width of iframe for specific figure references, using tilde (~iframe)
+$(document).ready(function() {
+  $("#fig\\:sample-map~iframe").attr("height", "600px");
+  $("#fig\\:sample-map~iframe").attr("width", "100%");
+  $("#fig\\:excel-drag~iframe").attr("height", "450px");
+  $("#fig\\:excel-drag~iframe").attr("width", "50%");
+})
+</script>
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><strong><a href="./">Bookdown Template</a></strong></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>1</b> Publishing with Bookdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="style-guide.html"><a href="style-guide.html"><i class="fa fa-check"></i>Style Guide</a></li>
+<li class="chapter" data-level="" data-path="images.html"><a href="images.html"><i class="fa fa-check"></i>Images</a></li>
+<li class="chapter" data-level="" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i>Tables</a></li>
+<li class="chapter" data-level="" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i>Notes and Bibliography</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="supplements.html"><a href="supplements.html"><i class="fa fa-check"></i><b>2</b> Supplements</a>
+<ul>
+<li class="chapter" data-level="" data-path="section-header.html"><a href="section-header.html"><i class="fa fa-check"></i>Section Header</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>3</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bookdown Template</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bookdown" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Publishing with Bookdown</h1>
+<p>This open-access book is built with free-to-use, open-source tools—primarily <a href="https://bookdown.org">Bookdown</a>, <a href="http://github.com">GitHub</a>, and <a href="http://zotero.org">Zotero</a>—and this chapter explains how, so that readers may do it themselves and share their knowledge to improve the process. The broad goal is an efficient workflow to compose one document in the easy-to-write <a href="https://en.wikipedia.org/wiki/Markdown">Markdown format</a> that Bookdown generates into multiple book products: an HTML web edition to read online, a PDF print edition for traditional book publishing, a Microsoft Word edition for editors who request it for copyediting, and option for other formats as desired.</p>
+<p>Since Bookdown is an <a href="https://www.r-project.org/">R code package</a>, we composed the book manuscript in R-flavored Markdown, with one file (.Rmd) for each chapter. We use Bookdown to build these files in its GitBook style as a set of static HTML pages, which we upload to our GitHub repository. Readers can view the open-access web edition of the book at our custom domain: <a href="https://HandsOnDataViz" class="uri">https://HandsOnDataViz</a>.</p>
+<p>We also use Bookdown to build additional book outputs (PDF, MS Word, Markdown) and upload these to the <code>docs</code> folder of our GitHub repository, so that our O’Reilly Media editor may download and comment on the manuscript as we revise.</p>
+<p>We also have the option to use <a href="https://pandoc.org">Pandoc</a> alone to convert the full-book Markdown file (.md) into an AsciiDoc file (.asciidoc) for easier importing into the <a href="https://docs.atlas.oreilly.com/writing_in_asciidoc.html">O’Reilly Atlas platform</a>. See some caveats and workarounds below.</p>
+<div id="file-organization-and-headers" class="section level3 unnumbered" number="">
+<h3>File Organization and Headers</h3>
+<p>We organized the <a href="http://github.com/handsondataviz/book">GitHub repository for this book</a> as a set of .Rmd files, one for each chapter. As co-authors, we are careful to work on different chapters of the book, and to regularly push our commits to the repo. Only one of us regularly builds the book with Bookdown to avoid code merge conflicts.</p>
+<p>Bookdown assigns a default ID to each header, which can be used for cross-references. The default ID for <code># Introduction</code> is <code>{#introduction}</code>, and the default ID for <code>## Part One</code> is <code>{#part-one}</code>, where spaces are replaced by dashes. But we do <em>not</em> rely on default IDs because they might change due to editing or contain duplicates across the book.</p>
+<p>Instead, we <em>manually assign a unique ID</em> to each first- and second-level header in the following way. Note that the <code>{-}</code> symbol, used alone or in combination <em>with a space</em> and a unique ID, prevents auto-numbering in the second- thru fourth-level headers:</p>
+<pre><code># Top-level chapter title {#unique-name}
+## Second-level section title {- #unique-name}
+### Third-level subhead {-}
+#### Fourth-level subhead {-}</code></pre>
+<p>Also, we match the unique ID keyword to the file name for top-level chapters this way: <code>01-introduction.Rmd</code> to keep our work organized. Unique names should contain only <em>alphanumeric</em> characters (a-z, A-Z, 0-9) or dashes (-).</p>
+<p>In the Bookdown <code>index.Rmd</code> for the HTML book output and the PDF output, the <code>toc_depth: 2</code> setting displays chapter and section headers down to the second level in the Table of Contents.</p>
+<p>The <code>split_by: section</code> setting divides the HTML pages at the second-level header, which creates shorter web pages with reduced scrolling for readers. For each web page, the unique ID becomes the file name, and is stored in the <code>docs</code> subfolder.</p>
+<p>The <code>number_sections</code> setting is true for the HTML and PDF editions, and given the <code>toc_depth: 2</code>, this means that they will display two-level chapter-section numbering (1.1, 1.2, etc.) in the Table of Contents. Note that <code>number_sections</code> must be true to display Figure and Table numbers in x.x format, which is desired for this book. See relevant settings in this excerpt from <code>index.Rmd</code>:</p>
+<pre><code>output:
+  bookdown::gitbook:
+    ...
+    toc_depth: 2
+    split_by: section
+    number_sections: true
+    split_bib: true
+    ...
+bookdown::pdf_book:
+  toc_depth: 2
+  number_sections: true</code></pre>
+<p>Note that chapter and section numbering do <em>not</em> appear automatically in the MS Word output unless you supply a reference.docx file, as described below:</p>
+<ul>
+<li><a href="https://bookdown.org/yihui/rmarkdown/word-document.html" class="uri">https://bookdown.org/yihui/rmarkdown/word-document.html</a></li>
+<li><a href="https://stackoverflow.com/questions/52924766/numbering-and-referring-sections-in-bookdown" class="uri">https://stackoverflow.com/questions/52924766/numbering-and-referring-sections-in-bookdown</a></li>
+<li><a href="https://stackoverflow.com/questions/50609212/caption-styles-for-word-document2-in-bookdown" class="uri">https://stackoverflow.com/questions/50609212/caption-styles-for-word-document2-in-bookdown</a></li>
+</ul>
+<p>In the <code>_bookdown.yml</code> settings, all book outputs are built into the <code>docs</code> subfolder of our GitHub repo, as shown in this excerpt:</p>
+<pre><code>output_dir: &quot;docs&quot;
+book_filename: &quot;bookdown-template&quot;
+language:
+  label:
+    fig: &quot;Figure &quot;
+chapter_name: &quot;Chapter &quot;</code></pre>
+<p>In our GitHub repo, we set GitHub Pages to publish to the web using <code>master/docs</code>, which means that visitors can browse the source files at the root level, and view the HTML web pages hosted in the <code>docs</code> subfolder. We use the GitHub Pages custom domain setting so that the HTML edition is available at <a href="https://HandsOnDataViz.org" class="uri">https://HandsOnDataViz.org</a>.</p>
+<p>The <code>docs</code> subfolder also may contain the following items, which are <em>not</em> generated by Bookdown and need to be manually created:</p>
+<ul>
+<li><code>CNAME</code> file for the custom domain, generated by GitHub Pages.</li>
+<li><code>.nojekyll</code> invisible empty file to ensure speedy processing of HTML files by GitHub Pages.</li>
+<li><code>404.html</code> custom file to redirects any mistaken web addresses under the domain back to the <code>index.html</code> page.</li>
+</ul>
+<p>One more option is to copy the Google Analytics code for the web book, paste it into an HTML file in the book repo, and include this reference in the <code>index.Rmd</code> code:</p>
+<pre><code>output:
+  bookdown::gitbook:
+  ...
+  includes:
+    in_header: google-analytics.html</code></pre>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="style-guide.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/handsondataviz/bookdown-template/edit/master/01-bookdown.Rmd",
+"text": null
+},
+"download": ["bookdown-template.pdf"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"search": true
+});
+});
+</script>
+
+</body>
+
+</html>

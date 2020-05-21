@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Notes and Bibliography | Bookdown Template</title>
+  <meta name="description" content="This is a book template" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Notes and Bibliography | Bookdown Template" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="http://handsondataviz.github.io/bookdown-template" />
+  
+  <meta property="og:description" content="This is a book template" />
+  <meta name="github-repo" content="handsondataviz/bookdown-template" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Notes and Bibliography | Bookdown Template" />
+  
+  <meta name="twitter:description" content="This is a book template" />
+  
+
+<meta name="author" content="Jack Dougherty" />
+<meta name="author" content="Ilya Ilyankou" />
+
+
+<meta name="date" content="2020-05-21" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="tables.html"/>
+<link rel="next" href="supplements.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script>
+  // adjust web edition height or width of iframe for specific figure references, using tilde (~iframe)
+$(document).ready(function() {
+  $("#fig\\:sample-map~iframe").attr("height", "600px");
+  $("#fig\\:sample-map~iframe").attr("width", "100%");
+  $("#fig\\:excel-drag~iframe").attr("height", "450px");
+  $("#fig\\:excel-drag~iframe").attr("width", "50%");
+})
+</script>
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><strong><a href="./">Bookdown Template</a></strong></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>1</b> Publishing with Bookdown</a>
+<ul>
+<li class="chapter" data-level="" data-path="style-guide.html"><a href="style-guide.html"><i class="fa fa-check"></i>Style Guide</a></li>
+<li class="chapter" data-level="" data-path="images.html"><a href="images.html"><i class="fa fa-check"></i>Images</a></li>
+<li class="chapter" data-level="" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i>Tables</a></li>
+<li class="chapter" data-level="" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i>Notes and Bibliography</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="supplements.html"><a href="supplements.html"><i class="fa fa-check"></i><b>2</b> Supplements</a>
+<ul>
+<li class="chapter" data-level="" data-path="section-header.html"><a href="section-header.html"><i class="fa fa-check"></i>Section Header</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>3</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bookdown Template</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="notes" class="section level2 unnumbered" number="">
+<h2>Notes and Bibliography</h2>
+<p>This book displays endnotes for each chapter in the HTML book, and footnotes at the bottom of pages for the PDF and MS Word books, followed by an alphabetized bibliography of all references cited on the last page. The notes and bibliography also appear in the full-book Markdown file.</p>
+<p>To create notes, insert citation keys in the text, such as <code>@huffHowLieStatistics1954</code>, which are generated by <a href="http://zotero.org">Zotero bibliographic database</a> with the <a href="https://retorque.re/zotero-better-bibtex/">Better BibTex extension</a>, and export these in the <em>Better BibLaTeX</em> format into the <code>dataviz.bib</code> in the book repo. The repo also contains <code>.csl</code> file to generate the notes and bibliography in a specific Chicago-style format, downloaded from the <a href="https://www.zotero.org/styles">Zotero Styles Repository</a>. These instructions are referenced in the <code>index.Rmd</code> file for both the HTML and PDF formats, as shown in these excerpts:</p>
+<pre><code>bibliography: dataviz.bib
+citation-style: chicago-fullnote-bibliography.csl
+...
+output:
+  bookdown::gitbook:
+    ...
+    pandoc_args: [ &quot;--csl&quot;, &quot;chicago-fullnote-bibliography.csl&quot; ]
+
+  bookdown::pdf_book:
+    ...
+    citation_package: none
+    pandoc_args: [ &quot;--csl&quot;, &quot;chicago-fullnote-bibliography.csl&quot; ]</code></pre>
+<p>Here’s a text-only note, with no Zotero citation.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>To create a note with citations only, separate Zotero/BibTeX citation keys with semi-colons:<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>Since notes also may include text and punctuation in Markdown syntax, always insert a caret symbol prior to the brackets to demarcate a note:<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<p>Note that the <code>chicago-fullnote-bibliography.csl</code> format automatically shortens the note after it its first reference.</p>
+<div id="pandoc-conversion" class="section level3 unnumbered" number="">
+<h3>Pandoc Conversion</h3>
+<ul>
+<li>Download <a href="https://pandoc.org">Pandoc</a></li>
+<li>TODO: Ask Ilya about my Pandoc PATH and/or overwriting older version</li>
+<li>Set Bookdown to build the book as one large Markdown file (docs folder, suffix .md)</li>
+<li>Use command line to navigate to subfolder with <code>pwd</code> and <code>cd</code>.</li>
+<li>Convert with: <code>pandoc bookdown-template.md --from markdown --to asciidoc --standalone --output bookdown-template-modified.asciidoc</code></li>
+<li>Confirm if AsciiDoc file matches <a href="https://docs.atlas.oreilly.com/writing_in_asciidoc.html">O’Reilly Atlas import style</a>.</li>
+</ul>
+
+</div>
+</div>
+<!-- </div> -->
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>This is a note, with no bibliographic reference.<a href="notes.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p><span class="citation">Darrell Huff, <em>How to Lie with Statistics</em> (W. W. Norton &amp; Company, 1954–2010), <a href="http://books.google.com/books?isbn=0393070875" role="doc-biblioref">http://books.google.com/books?isbn=0393070875</a></span>; <span class="citation">Mark S. Monmonier, <em>How to Lie with Maps</em>, 2nd ed. (University of Chicago Press, 1996), <a href="http://books.google.com/books?isbn=0226534219" role="doc-biblioref">http://books.google.com/books?isbn=0226534219</a></span><a href="notes.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Compare how “lying” is justified by <span class="citation">Huff, <em>How to Lie with Statistics</em></span>, pp. 10-11 and <span class="citation">Monmonier, <em>How to Lie with Maps</em></span>, pp. 11-12.<a href="notes.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="tables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="supplements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/handsondataviz/bookdown-template/edit/master/01-bookdown.Rmd",
+"text": null
+},
+"download": ["bookdown-template.pdf"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"search": true
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 ---
 lang: "en"
-title: "Bookdown testing"
+title: "Bookdown Template"
 subtitle: "subtitle here"
 author: ["Jack Dougherty", "Ilya Ilyankou"]
 date: "`r Sys.Date()`"
@@ -10,9 +10,9 @@ documentclass: book
 bibliography: dataviz.bib
 citation-style: chicago-fullnote-bibliography.csl
 
-url: 'http\://handsondataviz.github.io/bookdown-testing'
-github-repo: handsondataviz/bookdown-testing
-description: 'This is a test book'
+url: 'http\://handsondataviz.github.io/bookdown-template'
+github-repo: handsondataviz/bookdown-template
+description: 'This is a book template'
 
 output:
   bookdown::gitbook:
@@ -29,11 +29,11 @@ output:
         scroll_highlight: yes
         collapse: section
         before: |
-            <li><strong><a href="./">Bookdown testing</a></strong></li>
+            <li><strong><a href="./">Bookdown Template</a></strong></li>
         after: |
             <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
       download: [pdf]
-      view: https://github.com/handsondataviz/bookdown-testing/edit/master/%s
+      view: https://github.com/handsondataviz/bookdown-template/edit/master/%s
       search: yes
       sharing:
         facebook: yes
@@ -67,9 +67,5 @@ Insert additional preface items below (acknowledgements, etc.), with non-numberi
 Reminder: Bookdown does not auto-number figures in the `index.Rmd` file, which serves as a "preface" file.
 
 ### Acknowledgements {-}
-
-Cupcake ipsum dolor sit amet jelly beans wafer pudding. Bear claw lemon drops carrot cake pie wafer chocolate jelly cheesecake. Chocolate cheesecake chocolate bar sugar plum sweet dessert tart. Tootsie roll bear claw chocolate bar wafer powder sugar plum tiramisu bear claw gummies. Tart macaroon pastry lemon drops candy tootsie roll chocolate candy canes lollipop. Pudding fruitcake bear claw sweet cake cupcake. Chupa chups pudding candy canes chupa chups powder jujubes chocolate cake cotton candy jelly.
-
-## Copyright and Open-Access {-}
 
 Cupcake ipsum dolor sit amet jelly beans wafer pudding. Bear claw lemon drops carrot cake pie wafer chocolate jelly cheesecake. Chocolate cheesecake chocolate bar sugar plum sweet dessert tart. Tootsie roll bear claw chocolate bar wafer powder sugar plum tiramisu bear claw gummies. Tart macaroon pastry lemon drops candy tootsie roll chocolate candy canes lollipop. Pudding fruitcake bear claw sweet cake cupcake. Chupa chups pudding candy canes chupa chups powder jujubes chocolate cake cotton candy jelly.

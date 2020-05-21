@@ -1,5 +1,5 @@
 output_dir: "docs"
-book_filename: "bookdown-testing"
+book_filename: "bookdown-template"
 language:
   label:
     fig: "Figure "

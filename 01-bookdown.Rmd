@@ -52,7 +52,7 @@ Note that chapter and section numbering do *not* appear automatically in the MS 
 In the `_bookdown.yml` settings, all book outputs are built into the `docs` subfolder of our GitHub repo, as shown in this excerpt:
 ```
 output_dir: "docs"
-book_filename: "bookdown-testing"
+book_filename: "bookdown-template"
 language:
   label:
     fig: "Figure "
@@ -308,5 +308,5 @@ Note that the `chicago-fullnote-bibliography.csl` format automatically shortens 
 - TODO: Ask Ilya about my Pandoc PATH and/or overwriting older version
 - Set Bookdown to build the book as one large Markdown file (docs folder, suffix .md)
 - Use command line to navigate to subfolder with `pwd` and `cd`.
-- Convert with: `pandoc bookdown-testing.md --from markdown --to asciidoc --standalone --output bookdown-testing-modified.asciidoc`
+- Convert with: `pandoc bookdown-template.md --from markdown --to asciidoc --standalone --output bookdown-template-modified.asciidoc`
 - Confirm if AsciiDoc file matches [O'Reilly Atlas import style](https://docs.atlas.oreilly.com/writing_in_asciidoc.html).
