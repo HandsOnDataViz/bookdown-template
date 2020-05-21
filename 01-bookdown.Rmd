@@ -236,15 +236,15 @@ if(knitr::is_html_output()) knitr::include_url("https://handsondataviz.github.io
 ```
 
 ### Demo: R code-chunk for GIF animation and static image {-}
-TODO: FIX to make this appear consistently in all browsers.
+TODO: FIX to make this appear consistently in all browsers; shorter pathname.
 
 ...as shown in Figure \@ref(fig:excel-drag).
 
-(ref:excel-drag) Caption here, with embedded link to [animated GIF](https://handsondataviz.github.io/bookdown-template/excel-drag.gif).
+(ref:excel-drag) Caption here, with embedded link to GitHub repo, not GitHub Pages [animated GIF](https://github.com/HandsOnDataViz/bookdown-template/blob/master/images/excel-drag.gif).
 
 <!-- set iframe 450px height in custom-scripts.html -->
 ```{r excel-drag, fig.cap="(ref:excel-drag)"}
-if(knitr::is_html_output()) knitr::include_url("https://handsondataviz.github.io/bookdown-template/excel-drag.gif") else knitr::include_graphics("images/excel-drag.png")
+if(knitr::is_html_output()) knitr::include_url("images/excel-drag.gif") else knitr::include_graphics("images/excel-drag.png")
 ```
 
 ### Demo: R code-chunk for Youtube video and static image {-}

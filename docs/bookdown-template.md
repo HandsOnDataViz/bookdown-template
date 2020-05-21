@@ -421,17 +421,19 @@ map](https://handsondataviz.github.io/leaflet-maps-with-google-sheets/).
 
 ### Demo: R code-chunk for GIF animation and static image
 
-TODO: FIX to make this appear consistently in all browsers.
+TODO: FIX to make this appear consistently in all browsers; shorter
+pathname.
 
 …as shown in Figure <a href="#fig:excel-drag">3</a>.
 
 <!-- set iframe 450px height in custom-scripts.html -->
 
-<iframe src="https://handsondataviz.github.io/bookdown-template/excel-drag.gif" width="100%" height="400px">
+<iframe src="images/excel-drag.gif" width="100%" height="400px">
 </iframe>
 <p class="caption">
-Figure 3: Caption here, with embedded link to [animated
-GIF](https://handsondataviz.github.io/bookdown-template/excel-drag.gif).
+Figure 3: Caption here, with embedded link to GitHub repo, not GitHub
+Pages [animated
+GIF](https://github.com/HandsOnDataViz/bookdown-template/blob/master/images/excel-drag.gif).
 </p>
 
 ### Demo: R code-chunk for Youtube video and static image
