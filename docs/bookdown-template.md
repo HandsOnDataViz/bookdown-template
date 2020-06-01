@@ -3,7 +3,7 @@ Preface
 
 <!-- R global options: R chunk images display without code (no echo); show PDF image over JPG/PNG when available -->
 
-This test book was last updated on 21 May 2020
+This test book was last updated on 01 Jun 2020
 
 Insert additional preface items below (acknowledgements, etc.), with
 non-numbering symbols `{-}` to ensure that the preface is not numbered,
@@ -32,13 +32,16 @@ This open-access book is built with free-to-use, open-source
 tools—primarily [Bookdown](https://bookdown.org),
 [GitHub](http://github.com), and [Zotero](http://zotero.org)—and this
 chapter explains how, so that readers may do it themselves and share
-their knowledge to improve the process. The broad goal is an efficient
-workflow to compose one document in the easy-to-write [Markdown
-format](https://en.wikipedia.org/wiki/Markdown) that Bookdown generates
-into multiple book products: an HTML web edition to read online, a PDF
-print edition for traditional book publishing, a Microsoft Word edition
-for editors who request it for copyediting, and option for other formats
-as desired.
+their knowledge to improve the process. In addition to our notes below,
+see also Yihui Xie’s more comprehensive [Bookdown
+guide](https://bookdown.org/yihui/bookdown/).[1]
+
+Our broad goal is an efficient workflow to compose one document in the
+easy-to-write [Markdown format](https://en.wikipedia.org/wiki/Markdown)
+that Bookdown generates into multiple book products: an HTML web edition
+to read online, a PDF print edition for traditional book publishing, a
+Microsoft Word edition for editors who request it for copyediting, and
+option for other formats as desired.
 
 Since Bookdown is an [R code package](https://www.r-project.org/), we
 composed the book manuscript in R-flavored Markdown, with one file
@@ -47,15 +50,13 @@ GitBook style as a set of static HTML pages, which we upload to our
 GitHub repository. Readers can view the open-access web edition of the
 book at our custom domain:
 <a href="https://HandsOnDataViz" class="uri">https://HandsOnDataViz</a>.
-
-We also use Bookdown to build additional book outputs (PDF, MS Word,
+Also, we use Bookdown to build additional book outputs (PDF, MS Word,
 Markdown) and upload these to the `docs` folder of our GitHub
 repository, so that our O’Reilly Media editor may download and comment
-on the manuscript as we revise.
-
-We also have the option to use [Pandoc](https://pandoc.org) alone to
-convert the full-book Markdown file (.md) into an AsciiDoc file
-(.asciidoc) for easier importing into the [O’Reilly Atlas
+on the manuscript as we revise. Finally, we also have the option to use
+[Pandoc](https://pandoc.org) alone to convert the full-book Markdown
+file (.md) into an AsciiDoc file (.asciidoc) for easier importing into
+the [O’Reilly Atlas
 platform](https://docs.atlas.oreilly.com/writing_in_asciidoc.html). See
 some caveats and workarounds below.
 
@@ -401,9 +402,10 @@ Figure 1: Caption here. Markdown embedded links are acceptable.
 R code-chunks allow more complex conditional formatting, where an
 interactive map or animated GIF or YouTube video clip appears in the web
 version, and a static image with an embedded link appears in the PDF and
-MS Word outputs. Also note the option to change the default iframe
-height (400px) and width with settings in the `custom-scripts.html`
-file, with a code comment reminder.
+MS Word outputs. To change the height of the default 400px iframe, add
+the new height to `include_url` as shown in the examples. However, to
+change the width of the default 675px iframe to less than 100 percent,
+add a line in a `custom-scripts.html` file.
 
 ### Demo: R code-chunk for HTML iframe and static image
 
@@ -421,19 +423,14 @@ map](https://handsondataviz.github.io/leaflet-maps-with-google-sheets/).
 
 ### Demo: R code-chunk for GIF animation and static image
 
-TODO: FIX to make sizing appear consistently across browsers (FFox vs
-Chrome).
+…as shown in Figure <a href="#fig:sheets-option-drag">3</a>.
 
-…as shown in Figure <a href="#fig:excel-drag">3</a>.
-
-<!-- set iframe 450px height in custom-scripts.html -->
-
-<iframe src="images/excel-drag.gif" width="100%" height="400px">
+<iframe src="images/sheets-option-drag.gif" width="100%" height="250px">
 </iframe>
 <p class="caption">
 Figure 3: Caption here, with embedded link to GitHub repo, not GitHub
 Pages [animated
-GIF](https://github.com/HandsOnDataViz/bookdown-template/blob/master/images/excel-drag.gif).
+GIF](https://github.com/HandsOnDataViz/bookdown-template/blob/master/images/sheets-option-drag.gif).
 </p>
 
 ### Demo: R code-chunk for Youtube video and static image
@@ -563,14 +560,14 @@ and PDF formats, as shown in these excerpts:
         citation_package: none
         pandoc_args: [ "--csl", "chicago-fullnote-bibliography.csl" ]
 
-Here’s a text-only note, with no Zotero citation.[1]
+Here’s a text-only note, with no Zotero citation.[2]
 
 To create a note with citations only, separate Zotero/BibTeX citation
-keys with semi-colons:[2]
+keys with semi-colons:[3]
 
 Since notes also may include text and punctuation in Markdown syntax,
 always insert a caret symbol prior to the brackets to demarcate a
-note:[3]
+note:[4]
 
 Note that the `chicago-fullnote-bibliography.csl` format automatically
 shortens the note after it its first reference.
@@ -643,12 +640,18 @@ Huff, Darrell. *How to Lie with Statistics*. W. W. Norton & Company,
 Monmonier, Mark S. *How to Lie with Maps*. 2nd ed. University of Chicago
 Press, 1996. <http://books.google.com/books?isbn=0226534219>.
 
-[1] This is a note, with no bibliographic reference.
+Xie, Yihui. *Bookdown: Authoring Books and Technical Documents with R
+Markdown*, 2018. <https://bookdown.org/yihui/bookdown/>.
 
-[2] Darrell Huff, *How to Lie with Statistics* (W. W. Norton & Company,
+[1] Yihui Xie, *Bookdown: Authoring Books and Technical Documents with R
+Markdown*, 2018, <https://bookdown.org/yihui/bookdown/>
+
+[2] This is a note, with no bibliographic reference.
+
+[3] Darrell Huff, *How to Lie with Statistics* (W. W. Norton & Company,
 1954–2010), <http://books.google.com/books?isbn=0393070875>; Mark S.
 Monmonier, *How to Lie with Maps*, 2nd ed. (University of Chicago Press,
 1996), <http://books.google.com/books?isbn=0226534219>
 
-[3] Compare how “lying” is justified by Huff, *How to Lie with
+[4] Compare how “lying” is justified by Huff, *How to Lie with
 Statistics*, pp. 10-11 and Monmonier, *How to Lie with Maps*, pp. 11-12.

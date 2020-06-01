@@ -18,8 +18,6 @@ output:
   bookdown::gitbook:
     dev: svglite
     css: css/style.css
-    includes:
-      in_header: [custom-scripts.html]
     toc_depth: 2
     split_by: section
     number_sections: true

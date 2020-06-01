@@ -1,11 +1,9 @@
 # Publishing with Bookdown {#bookdown}
-This open-access book is built with free-to-use, open-source tools---primarily [Bookdown](https://bookdown.org), [GitHub](http://github.com), and [Zotero](http://zotero.org)---and this chapter explains how, so that readers may do it themselves and share their knowledge to improve the process. The broad goal is an efficient workflow to compose one document in the easy-to-write [Markdown format](https://en.wikipedia.org/wiki/Markdown) that Bookdown generates into multiple book products: an HTML web edition to read online, a PDF print edition for traditional book publishing, a Microsoft Word edition for editors who request it for copyediting, and option for other formats as desired.
+This open-access book is built with free-to-use, open-source tools---primarily [Bookdown](https://bookdown.org), [GitHub](http://github.com), and [Zotero](http://zotero.org)---and this chapter explains how, so that readers may do it themselves and share their knowledge to improve the process. In addition to our notes below, see also Yihui Xie's more comprehensive [Bookdown guide](https://bookdown.org/yihui/bookdown/).^[@xieBookdownAuthoringBooks2018]
 
-Since Bookdown is an [R code package](https://www.r-project.org/), we composed the book manuscript in R-flavored Markdown, with one file (.Rmd) for each chapter. We use Bookdown to build these files in its GitBook style as a set of static HTML pages, which we upload to our GitHub repository. Readers can view the open-access web edition of the book at our custom domain: https://HandsOnDataViz.
+Our broad goal is an efficient workflow to compose one document in the easy-to-write [Markdown format](https://en.wikipedia.org/wiki/Markdown) that Bookdown generates into multiple book products: an HTML web edition to read online, a PDF print edition for traditional book publishing, a Microsoft Word edition for editors who request it for copyediting, and option for other formats as desired.
 
-We also use Bookdown to build additional book outputs (PDF, MS Word, Markdown) and upload these to the `docs` folder of our GitHub repository, so that our O'Reilly Media editor may download and comment on the manuscript as we revise.
-
-We also have the option to use [Pandoc](https://pandoc.org) alone to convert the full-book Markdown file (.md) into an AsciiDoc file (.asciidoc) for easier importing into the [O'Reilly Atlas platform](https://docs.atlas.oreilly.com/writing_in_asciidoc.html). See some caveats and workarounds below.
+Since Bookdown is an [R code package](https://www.r-project.org/), we composed the book manuscript in R-flavored Markdown, with one file (.Rmd) for each chapter. We use Bookdown to build these files in its GitBook style as a set of static HTML pages, which we upload to our GitHub repository. Readers can view the open-access web edition of the book at our custom domain: https://HandsOnDataViz. Also, we use Bookdown to build additional book outputs (PDF, MS Word, Markdown) and upload these to the `docs` folder of our GitHub repository, so that our O'Reilly Media editor may download and comment on the manuscript as we revise. Finally, we also have the option to use [Pandoc](https://pandoc.org) alone to convert the full-book Markdown file (.md) into an AsciiDoc file (.asciidoc) for easier importing into the [O'Reilly Atlas platform](https://docs.atlas.oreilly.com/writing_in_asciidoc.html). See some caveats and workarounds below.
 
 ### File Organization and Headers {-}
 We organized the [GitHub repository for this book](http://github.com/handsondataviz/book) as a set of .Rmd files, one for each chapter. As co-authors, we are careful to work on different chapters of the book, and to regularly push our commits to the repo. Only one of us regularly builds the book with Bookdown to avoid code merge conflicts.
@@ -223,7 +221,7 @@ Do not insert spaces inside the `ref:chunk-label` for the caption, but add a bla
  knitr::include_graphics("images/tiger.png")
 ```
 
-R code-chunks allow more complex conditional formatting, where an interactive map or animated GIF or YouTube video clip appears in the web version, and a static image with an embedded link appears in the PDF and MS Word outputs. Also note the option to change the default iframe height (400px) and width with settings in the `custom-scripts.html` file, with a code comment reminder.
+R code-chunks allow more complex conditional formatting, where an interactive map or animated GIF or YouTube video clip appears in the web version, and a static image with an embedded link appears in the PDF and MS Word outputs. To change the height of the default 400px iframe, add the new height to `include_url` as shown in the examples. However, to change the width of the default 675px iframe to less than 100 percent, add a line in a `custom-scripts.html` file.
 
 ### Demo: R code-chunk for HTML iframe and static image {-}
 ...as shown in Figure \@ref(fig:sample-map).
@@ -236,15 +234,12 @@ if(knitr::is_html_output()) knitr::include_url("https://handsondataviz.github.io
 ```
 
 ### Demo: R code-chunk for GIF animation and static image {-}
-TODO: FIX to make sizing appear consistently across browsers (FFox vs Chrome).
+...as shown in Figure \@ref(fig:sheets-option-drag).
 
-...as shown in Figure \@ref(fig:excel-drag).
+(ref:sheets-option-drag) Caption here, with embedded link to GitHub repo, not GitHub Pages [animated GIF](https://github.com/HandsOnDataViz/bookdown-template/blob/master/images/sheets-option-drag.gif).
 
-(ref:excel-drag) Caption here, with embedded link to GitHub repo, not GitHub Pages [animated GIF](https://github.com/HandsOnDataViz/bookdown-template/blob/master/images/excel-drag.gif).
-
-<!-- set iframe 450px height in custom-scripts.html -->
-```{r excel-drag, fig.cap="(ref:excel-drag)"}
-if(knitr::is_html_output()) knitr::include_url("images/excel-drag.gif") else knitr::include_graphics("images/excel-drag.png")
+```{r sheets-option-drag, fig.cap="(ref:sheets-option-drag)"}
+if(knitr::is_html_output()) knitr::include_url("images/sheets-option-drag.gif", height = "250px") else knitr::include_graphics("images/sheets-option-drag.png")
 ```
 
 ### Demo: R code-chunk for Youtube video and static image {-}
