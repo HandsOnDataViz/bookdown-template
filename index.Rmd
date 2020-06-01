@@ -39,9 +39,11 @@ output:
         twitter: yes
 
   bookdown::pdf_book:
+    includes:
+      in_header: latex/preamble.tex
     toc_depth: 2
     number_sections: true
-    citation_package: none
+    citation_package: default
     pandoc_args: [ "--csl", "chicago-fullnote-bibliography.csl" ]
 
   bookdown::word_document2:

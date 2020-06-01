@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 Supplements | Bookdown Template</title>
+  <title>Custom Blocks | Bookdown Template</title>
   <meta name="description" content="This is a book template" />
   <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 Supplements | Bookdown Template" />
+  <meta property="og:title" content="Custom Blocks | Bookdown Template" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://handsondataviz.github.io/bookdown-template" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="handsondataviz/bookdown-template" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Supplements | Bookdown Template" />
+  <meta name="twitter:title" content="Custom Blocks | Bookdown Template" />
   
   <meta name="twitter:description" content="This is a book template" />
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="custom-blocks.html"/>
-<link rel="next" href="section-header.html"/>
+<link rel="prev" href="notes.html"/>
+<link rel="next" href="supplements.html"/>
 <script src="libs/header-attrs-2.2/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -105,17 +105,51 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="supplements" class="section level1" number="2">
-<h1><span class="header-section-number">Chapter 2</span> Supplements</h1>
-<p>Cupcake ipsum dolor sit amet jelly beans wafer pudding. Bear claw lemon drops carrot cake pie wafer chocolate jelly cheesecake. Chocolate cheesecake chocolate bar sugar plum sweet dessert tart. Tootsie roll bear claw chocolate bar wafer powder sugar plum tiramisu bear claw gummies. Tart macaroon pastry lemon drops candy tootsie roll chocolate candy canes lollipop. Pudding fruitcake bear claw sweet cake cupcake. Chupa chups pudding candy canes chupa chups powder jujubes chocolate cake cotton candy jelly.</p>
+<div id="custom-blocks" class="section level2 unnumbered" number="">
+<h2>Custom Blocks</h2>
+<p>See Custom Blocks described in <a href="https://bookdown.org/yihui/bookdown/custom-blocks.html">Bookdown</a> and <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html">RMarkdown</a> to setup style and output options. Be sure to add <code>echo=TRUE</code> in each instance because of the global <code>echo=false</code> in <code>index.Rmd</code> for all R code-chunk images. Also add LaTeX code <code>preamble.tex</code> for PDF output, and include this in the <code>index.Rmd</code> PDF output, as described in <a href="https://bookdown.org/yihui/bookdown/yaml-options.html">Bookdown</a> and <a href="https://bookdown.org/yihui/rmarkdown-cookbook/latex-preamble.html">RMarkdown</a>.</p>
+<p>Demos: NOTE that PDF output is not yet working; check <code>latex/preamble.tex</code></p>
+
+<div class="rmdnote">
+Here is a sample note.
 </div>
+
+<div class="rmdcaution">
+Here is a sample caution.
+</div>
+
+<div class="rmdimportant">
+Here is sample “Important” text.
+</div>
+
+<div class="rmdtip">
+Here is a sample tip.
+</div>
+
+<div class="rmdwarning">
+<p>Here is a sample warning. Remember that if the last line is not a standard paragraph, add a blank line at the end.</p>
+</div>
+<div id="pandoc-conversion" class="section level3 unnumbered" number="">
+<h3>Pandoc Conversion</h3>
+<ul>
+<li>Download <a href="https://pandoc.org">Pandoc</a></li>
+<li>TODO: Ask Ilya about my Pandoc PATH and/or overwriting older version</li>
+<li>Set Bookdown to build the book as one large Markdown file (docs folder, suffix .md)</li>
+<li>Use command line to navigate to subfolder with <code>pwd</code> and <code>cd</code>.</li>
+<li>Convert with: <code>pandoc bookdown-template.md --from markdown --to asciidoc --standalone --output bookdown-template-modified.asciidoc</code></li>
+<li>Confirm if AsciiDoc file matches <a href="https://docs.atlas.oreilly.com/writing_in_asciidoc.html">O’Reilly Atlas import style</a>.</li>
+</ul>
+
+</div>
+</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="custom-blocks.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="section-header.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="notes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="supplements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -154,7 +188,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/handsondataviz/bookdown-template/edit/master/02-supplements.Rmd",
+"link": "https://github.com/handsondataviz/bookdown-template/edit/master/01-bookdown.Rmd",
 "text": null
 },
 "download": ["bookdown-template.pdf"],
