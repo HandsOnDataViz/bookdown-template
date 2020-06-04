@@ -25,7 +25,7 @@
 <meta name="author" content="Ilya Ilyankou" />
 
 
-<meta name="date" content="2020-06-01" />
+<meta name="date" content="2020-06-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -107,28 +107,21 @@
             <section class="normal" id="section-">
 <div id="custom-blocks" class="section level2 unnumbered" number="">
 <h2>Custom Blocks</h2>
-<p>See Custom Blocks described in <a href="https://bookdown.org/yihui/bookdown/custom-blocks.html">Bookdown</a> and <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html">RMarkdown</a> to setup style and output options. Be sure to add <code>echo=TRUE</code> in each instance because of the global <code>echo=false</code> in <code>index.Rmd</code> for all R code-chunk images. Also add LaTeX code <code>preamble.tex</code> for PDF output, and include this in the <code>index.Rmd</code> PDF output, as described in <a href="https://bookdown.org/yihui/bookdown/yaml-options.html">Bookdown</a> and <a href="https://bookdown.org/yihui/rmarkdown-cookbook/latex-preamble.html">RMarkdown</a>.</p>
-<p>Demos: NOTE that PDF output is not yet working; check <code>latex/preamble.tex</code></p>
+<p>NOTE: I commented-out custom blocks below and removed <code>index.Rmd</code> ref to <code>latex/preamble.tex</code> because it’s not currently working as expected, so custom blocks do NOT appear in PDF output.</p>
+<p>See Custom Blocks described in <a href="https://bookdown.org/yihui/bookdown/custom-blocks.html">Bookdown</a> and <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html">RMarkdown</a> to setup style and output options. Be sure to add <code>echo=TRUE</code> in each instance because of the global <code>echo=false</code> in <code>index.Rmd</code> for all R code-chunk images.</p>
+<p>Also add LaTeX code <code>preamble.tex</code> for PDF output, and include this in the <code>index.Rmd</code> PDF output, as described in <a href="https://bookdown.org/yihui/bookdown/yaml-options.html">Bookdown</a> and <a href="https://bookdown.org/yihui/rmarkdown-cookbook/latex-preamble.html">RMarkdown</a>.</p>
+<!--
+\BeginKnitrBlock{rmdnote}<div class="rmdnote">Here is a sample note.</div>\EndKnitrBlock{rmdnote}
 
-<div class="rmdnote">
-Here is a sample note.
-</div>
+\BeginKnitrBlock{rmdcaution}<div class="rmdcaution">Here is a sample caution.</div>\EndKnitrBlock{rmdcaution}
 
-<div class="rmdcaution">
-Here is a sample caution.
-</div>
+\BeginKnitrBlock{rmdimportant}<div class="rmdimportant">Here is sample "Important" text.</div>\EndKnitrBlock{rmdimportant}
 
-<div class="rmdimportant">
-Here is sample “Important” text.
-</div>
+\BeginKnitrBlock{rmdtip}<div class="rmdtip">Here is a sample tip.</div>\EndKnitrBlock{rmdtip}
 
-<div class="rmdtip">
-Here is a sample tip.
-</div>
+\BeginKnitrBlock{rmdwarning}<div class="rmdwarning">Here is a sample warning. Remember that if the last line is not a standard paragraph, add a blank line at the end.
 
-<div class="rmdwarning">
-<p>Here is a sample warning. Remember that if the last line is not a standard paragraph, add a blank line at the end.</p>
-</div>
+``` -->
 <div id="pandoc-conversion" class="section level3 unnumbered" number="">
 <h3>Pandoc Conversion</h3>
 <ul>

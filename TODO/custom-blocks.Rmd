@@ -1,0 +1,28 @@
+## Custom Blocks {- #custom-blocks}
+NOTE: I commented-out custom blocks below and removed `index.Rmd` ref to `latex/preamble.tex` because it's not currently working as expected, so custom blocks do NOT appear in PDF output.
+
+See Custom Blocks described in [Bookdown](https://bookdown.org/yihui/bookdown/custom-blocks.html) and [RMarkdown](https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html) to setup style and output options. Be sure to add `echo=TRUE` in each instance because of the global `echo=false` in `index.Rmd` for all R code-chunk images.
+
+Also add LaTeX code `preamble.tex` for PDF output, and include this in the `index.Rmd` PDF output, as described in [Bookdown](https://bookdown.org/yihui/bookdown/yaml-options.html) and [RMarkdown](https://bookdown.org/yihui/rmarkdown-cookbook/latex-preamble.html).
+
+<!--
+```{block2, echo=TRUE, type='rmdnote'}
+Here is a sample note.
+```
+
+```{block2, echo=TRUE, type='rmdcaution'}
+Here is a sample caution.
+```
+
+```{block2, echo=TRUE, type='rmdimportant'}
+Here is sample "Important" text.
+```
+
+```{block2, echo=TRUE, type='rmdtip'}
+Here is a sample tip.
+```
+
+```{block2, echo=TRUE, type='rmdwarning'}
+Here is a sample warning. Remember that if the last line is not a standard paragraph, add a blank line at the end.
+
+``` -->

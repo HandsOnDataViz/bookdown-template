@@ -25,7 +25,7 @@
 <meta name="author" content="Ilya Ilyankou" />
 
 
-<meta name="date" content="2020-06-01" />
+<meta name="date" content="2020-06-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -78,7 +78,6 @@
 <li class="chapter" data-level="" data-path="images.html"><a href="images.html"><i class="fa fa-check"></i>Images</a></li>
 <li class="chapter" data-level="" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i>Tables</a></li>
 <li class="chapter" data-level="" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i>Notes and Bibliography</a></li>
-<li class="chapter" data-level="" data-path="custom-blocks.html"><a href="custom-blocks.html"><i class="fa fa-check"></i>Custom Blocks</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="supplements.html"><a href="supplements.html"><i class="fa fa-check"></i><b>2</b> Supplements</a>
 <ul>
@@ -163,7 +162,7 @@ Figure 1.1: Caption here. Markdown embedded links are acceptable.
 <iframe src="https://handsondataviz.github.io/leaflet-maps-with-google-sheets/" width="672" height="400px">
 </iframe>
 <p class="caption">
-Figure 1.2: Caption here, and add embedded link to explore the <a href="https://handsondataviz.github.io/leaflet-maps-with-google-sheets/">full-screen interactive map</a>.
+Figure 1.2: Caption here, and add embedded link to explore the <a href="https://handsondataviz.github.io/leaflet-maps-with-google-sheets">full-screen interactive map</a>
 </p>
 </div>
 </div>
@@ -179,16 +178,27 @@ Figure 1.3: Caption here, with embedded link to GitHub repo, not GitHub Pages <a
 </p>
 </div>
 </div>
+<div id="demo-r-code-chunk-for-youtube-video-in-html-with-no-static-image-in-pdf" class="section level3 unnumbered" number="">
+<h3>Demo: R code-chunk for YouTube video in HTML, with NO static image in PDF</h3>
+
+<div class="figure"><span id="fig:video-sample2"></span>
+<iframe src="https://www.youtube.com/embed/w6dQ-RIQ5bc" width="672" height="400px">
+</iframe>
+<p class="caption">
+Figure 1.4: Caption <strong>only</strong> for HTML version, with embedded link to the <a href="https://youtu.be/w6dQ-RIQ5bc">YouTube video</a>. How will this affect figure numbering in HTML vs PDF?
+</p>
+</div>
+</div>
 <div id="demo-r-code-chunk-for-youtube-video-and-static-image" class="section level3 unnumbered" number="">
 <h3>Demo: R code-chunk for Youtube video and static image</h3>
 <p>Be sure to use the <em>embed</em> link from the YouTube <em>share</em> button.</p>
-<p>…as shown in the video <a href="images.html#fig:video-sample">1.4</a>.</p>
+<p>…as shown in the video <a href="images.html#fig:video-sample">1.5</a>.</p>
 
 <div class="figure"><span id="fig:video-sample"></span>
 <iframe src="https://www.youtube.com/embed/-nGdrzMuUnI" width="672" height="400px">
 </iframe>
 <p class="caption">
-Figure 1.4: Caption here, with embedded link to the <a href="https://youtu.be/-nGdrzMuUnI">YouTube video</a>.
+Figure 1.5: Caption here, with embedded link to the <a href="https://youtu.be/-nGdrzMuUnI">YouTube video</a>.
 </p>
 </div>
 <p>This Bookdown <code>index.Rmd</code> file includes an R code-chunk setting immediately after the first header, which displays each code-chunk image without a code echo. Read more about this feature and related options in this <a href="https://bookdown.org/yihui/bookdown/figures.html">Bookdown chapter</a>.</p>

@@ -3,7 +3,7 @@ Preface
 
 <!-- R global options: R chunk images display without code (no echo); show PDF image over JPG/PNG when available -->
 
-This test book was last updated on 01 Jun 2020
+This test book was last updated on 04 Jun 2020
 
 Insert additional preface items below (acknowledgements, etc.), with
 non-numbering symbols `{-}` to ensure that the preface is not numbered,
@@ -418,7 +418,7 @@ add a line in a `custom-scripts.html` file.
 <p class="caption">
 Figure 2: Caption here, and add embedded link to explore the
 [full-screen interactive
-map](https://handsondataviz.github.io/leaflet-maps-with-google-sheets/).
+map](https://handsondataviz.github.io/leaflet-maps-with-google-sheets)
 </p>
 
 ### Demo: R code-chunk for GIF animation and static image
@@ -433,16 +433,26 @@ Pages [animated
 GIF](https://github.com/HandsOnDataViz/bookdown-template/blob/master/images/sheets-option-drag.gif).
 </p>
 
+### Demo: R code-chunk for YouTube video in HTML, with NO static image in PDF
+
+<iframe src="https://www.youtube.com/embed/w6dQ-RIQ5bc" width="100%" height="400px">
+</iframe>
+<p class="caption">
+Figure 4: Caption **only** for HTML version, with embedded link to the
+[YouTube video](https://youtu.be/w6dQ-RIQ5bc). How will this affect
+figure numbering in HTML vs PDF?
+</p>
+
 ### Demo: R code-chunk for Youtube video and static image
 
 Be sure to use the *embed* link from the YouTube *share* button.
 
-…as shown in the video <a href="#fig:video-sample">4</a>.
+…as shown in the video <a href="#fig:video-sample">5</a>.
 
 <iframe src="https://www.youtube.com/embed/-nGdrzMuUnI" width="100%" height="400px">
 </iframe>
 <p class="caption">
-Figure 4: Caption here, with embedded link to the [YouTube
+Figure 5: Caption here, with embedded link to the [YouTube
 video](https://youtu.be/-nGdrzMuUnI).
 </p>
 
@@ -572,6 +582,11 @@ note:[4]
 Note that the `chicago-fullnote-bibliography.csl` format automatically
 shortens the note after it its first reference.
 
+### Custom Blocks
+
+Note: I moved code to `TODO` folder because it’s not working as expected
+for LaTeX PDF output.
+
 ### Pandoc Conversion
 
 -   Download [Pandoc](https://pandoc.org)
@@ -612,7 +627,7 @@ cake cotton candy jelly.
 
 <img src="images/tiger.png" alt="Caption for sample static image using R code-chunk method."  />
 <p class="caption">
-Figure 5: Caption for sample static image using R code-chunk method.
+Figure 6: Caption for sample static image using R code-chunk method.
 </p>
 
 ### A Third-Level Section

@@ -226,7 +226,7 @@ R code-chunks allow more complex conditional formatting, where an interactive ma
 ### Demo: R code-chunk for HTML iframe and static image {-}
 ...as shown in Figure \@ref(fig:sample-map).
 
-(ref:sample-map) Caption here, and add embedded link to explore the [full-screen interactive map](https://handsondataviz.github.io/leaflet-maps-with-google-sheets/).
+(ref:sample-map) Caption here, and add embedded link to explore the [full-screen interactive map](https://handsondataviz.github.io/leaflet-maps-with-google-sheets)
 
 <!-- set iframe 600px height 100% width in custom-scripts.html -->
 ```{r sample-map, fig.cap="(ref:sample-map)"}
@@ -240,6 +240,13 @@ if(knitr::is_html_output()) knitr::include_url("https://handsondataviz.github.io
 
 ```{r sheets-option-drag, fig.cap="(ref:sheets-option-drag)"}
 if(knitr::is_html_output()) knitr::include_url("images/sheets-option-drag.gif", height = "250px") else knitr::include_graphics("images/sheets-option-drag.png")
+```
+
+### Demo: R code-chunk for YouTube video in HTML, with NO static image in PDF {-}
+(ref:video-sample2) Caption **only** for HTML version, with embedded link to the [YouTube video](https://youtu.be/w6dQ-RIQ5bc). How will this affect figure numbering in HTML vs PDF?
+
+```{r video-sample2, fig.cap="(ref:video-sample2)"}
+if(knitr::is_html_output()) knitr::include_url("https://www.youtube.com/embed/w6dQ-RIQ5bc")
 ```
 
 ### Demo: R code-chunk for Youtube video and static image {-}
@@ -310,32 +317,8 @@ Since notes also may include text and punctuation in Markdown syntax, always ins
 
 Note that the `chicago-fullnote-bibliography.csl` format automatically shortens the note after it its first reference.
 
-## Custom Blocks {- #custom-blocks}
-See Custom Blocks described in [Bookdown](https://bookdown.org/yihui/bookdown/custom-blocks.html) and [RMarkdown](https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html) to setup style and output options. Be sure to add `echo=TRUE` in each instance because of the global `echo=false` in `index.Rmd` for all R code-chunk images. Also add LaTeX code `preamble.tex` for PDF output, and include this in the `index.Rmd` PDF output, as described in [Bookdown](https://bookdown.org/yihui/bookdown/yaml-options.html) and [RMarkdown](https://bookdown.org/yihui/rmarkdown-cookbook/latex-preamble.html).
-
-Demos: NOTE that PDF output is not yet working; check `latex/preamble.tex`
-
-```{block2, echo=TRUE, type='rmdnote'}
-Here is a sample note.
-```
-
-```{block2, echo=TRUE, type='rmdcaution'}
-Here is a sample caution.
-```
-
-```{block2, echo=TRUE, type='rmdimportant'}
-Here is sample "Important" text.
-```
-
-```{block2, echo=TRUE, type='rmdtip'}
-Here is a sample tip.
-```
-
-```{block2, echo=TRUE, type='rmdwarning'}
-Here is a sample warning. Remember that if the last line is not a standard paragraph, add a blank line at the end.
-
-```
-
+### Custom Blocks {-}
+Note: I moved code to `TODO` folder because it's not working as expected for LaTeX PDF output.
 
 ### Pandoc Conversion {-}
 - Download [Pandoc](https://pandoc.org)

@@ -25,7 +25,7 @@
 <meta name="author" content="Ilya Ilyankou" />
 
 
-<meta name="date" content="2020-06-01" />
+<meta name="date" content="2020-06-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="tables.html"/>
-<link rel="next" href="custom-blocks.html"/>
+<link rel="next" href="supplements.html"/>
 <script src="libs/header-attrs-2.2/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -78,7 +78,6 @@
 <li class="chapter" data-level="" data-path="images.html"><a href="images.html"><i class="fa fa-check"></i>Images</a></li>
 <li class="chapter" data-level="" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i>Tables</a></li>
 <li class="chapter" data-level="" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i>Notes and Bibliography</a></li>
-<li class="chapter" data-level="" data-path="custom-blocks.html"><a href="custom-blocks.html"><i class="fa fa-check"></i>Custom Blocks</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="supplements.html"><a href="supplements.html"><i class="fa fa-check"></i><b>2</b> Supplements</a>
 <ul>
@@ -125,7 +124,24 @@ output:
 <p>To create a note with citations only, separate Zotero/BibTeX citation keys with semi-colons:<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
 <p>Since notes also may include text and punctuation in Markdown syntax, always insert a caret symbol prior to the brackets to demarcate a note:<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
 <p>Note that the <code>chicago-fullnote-bibliography.csl</code> format automatically shortens the note after it its first reference.</p>
+<div id="custom-blocks" class="section level3 unnumbered" number="">
+<h3>Custom Blocks</h3>
+<p>Note: I moved code to <code>TODO</code> folder because it’s not working as expected for LaTeX PDF output.</p>
 </div>
+<div id="pandoc-conversion" class="section level3 unnumbered" number="">
+<h3>Pandoc Conversion</h3>
+<ul>
+<li>Download <a href="https://pandoc.org">Pandoc</a></li>
+<li>TODO: Ask Ilya about my Pandoc PATH and/or overwriting older version</li>
+<li>Set Bookdown to build the book as one large Markdown file (docs folder, suffix .md)</li>
+<li>Use command line to navigate to subfolder with <code>pwd</code> and <code>cd</code>.</li>
+<li>Convert with: <code>pandoc bookdown-template.md --from markdown --to asciidoc --standalone --output bookdown-template-modified.asciidoc</code></li>
+<li>Confirm if AsciiDoc file matches <a href="https://docs.atlas.oreilly.com/writing_in_asciidoc.html">O’Reilly Atlas import style</a>.</li>
+</ul>
+
+</div>
+</div>
+<!-- </div> -->
 <div class="footnotes">
 <hr />
 <ol start="2">
@@ -140,7 +156,7 @@ output:
         </div>
       </div>
 <a href="tables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="custom-blocks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="supplements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

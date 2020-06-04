@@ -39,8 +39,6 @@ output:
         twitter: yes
 
   bookdown::pdf_book:
-    includes:
-      in_header: latex/preamble.tex
     toc_depth: 2
     number_sections: true
     citation_package: default
