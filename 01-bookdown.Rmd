@@ -236,7 +236,7 @@ if(knitr::is_html_output()) knitr::include_url("https://handsondataviz.github.io
 ### Demo: R code-chunk for GIF animation and static image {-}
 ...as shown in Figure \@ref(fig:sheets-option-drag).
 
-(ref:sheets-option-drag) Caption here, with embedded link to GitHub repo, not GitHub Pages [animated GIF](https://github.com/HandsOnDataViz/bookdown-template/blob/master/images/sheets-option-drag.gif).
+(ref:sheets-option-drag) Caption here, with embedded link to [animated GIF](https://handsondataviz.github.io/bookdown-template/images/sheets-option-drag.gif).
 
 ```{r sheets-option-drag, fig.cap="(ref:sheets-option-drag)"}
 if(knitr::is_html_output()) knitr::include_url("images/sheets-option-drag.gif", height = "250px") else knitr::include_graphics("images/sheets-option-drag.png")

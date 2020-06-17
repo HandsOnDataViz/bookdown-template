@@ -3,7 +3,7 @@ Preface
 
 <!-- R global options: R chunk images display without code (no echo); show PDF image over JPG/PNG when available -->
 
-This test book was last updated on 04 Jun 2020
+This test book was last updated on 17 Jun 2020
 
 Insert additional preface items below (acknowledgements, etc.), with
 non-numbering symbols `{-}` to ensure that the preface is not numbered,
@@ -428,9 +428,8 @@ map](https://handsondataviz.github.io/leaflet-maps-with-google-sheets)
 <iframe src="images/sheets-option-drag.gif" width="100%" height="250px">
 </iframe>
 <p class="caption">
-Figure 3: Caption here, with embedded link to GitHub repo, not GitHub
-Pages [animated
-GIF](https://github.com/HandsOnDataViz/bookdown-template/blob/master/images/sheets-option-drag.gif).
+Figure 3: Caption here, with embedded link to [animated
+GIF](https://handsondataviz.github.io/bookdown-template/images/sheets-option-drag.gif).
 </p>
 
 ### Demo: R code-chunk for YouTube video in HTML, with NO static image in PDF
