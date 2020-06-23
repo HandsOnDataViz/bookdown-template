@@ -223,6 +223,24 @@ Do not insert spaces inside the `ref:chunk-label` for the caption, but add a bla
 
 R code-chunks allow more complex conditional formatting, where an interactive map or animated GIF or YouTube video clip appears in the web version, and a static image with an embedded link appears in the PDF and MS Word outputs. To change the height of the default 400px iframe, add the new height to `include_url` as shown in the examples. However, to change the width of the default 675px iframe to less than 100 percent, add a line in a `custom-scripts.html` file.
 
+### TESTING without out.width in HTML and PDF
+...as shown in Figure \@ref(fig:screenshot-tall).
+
+(ref:screenshot-tall) Testing how this appears without out.width.
+
+```{r screenshot-tall, fig.cap="(ref:screenshot-tall)"}
+ knitr::include_graphics("images/screenshot-tall.png")
+```
+
+### TESTING with out.width in HTML and PDF
+...as shown in Figure \@ref(fig:screenshot-tall2).
+
+(ref:screenshot-tall2) Testing how this appears with out.width.
+
+```{r screenshot-tall2, out.width=350, fig.cap="(ref:screenshot-tall2)"}
+ knitr::include_graphics("images/screenshot-tall.png")
+```
+
 ### Demo: R code-chunk for HTML iframe and static image {-}
 ...as shown in Figure \@ref(fig:sample-map).
 

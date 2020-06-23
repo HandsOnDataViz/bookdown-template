@@ -3,7 +3,7 @@ Preface
 
 <!-- R global options: R chunk images display without code (no echo); show PDF image over JPG/PNG when available -->
 
-This test book was last updated on 17 Jun 2020
+This test book was last updated on 23 Jun 2020
 
 Insert additional preface items below (acknowledgements, etc.), with
 non-numbering symbols `{-}` to ensure that the preface is not numbered,
@@ -283,7 +283,7 @@ this example: [Chapter 1 “Style Guide”](#style-guide)
 To cross-reference figures and tables, and display their auto-number and
 allow readers to jump there, write a call-out with a Bookdown reference
 to a code-chunk label, such as
-`See Figure <a href="#fig:sample-map">2</a>` or
+`See Figure <a href="#fig:sample-map">4</a>` or
 `See Table <a href="#tab:left-table">1</a>`. Demos:
 
 -   See Figure <a href="#fig:tiger">1</a>.
@@ -407,28 +407,46 @@ the new height to `include_url` as shown in the examples. However, to
 change the width of the default 675px iframe to less than 100 percent,
 add a line in a `custom-scripts.html` file.
 
+### TESTING without out.width in HTML and PDF
+
+…as shown in Figure <a href="#fig:screenshot-tall">2</a>.
+
+<img src="images/screenshot-tall.png" alt="Testing how this appears without out.width."  />
+<p class="caption">
+Figure 2: Testing how this appears without out.width.
+</p>
+
+### TESTING with out.width in HTML and PDF
+
+…as shown in Figure <a href="#fig:screenshot-tall2">3</a>.
+
+<img src="images/screenshot-tall.png" alt="Testing how this appears with out.width." width="350" />
+<p class="caption">
+Figure 3: Testing how this appears with out.width.
+</p>
+
 ### Demo: R code-chunk for HTML iframe and static image
 
-…as shown in Figure <a href="#fig:sample-map">2</a>.
+…as shown in Figure <a href="#fig:sample-map">4</a>.
 
 <!-- set iframe 600px height 100% width in custom-scripts.html -->
 
 <iframe src="https://handsondataviz.github.io/leaflet-maps-with-google-sheets/" width="100%" height="400px">
 </iframe>
 <p class="caption">
-Figure 2: Caption here, and add embedded link to explore the
+Figure 4: Caption here, and add embedded link to explore the
 [full-screen interactive
 map](https://handsondataviz.github.io/leaflet-maps-with-google-sheets)
 </p>
 
 ### Demo: R code-chunk for GIF animation and static image
 
-…as shown in Figure <a href="#fig:sheets-option-drag">3</a>.
+…as shown in Figure <a href="#fig:sheets-option-drag">5</a>.
 
 <iframe src="images/sheets-option-drag.gif" width="100%" height="250px">
 </iframe>
 <p class="caption">
-Figure 3: Caption here, with embedded link to [animated
+Figure 5: Caption here, with embedded link to [animated
 GIF](https://handsondataviz.github.io/bookdown-template/images/sheets-option-drag.gif).
 </p>
 
@@ -437,7 +455,7 @@ GIF](https://handsondataviz.github.io/bookdown-template/images/sheets-option-dra
 <iframe src="https://www.youtube.com/embed/w6dQ-RIQ5bc" width="100%" height="400px">
 </iframe>
 <p class="caption">
-Figure 4: Caption **only** for HTML version, with embedded link to the
+Figure 6: Caption **only** for HTML version, with embedded link to the
 [YouTube video](https://youtu.be/w6dQ-RIQ5bc). How will this affect
 figure numbering in HTML vs PDF?
 </p>
@@ -446,12 +464,12 @@ figure numbering in HTML vs PDF?
 
 Be sure to use the *embed* link from the YouTube *share* button.
 
-…as shown in the video <a href="#fig:video-sample">5</a>.
+…as shown in the video <a href="#fig:video-sample">7</a>.
 
 <iframe src="https://www.youtube.com/embed/-nGdrzMuUnI" width="100%" height="400px">
 </iframe>
 <p class="caption">
-Figure 5: Caption here, with embedded link to the [YouTube
+Figure 7: Caption here, with embedded link to the [YouTube
 video](https://youtu.be/-nGdrzMuUnI).
 </p>
 
@@ -626,7 +644,7 @@ cake cotton candy jelly.
 
 <img src="images/tiger.png" alt="Caption for sample static image using R code-chunk method."  />
 <p class="caption">
-Figure 6: Caption for sample static image using R code-chunk method.
+Figure 8: Caption for sample static image using R code-chunk method.
 </p>
 
 ### A Third-Level Section
