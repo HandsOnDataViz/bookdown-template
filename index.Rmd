@@ -55,6 +55,7 @@ output:
 <!-- R global options: R chunk images display without code (no echo); show PDF image over JPG/PNG when available -->
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
+options(knitr.graphics.auto_pdf = TRUE)
 ```
 
 This test book was last updated on `r format (Sys.Date(), '%d %b %Y')`
