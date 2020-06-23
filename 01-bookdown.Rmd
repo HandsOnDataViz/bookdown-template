@@ -217,7 +217,7 @@ Do not insert spaces inside the `ref:chunk-label` for the caption, but add a bla
 
 (ref:tiger) Caption here. Markdown embedded links are acceptable.
 
-```{r tiger, fig.cap="(ref:tiger)"}
+```{r tiger, fig.pos='h', fig.cap="(ref:tiger)"}
  knitr::include_graphics("images/tiger.png")
 ```
 
@@ -228,7 +228,7 @@ R code-chunks allow more complex conditional formatting, where an interactive ma
 
 (ref:screenshot-tall) Testing how this appears without out.width.
 
-```{r screenshot-tall, fig.cap="(ref:screenshot-tall)"}
+```{r screenshot-tall, fig.pos='h', fig.cap="(ref:screenshot-tall)"}
  knitr::include_graphics("images/screenshot-tall.png")
 ```
 
@@ -237,7 +237,7 @@ R code-chunks allow more complex conditional formatting, where an interactive ma
 
 (ref:screenshot-tall2) Testing how this appears with out.width.
 
-```{r screenshot-tall2, out.width=200, fig.cap="(ref:screenshot-tall2)"}
+```{r screenshot-tall2, out.width=200, fig.pos='h', fig.cap="(ref:screenshot-tall2)"}
  knitr::include_graphics("images/screenshot-tall.png")
 ```
 
@@ -246,7 +246,7 @@ R code-chunks allow more complex conditional formatting, where an interactive ma
 
 (ref:screenshot-tall3) Testing outwidth and dpi together.
 
-```{r screenshot-tall3, out.width=200, dpi=300, fig.cap="(ref:screenshot-tall3)"}
+```{r screenshot-tall3, out.width=200, dpi=300, fig.pos='h', fig.cap="(ref:screenshot-tall3)"}
  knitr::include_graphics("images/screenshot-tall.png")
 ```
 
@@ -255,7 +255,7 @@ R code-chunks allow more complex conditional formatting, where an interactive ma
 
 (ref:screenshot-tall4) Testing outwidth and auto smaller pdf together.
 
-```{r screenshot-tall4, out.width=200, fig.cap="(ref:screenshot-tall4)"}
+```{r screenshot-tall4, out.width=200, fig.pos='h', fig.cap="(ref:screenshot-tall4)"}
  knitr::include_graphics("images/screenshot-tall.png")
 ```
 
@@ -265,7 +265,7 @@ R code-chunks allow more complex conditional formatting, where an interactive ma
 (ref:sample-map) Caption here, and add embedded link to explore the [full-screen interactive map](https://handsondataviz.github.io/leaflet-maps-with-google-sheets)
 
 <!-- set iframe 600px height 100% width in custom-scripts.html -->
-```{r sample-map, fig.cap="(ref:sample-map)"}
+```{r sample-map, fig.pos='h', fig.cap="(ref:sample-map)"}
 if(knitr::is_html_output()) knitr::include_url("https://handsondataviz.github.io/leaflet-maps-with-google-sheets/") else knitr::include_graphics("images/sample-map.jpg")
 ```
 
@@ -274,14 +274,14 @@ if(knitr::is_html_output()) knitr::include_url("https://handsondataviz.github.io
 
 (ref:sheets-option-drag) Caption here, with embedded link to [animated GIF](https://handsondataviz.github.io/bookdown-template/images/sheets-option-drag.gif).
 
-```{r sheets-option-drag, fig.cap="(ref:sheets-option-drag)"}
+```{r sheets-option-drag, fig.pos='h', fig.cap="(ref:sheets-option-drag)"}
 if(knitr::is_html_output()) knitr::include_url("images/sheets-option-drag.gif", height = "250px") else knitr::include_graphics("images/sheets-option-drag.png")
 ```
 
 ### Demo: R code-chunk for YouTube video in HTML, with NO static image in PDF {-}
 (ref:video-sample2) Caption **only** for HTML version, with embedded link to the [YouTube video](https://youtu.be/w6dQ-RIQ5bc). How will this affect figure numbering in HTML vs PDF?
 
-```{r video-sample2, fig.cap="(ref:video-sample2)"}
+```{r video-sample2, fig.pos='h', fig.cap="(ref:video-sample2)"}
 if(knitr::is_html_output()) knitr::include_url("https://www.youtube.com/embed/w6dQ-RIQ5bc")
 ```
 
@@ -292,7 +292,7 @@ Be sure to use the *embed* link from the YouTube *share* button.
 
 (ref:video-sample) Caption here, with embedded link to the [YouTube video](https://youtu.be/-nGdrzMuUnI).
 
-```{r video-sample, fig.cap="(ref:video-sample)"}
+```{r video-sample, fig.pos='h', fig.cap="(ref:video-sample)"}
 if(knitr::is_html_output()) knitr::include_url("https://www.youtube.com/embed/-nGdrzMuUnI") else knitr::include_graphics("images/video-sample.png")
 ```
 
