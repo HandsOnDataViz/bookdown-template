@@ -250,7 +250,7 @@ R code-chunks allow more complex conditional formatting, where an interactive ma
  knitr::include_graphics("images/screenshot-tall.png")
 ```
 
-### TESTING with out.width=200 and auto-smaller-pdf in HTML and PDF
+### TESTING with out.width=200 and auto-even-smaller-pdf in HTML and PDF
 ...as shown in Figure \@ref(fig:screenshot-tall4).
 
 (ref:screenshot-tall4) Testing outwidth and auto smaller pdf together.

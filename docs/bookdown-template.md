@@ -434,7 +434,7 @@ Figure 3: Testing how this appears with out.width.
 Figure 4: Testing outwidth and dpi together.
 </p>
 
-### TESTING with out.width=200 and auto-smaller-pdf in HTML and PDF
+### TESTING with out.width=200 and auto-even-smaller-pdf in HTML and PDF
 
 …as shown in Figure <a href="#fig:screenshot-tall4">5</a>.
 
