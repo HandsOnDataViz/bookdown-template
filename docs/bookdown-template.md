@@ -425,13 +425,13 @@ Figure 2: Testing how this appears without out.width.
 Figure 3: Testing how this appears with out.width.
 </p>
 
-### TESTING with dpi=300 (installed PNG package) in HTML and PDF
+### TESTING with out.width=200 and dpi=300 (installed PNG package) in HTML and PDF
 
 …as shown in Figure <a href="#fig:screenshot-tall3">4</a>.
 
-<img src="images/screenshot-tall.png" alt="Testing how this appears with out.width." width="170" />
+<img src="images/screenshot-tall.png" alt="Testing outwidth and dpi together." width="200" />
 <p class="caption">
-Figure 4: Testing how this appears with out.width.
+Figure 4: Testing outwidth and dpi together.
 </p>
 
 ### Demo: R code-chunk for HTML iframe and static image
