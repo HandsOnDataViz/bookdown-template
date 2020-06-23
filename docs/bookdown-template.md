@@ -283,7 +283,7 @@ this example: [Chapter 1 “Style Guide”](#style-guide)
 To cross-reference figures and tables, and display their auto-number and
 allow readers to jump there, write a call-out with a Bookdown reference
 to a code-chunk label, such as
-`See Figure <a href="#fig:sample-map">6</a>` or
+`See Figure <a href="#fig:sample-map">3</a>` or
 `See Table <a href="#tab:left-table">1</a>`. Demos:
 
 -   See Figure <a href="#fig:tiger">1</a>.
@@ -375,10 +375,6 @@ Auto-numbering appears in `Figure x.x` format in HTML and PDF, but
 `Figure x` format in MS Word. TODO: Check if Word formatting can be
 changed with reference.docx.
 
-Note that images in PDF output will “float” by design and may appear
-before or after the desired page, so always add a cross-reference
-call-out.
-
 Write R code-chunk labels that follow the image file name, and avoid
 duplicate labels across the book:
 
@@ -390,13 +386,47 @@ Do not insert spaces inside the `ref:chunk-label` for the caption, but
 add a blank line to separate it from the code-chunk. After the
 code-chunk, add another blank line.
 
-### Demo: R code-chunk for static image
+For each figure, manually add a cross-reference call-out and insert
+`fig.pos='h'` to place the image “here” on the page in the PDF output,
+to *attempt* to avoid PDF floating. Ignore the Bookdown LaTeX warning
+message “h float specifier changed to ht.” See more at
+<a href="https://bookdown.org/yihui/bookdown/figures.html" class="uri">https://bookdown.org/yihui/bookdown/figures.html</a>
+and
+<a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-placement.html" class="uri">https://bookdown.org/yihui/rmarkdown-cookbook/figure-placement.html</a>
 
-…as shown in Figure <a href="#fig:tiger">1</a>.
+This Bookdown `index.Rmd` file includes two global R code-chunk settings
+immediately after the first header. One setting displays each code-chunk
+image without a code echo. The other setting automatically inserts the
+PDF version of an PNG/JPG image, whenever it exists, in the PDF output,
+which allows us to manually reduce the image sizes for the PDF book.
+Read more about these options in this Bookdown chapter:
+<a href="https://bookdown.org/yihui/bookdown/figures.html" class="uri">https://bookdown.org/yihui/bookdown/figures.html</a>.
 
-<img src="images/tiger.png" alt="Caption here. Markdown embedded links are acceptable." width="216" />
+    {r setup, include=FALSE}
+    knitr::opts_chunk$set(echo = FALSE)
+    options(knitr.graphics.auto_pdf = TRUE)
+
+### Demo: R code-chunk for small static image
+
+Small is defined as each side less than 300px, as shown in Figure
+<a href="#fig:tiger">1</a>.
+
+<img src="images/tiger.png" alt="Caption here. Markdown embedded links are acceptable."  />
 <p class="caption">
 Figure 1: Caption here. Markdown embedded links are acceptable.
+</p>
+
+### R code-chunk for larger static image using out.width and PDF img
+
+For larger images, where one side is greater than 300px, set the
+out.width to a pixel number for ideal display in the HTML edition. Also,
+if needed, copy the image, use Photoshop to create a smaller image size,
+and save with same file name but .pdf ending, … as shown in Figure
+<a href="#fig:screenshot-tall">2</a>.
+
+<img src="images/screenshot-tall.png" alt="Using out.width=200 and smaller PDF image size." width="200" />
+<p class="caption">
+Figure 2: Using out.width=200 and smaller PDF image size.
 </p>
 
 R code-chunks allow more complex conditional formatting, where an
@@ -407,64 +437,28 @@ the new height to `include_url` as shown in the examples. However, to
 change the width of the default 675px iframe to less than 100 percent,
 add a line in a `custom-scripts.html` file.
 
-### TESTING without out.width in HTML and PDF
-
-…as shown in Figure <a href="#fig:screenshot-tall">2</a>.
-
-<img src="images/screenshot-tall.png" alt="Testing how this appears without out.width." width="530" />
-<p class="caption">
-Figure 2: Testing how this appears without out.width.
-</p>
-
-### TESTING with out.width=200 in HTML and PDF
-
-…as shown in Figure <a href="#fig:screenshot-tall2">3</a>.
-
-<img src="images/screenshot-tall.png" alt="Testing how this appears with out.width." width="200" />
-<p class="caption">
-Figure 3: Testing how this appears with out.width.
-</p>
-
-### TESTING with out.width=200 and dpi=300 (installed PNG package) in HTML and PDF
-
-…as shown in Figure <a href="#fig:screenshot-tall3">4</a>.
-
-<img src="images/screenshot-tall.png" alt="Testing outwidth and dpi together." width="200" />
-<p class="caption">
-Figure 4: Testing outwidth and dpi together.
-</p>
-
-### TESTING with out.width=200 and auto-even-smaller-pdf in HTML and PDF
-
-…as shown in Figure <a href="#fig:screenshot-tall4">5</a>.
-
-<img src="images/screenshot-tall.png" alt="Testing outwidth and auto smaller pdf together." width="200" />
-<p class="caption">
-Figure 5: Testing outwidth and auto smaller pdf together.
-</p>
-
 ### Demo: R code-chunk for HTML iframe and static image
 
-…as shown in Figure <a href="#fig:sample-map">6</a>.
+…as shown in Figure <a href="#fig:sample-map">3</a>.
 
 <!-- set iframe 600px height 100% width in custom-scripts.html -->
 
 <iframe src="https://handsondataviz.github.io/leaflet-maps-with-google-sheets/" width="100%" height="400px">
 </iframe>
 <p class="caption">
-Figure 6: Caption here, and add embedded link to explore the
+Figure 3: Caption here, and add embedded link to explore the
 [full-screen interactive
 map](https://handsondataviz.github.io/leaflet-maps-with-google-sheets)
 </p>
 
 ### Demo: R code-chunk for GIF animation and static image
 
-…as shown in Figure <a href="#fig:sheets-option-drag">7</a>.
+…as shown in Figure <a href="#fig:sheets-option-drag">4</a>.
 
 <iframe src="images/sheets-option-drag.gif" width="100%" height="250px">
 </iframe>
 <p class="caption">
-Figure 7: Caption here, with embedded link to [animated
+Figure 4: Caption here, with embedded link to [animated
 GIF](https://handsondataviz.github.io/bookdown-template/images/sheets-option-drag.gif).
 </p>
 
@@ -473,7 +467,7 @@ GIF](https://handsondataviz.github.io/bookdown-template/images/sheets-option-dra
 <iframe src="https://www.youtube.com/embed/w6dQ-RIQ5bc" width="100%" height="400px">
 </iframe>
 <p class="caption">
-Figure 8: Caption **only** for HTML version, with embedded link to the
+Figure 5: Caption **only** for HTML version, with embedded link to the
 [YouTube video](https://youtu.be/w6dQ-RIQ5bc). How will this affect
 figure numbering in HTML vs PDF?
 </p>
@@ -482,23 +476,14 @@ figure numbering in HTML vs PDF?
 
 Be sure to use the *embed* link from the YouTube *share* button.
 
-…as shown in the video <a href="#fig:video-sample">9</a>.
+…as shown in the video <a href="#fig:video-sample">6</a>.
 
 <iframe src="https://www.youtube.com/embed/-nGdrzMuUnI" width="100%" height="400px">
 </iframe>
 <p class="caption">
-Figure 9: Caption here, with embedded link to the [YouTube
+Figure 6: Caption here, with embedded link to the [YouTube
 video](https://youtu.be/-nGdrzMuUnI).
 </p>
-
-This Bookdown `index.Rmd` file includes an R code-chunk setting
-immediately after the first header, which displays each code-chunk image
-without a code echo. Read more about this feature and related options in
-this [Bookdown
-chapter](https://bookdown.org/yihui/bookdown/figures.html).
-
-    {r setup, include=FALSE}
-    knitr::opts_chunk$set(echo = FALSE)
 
 Tables
 ------
@@ -660,9 +645,9 @@ candy canes lollipop. Pudding fruitcake bear claw sweet cake cupcake.
 Chupa chups pudding candy canes chupa chups powder jujubes chocolate
 cake cotton candy jelly.
 
-<img src="images/tiger.png" alt="Caption for sample static image using R code-chunk method." width="216" />
+<img src="images/tiger.png" alt="Caption for sample static image using R code-chunk method."  />
 <p class="caption">
-Figure 10: Caption for sample static image using R code-chunk method.
+Figure 7: Caption for sample static image using R code-chunk method.
 </p>
 
 ### A Third-Level Section

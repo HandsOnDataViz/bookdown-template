@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.4)  23 JUN 2020 12:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.23)  23 JUN 2020 16:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **bookdown-template.tex
 (./bookdown-template.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-06-03> (/Users/jdoughe2/Library/TinyTeX/texmf-dist/t
+L3 programming layer <2020-06-18> (/Users/jdoughe2/Library/TinyTeX/texmf-dist/t
 ex/latex/base/book.cls
 Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
 (/Users/jdoughe2/Library/TinyTeX/texmf-dist/tex/latex/base/bk10.clo
@@ -165,7 +165,7 @@ Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
 Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )
 (/Users/jdoughe2/Library/TinyTeX/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2020-06-04 v0.32 Utility functions of pdfTeX for LuaTeX (HO
 )
 
 (/Users/jdoughe2/Library/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
@@ -338,9 +338,9 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 \Gin@req@height=\dimen163
 \Gin@req@width=\dimen164
 ) (/Users/jdoughe2/Library/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2020/05/13 3.44 The Babel package
+Package: babel 2020/06/10 3.45 The Babel package
 (/Users/jdoughe2/Library/TinyTeX/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2020/05/13 3.44 Babel common definitions
+File: babel.def 2020/06/10 3.45 Babel common definitions
 \babel@savecnt=\count274
 \U@D=\dimen165
 \l@babelnohyphens=\language3
@@ -371,7 +371,7 @@ Language: english 2017/06/06 v3.3r English support from the babel system
 
 (/Users/jdoughe2/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdfmo
 de.def
-File: l3backend-pdfmode.def 2020-06-03 L3 backend support: PDF mode
+File: l3backend-pdfmode.def 2020-06-18 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count276
 \l__pdf_internal_box=\box52
 ) (./bookdown-template.aux)
@@ -568,121 +568,103 @@ File: images/ilyankou-ilya.jpg Graphic file (type jpg)
 Package pdftex.def Info: images/ilyankou-ilya.jpg  used on input line 396.
 (pdftex.def)             Requested size: 48.17986pt x 48.17986pt.
 [13 <./images/dougherty-jack.jpg> <./images/ilyankou-ilya.jpg>]
-<images/tiger.png, id=186, 108.405pt x 110.4125pt>
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
+416.
+(/Users/jdoughe2/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+<images/tiger.png, id=189, 108.405pt x 110.4125pt>
 File: images/tiger.png Graphic file (type png)
 <use images/tiger.png>
-Package pdftex.def Info: images/tiger.png  used on input line 427.
+Package pdftex.def Info: images/tiger.png  used on input line 436.
 (pdftex.def)             Requested size: 108.40968pt x 110.41727pt.
-<images/screenshot-tall.pdf, id=188, 75.28125pt x 151.06438pt>
+<images/screenshot-tall.pdf, id=191, 75.28125pt x 151.06438pt>
 File: images/screenshot-tall.pdf Graphic file (type pdf)
 <use images/screenshot-tall.pdf>
-Package pdftex.def Info: images/screenshot-tall.pdf  used on input line 441.
-(pdftex.def)             Requested size: 75.28105pt x 151.064pt.
-[14 <./images/tiger.png>]
-File: images/screenshot-tall.pdf Graphic file (type pdf)
-<use images/screenshot-tall.pdf>
-Package pdftex.def Info: images/screenshot-tall.pdf  used on input line 453.
-(pdftex.def)             Requested size: 75.28105pt x 151.064pt.
-File: images/screenshot-tall.pdf Graphic file (type pdf)
-<use images/screenshot-tall.pdf>
-Package pdftex.def Info: images/screenshot-tall.pdf  used on input line 464.
+Package pdftex.def Info: images/screenshot-tall.pdf  used on input line 449.
 (pdftex.def)             Requested size: 75.28105pt x 151.064pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Underfull \hbox (badness 2762) in paragraph at lines 468--468
-[]\T1/lmr/bx/n/12 TESTING with out.width=200 and auto-even-
- []
-
-File: images/screenshot-tall.pdf Graphic file (type pdf)
-<use images/screenshot-tall.pdf>
-Package pdftex.def Info: images/screenshot-tall.pdf  used on input line 475.
-(pdftex.def)             Requested size: 75.28105pt x 151.064pt.
-[15 <./images/screenshot-tall.pdf>]
-<images/sample-map.jpg, id=225, 401.8212pt x 216.81pt>
+[14]
+<images/sample-map.jpg, id=205, 401.8212pt x 216.81pt>
 File: images/sample-map.jpg Graphic file (type jpg)
 <use images/sample-map.jpg>
-Package pdftex.def Info: images/sample-map.jpg  used on input line 488.
+Package pdftex.def Info: images/sample-map.jpg  used on input line 464.
 (pdftex.def)             Requested size: 345.00154pt x 186.1519pt.
-<images/sheets-option-drag.png, id=229, 271.0125pt x 250.9375pt>
+<images/sheets-option-drag.png, id=209, 271.0125pt x 250.9375pt>
 File: images/sheets-option-drag.png Graphic file (type png)
 <use images/sheets-option-drag.png>
-Package pdftex.def Info: images/sheets-option-drag.png  used on input line 501.
+Package pdftex.def Info: images/sheets-option-drag.png  used on input line 478.
 
-(pdftex.def)             Requested size: 271.02423pt x 250.94835pt.
+(pdftex.def)             Requested size: 271.0201pt x 250.94452pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \vbox (badness 1590) has occurred while \output is active []
 
-[16]
-<images/video-sample.png, id=246, 168.63pt x 94.6737pt>
+[15 <./images/tiger.png> <./images/screenshot-tall.pdf>]
+<images/video-sample.png, id=234, 168.63pt x 94.6737pt>
 File: images/video-sample.png Graphic file (type png)
 <use images/video-sample.png>
-Package pdftex.def Info: images/video-sample.png  used on input line 521.
+Package pdftex.def Info: images/video-sample.png  used on input line 500.
 (pdftex.def)             Requested size: 168.63214pt x 94.6749pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Overfull \hbox (41.69397pt too wide) in alignment at lines 539--544
+Overfull \hbox (41.69397pt too wide) in alignment at lines 512--517
  [] [] [] 
  []
 
 
-Overfull \hbox (41.69397pt too wide) in alignment at lines 544--548
+Overfull \hbox (41.69397pt too wide) in alignment at lines 517--521
  [] [] [] 
  []
 
 
-Overfull \hbox (41.69397pt too wide) in alignment at lines 548--552
+Overfull \hbox (41.69397pt too wide) in alignment at lines 521--525
  [] [] [] 
  []
 
-[17 <./images/sample-map.jpg>] [18 <./images/sheets-option-drag.png>]
-Overfull \hbox (24.25111pt too wide) in paragraph at lines 578--579
+[16 <./images/sample-map.jpg>] [17 <./images/sheets-option-drag.png> <./images/
+video-sample.png>]
+Overfull \hbox (24.25111pt too wide) in paragraph at lines 551--552
 []\T1/lmr/m/n/10 To cre-ate notes, in-sert ci-ta-tion keys in the text, such as
  \T1/lmtt/m/n/10 @huffHowLieStatistics1954\T1/lmr/m/n/10 ,
  []
 
-
-Overfull \vbox (115.70186pt too high) has occurred while \output is active []
-
-[19 <./images/video-sample.png>]
-Overfull \hbox (26.49902pt too wide) in paragraph at lines 624--626
+[18]
+Overfull \hbox (26.49902pt too wide) in paragraph at lines 597--599
 \T1/lmtt/m/n/10 asciidoc --standalone --output bookdown-template-modified.ascii
 doc 
  []
 
-[20]
+[19] [20
+
+]
 Chapter 2.
 File: images/tiger.png Graphic file (type png)
 <use images/tiger.png>
-Package pdftex.def Info: images/tiger.png  used on input line 643.
+Package pdftex.def Info: images/tiger.png  used on input line 617.
 (pdftex.def)             Requested size: 108.40968pt x 110.41727pt.
-[21
-
-] [22]
+[21] [22]
 Chapter 3.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 667.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 642.
 [23
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 667.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 642.
 (./bookdown-template.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 667.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 667.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 642.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 642.
 Package rerunfilecheck Info: File `bookdown-template.out' has not changed.
-(rerunfilecheck)             Checksum: D66C1BDD023D62A96DBE71B3588FA1DE;1014.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 667.
+(rerunfilecheck)             Checksum: D6866F84DDA9D87F90196CD2A7A20AA8;1014.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 642.
  ) 
 Here is how much of TeX's memory you used:
- 11438 strings out of 482426
- 163798 string characters out of 5947095
- 423222 words of memory out of 5000000
- 26886 multiletter control sequences out of 15000+600000
- 610857 words of font info for 74 fonts, out of 8000000 for 9000
+ 11450 strings out of 482419
+ 163682 string characters out of 5946909
+ 422925 words of memory out of 5000000
+ 26910 multiletter control sequences out of 15000+600000
+ 611162 words of font info for 75 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 34i,8n,37p,1009b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,8n,37p,1009b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/Users/jdoughe2/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/U
 sers/jdoughe2/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</Users/j
 doughe2/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/jdo
@@ -697,10 +679,10 @@ exmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/jdoughe2/Library/TinyTeX/tex
 mf-dist/fonts/type1/public/lm/lmri8.pfb></Users/jdoughe2/Library/TinyTeX/texmf-
 dist/fonts/type1/public/lm/lmro10.pfb></Users/jdoughe2/Library/TinyTeX/texmf-di
 st/fonts/type1/public/lm/lmtt10.pfb>
-Output written on bookdown-template.pdf (23 pages, 2018405 bytes).
+Output written on bookdown-template.pdf (23 pages, 2017836 bytes).
 PDF statistics:
- 388 PDF objects out of 1000 (max. 8388607)
- 329 compressed objects within 4 object streams
- 102 named destinations out of 1000 (max. 500000)
+ 382 PDF objects out of 1000 (max. 8388607)
+ 323 compressed objects within 4 object streams
+ 93 named destinations out of 1000 (max. 500000)
  108 words of extra memory for PDF output out of 10000 (max. 10000000)
 

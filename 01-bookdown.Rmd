@@ -200,8 +200,6 @@ For these reasons, this book *primarily uses R code-chunk formatting for images*
 
 Auto-numbering appears in `Figure x.x` format in HTML and PDF, but `Figure x` format in MS Word. TODO: Check if Word formatting can be changed with reference.docx.
 
-Note that images in PDF output will "float" by design and may appear before or after the desired page, so always add a cross-reference call-out.
-
 Write R code-chunk labels that follow the image file name, and avoid duplicate labels across the book:
 
 ```
@@ -212,8 +210,18 @@ images/05-chart/design-no-junk.png
 
 Do not insert spaces inside the `ref:chunk-label` for the caption, but add a blank line to separate it from the code-chunk. After the code-chunk, add another blank line.
 
-### Demo: R code-chunk for static image {-}
-...as shown in Figure \@ref(fig:tiger).
+For each figure, manually add a cross-reference call-out and insert `fig.pos='h'` to place the image "here" on the page in the PDF output, to *attempt* to avoid PDF floating. Ignore the Bookdown LaTeX warning message "h float specifier changed to ht." See more at https://bookdown.org/yihui/bookdown/figures.html and https://bookdown.org/yihui/rmarkdown-cookbook/figure-placement.html
+
+This Bookdown `index.Rmd` file includes two global R code-chunk settings immediately after the first header. One setting displays each code-chunk image without a code echo. The other setting automatically inserts the PDF version of an PNG/JPG image, whenever it exists, in the PDF output, which allows us to manually reduce the image sizes for the PDF book. Read more about these options in this Bookdown chapter: https://bookdown.org/yihui/bookdown/figures.html.
+
+```
+{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+options(knitr.graphics.auto_pdf = TRUE)
+```
+
+### Demo: R code-chunk for small static image {-}
+Small is defined as each side less than 300px, as shown in Figure \@ref(fig:tiger).
 
 (ref:tiger) Caption here. Markdown embedded links are acceptable.
 
@@ -221,43 +229,17 @@ Do not insert spaces inside the `ref:chunk-label` for the caption, but add a bla
  knitr::include_graphics("images/tiger.png")
 ```
 
+### R code-chunk for larger static image using out.width and PDF img {-}
+For larger images, where one side is greater than 300px, set the out.width to a pixel number for ideal display in the HTML edition. Also, if needed, copy the image, use Photoshop to create a smaller image size, and save with same file name but .pdf ending, ... as shown in Figure \@ref(fig:screenshot-tall).
+
+(ref:screenshot-tall) Using out.width=200 and smaller PDF image size.
+
+```{r screenshot-tall, fig.pos='h', out.width=200, fig.cap="(ref:screenshot-tall)"}
+ knitr::include_graphics("images/screenshot-tall.png")
+```
+
 R code-chunks allow more complex conditional formatting, where an interactive map or animated GIF or YouTube video clip appears in the web version, and a static image with an embedded link appears in the PDF and MS Word outputs. To change the height of the default 400px iframe, add the new height to `include_url` as shown in the examples. However, to change the width of the default 675px iframe to less than 100 percent, add a line in a `custom-scripts.html` file.
 
-### TESTING without out.width in HTML and PDF
-...as shown in Figure \@ref(fig:screenshot-tall).
-
-(ref:screenshot-tall) Testing how this appears without out.width.
-
-```{r screenshot-tall, fig.pos='h', fig.cap="(ref:screenshot-tall)"}
- knitr::include_graphics("images/screenshot-tall.png")
-```
-
-### TESTING with out.width=200 in HTML and PDF
-...as shown in Figure \@ref(fig:screenshot-tall2).
-
-(ref:screenshot-tall2) Testing how this appears with out.width.
-
-```{r screenshot-tall2, out.width=200, fig.pos='h', fig.cap="(ref:screenshot-tall2)"}
- knitr::include_graphics("images/screenshot-tall.png")
-```
-
-### TESTING with out.width=200 and dpi=300 (installed PNG package) in HTML and PDF
-...as shown in Figure \@ref(fig:screenshot-tall3).
-
-(ref:screenshot-tall3) Testing outwidth and dpi together.
-
-```{r screenshot-tall3, out.width=200, dpi=300, fig.pos='h', fig.cap="(ref:screenshot-tall3)"}
- knitr::include_graphics("images/screenshot-tall.png")
-```
-
-### TESTING with out.width=200 and auto-even-smaller-pdf in HTML and PDF
-...as shown in Figure \@ref(fig:screenshot-tall4).
-
-(ref:screenshot-tall4) Testing outwidth and auto smaller pdf together.
-
-```{r screenshot-tall4, out.width=200, fig.pos='h', fig.cap="(ref:screenshot-tall4)"}
- knitr::include_graphics("images/screenshot-tall.png")
-```
 
 ### Demo: R code-chunk for HTML iframe and static image {-}
 ...as shown in Figure \@ref(fig:sample-map).
@@ -296,12 +278,6 @@ Be sure to use the *embed* link from the YouTube *share* button.
 if(knitr::is_html_output()) knitr::include_url("https://www.youtube.com/embed/-nGdrzMuUnI") else knitr::include_graphics("images/video-sample.png")
 ```
 
-This Bookdown `index.Rmd` file includes an R code-chunk setting immediately after the first header, which displays each code-chunk image without a code echo. Read more about this feature and related options in this [Bookdown chapter](https://bookdown.org/yihui/bookdown/figures.html).
-
-```
-{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
 
 ## Tables {- #tables}
 Create tables in Markdown format, since it produces good output for HTML, PDF, Word, and Markdown. Use a tool such as [Tables Generator](https://www.tablesgenerator.com/markdown_tables) to import significant table data in CSV format, format the column alignment as desired, and press Generate button to create table in Markdown format. For significant table data, save the CSV version in a GitHub repo for potential later use.
