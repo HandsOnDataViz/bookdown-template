@@ -241,6 +241,15 @@ R code-chunks allow more complex conditional formatting, where an interactive ma
  knitr::include_graphics("images/screenshot-tall.png")
 ```
 
+### TESTING with dpi=300 (installed PNG package) in HTML and PDF
+...as shown in Figure \@ref(fig:screenshot-tall3).
+
+(ref:screenshot-tall3) Testing how this appears with out.width.
+
+```{r screenshot-tall3, dpi=300, fig.cap="(ref:screenshot-tall3)"}
+ knitr::include_graphics("images/screenshot-tall.png")
+```
+
 ### Demo: R code-chunk for HTML iframe and static image {-}
 ...as shown in Figure \@ref(fig:sample-map).
 
