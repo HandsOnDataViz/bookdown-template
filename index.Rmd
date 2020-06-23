@@ -52,7 +52,7 @@ output:
 
 ---
 # Preface {-}
-<!-- R global options: R chunk images display without code (no echo); show PDF image over JPG/PNG when available -->
+<!-- R global options: R chunk images display without code (no echo); show PDF image over JPG/PNG when available in PDF output-->
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 options(knitr.graphics.auto_pdf = TRUE)

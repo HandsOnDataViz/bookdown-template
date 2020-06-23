@@ -172,16 +172,19 @@ Cross-reference interactivity varies by output:
 When writing cross-references in the text, the [O'Reilly Style Guide](http://oreillymedia.github.io/production-resources/styleguide/#considering_electronic_formats) prefers live cross references (e.g., "see Figure 2-1"), but if not feasible, use "preceding" or "following" because physical placement of elements may vary across print and digital formats. *Avoid* using "above" or "below."
 
 ## Images {- #images}
-Create high-resolution color static images in .jpg or .png format, and animated .gif files, and save them into the `images` subfolder by chapter. Make sure that color images can be rendered into grayscale by the publisher for the print book. Write file names in lowercase with dashes (not spaces) and begin with keyword of relevant section to keep related images grouped together. Despite being in separate folders, avoid duplicate image file names across the book. Avoid numbering images since they may not match the final sequence. Add `-original` to the end of the file name prior to resizing or adding more text or artwork.
+Create high-resolution color screenshots and other static images in .png or .jpg format, with tight cropping on a high-resolution Retina monitor, typically at 144 ppi. Save items into the `images` subfolder by chapter. Make sure that color images include high contrast and/or shading, because they will be converted to grayscale by the publisher for the print book. Write file names in lowercase with dashes (not spaces) and begin with keyword of relevant section to keep related images grouped together. Despite being in separate folders, avoid duplicate image file names across the book. Avoid numbering images since they may not match the final sequence.
 
-Use Photoshop or a similar photo-editing tool (*not* Preview) to add any additional text or artwork if desired. Try to maintain a high resolution (300 dpi) and reduce size if desired to fit into the HTML book (measured in pixels) and PDF book (measured in inches). Save into the same folder with the same file name, minus `-original`, like this:
+If a screenshot requires additional artwork or text for the HTML edition, make a copy of the original and add `-ann` to note that this version is annotated, save into the same folder with the same root file name, and use in the code-chunk image pathnames. The publisher will use the original image and add their own artwork for their editions.
+
+If an image is larger than approximately 300px on either side, one more option is to reduce the image size in the PDF version. Use Photoshop (*not* Preview) to reduce the image size, and save a copy with the same file name with the .pdf extension into the folder. In some cases, the folder will contain only one version of each image, but in other cases it may contain up to three versions of an image:
 
 ```
-images/05-chart/design-no-junk-original.png
 images/05-chart/design-no-junk.png
+images/05-chart/design-no-junk-ann.png
+images/05-chart/design-no-junk-ann.pdf
 ```
 
-When inserting image filenames into the text, use the version minus `-original`. If creating images to appear as the same size in sequence, add a code-comment with the image width, height, and resolution as a reminder to make others match up, like this:
+If creating images to appear as the same size in sequence, add a code-comment with the image width, height, and resolution as a reminder to make others match up, like this:
 
 `<!-- Images below are 200x200 at 300 resolution -->`
 
@@ -196,9 +199,10 @@ In this book, use *Markdown formatting only for images that appear inside tables
 
 Although Markdown formatting offers a simple syntax that easily converts into other formats with Bookdown/Pandoc, there is no auto-numbering in the HTML edition, while auto-numbering appears in the PDF edition, and numbered figures are required by the publisher. Furthermore, Markdown formatting does not allow conditional output.
 
+### Images using R code-chunks {-}
 For these reasons, this book *primarily uses R code-chunk formatting for images*. The syntax is more complex but supports auto-numbering in HTML and PDF, and conditional output for interactive and static images. Note that R code-chunk images do *not* easily convert with Pandoc from Markdown to AsciiDoc, but "Figure x Caption" appears as a placeholder.
 
-Auto-numbering appears in `Figure x.x` format in HTML and PDF, but `Figure x` format in MS Word. TODO: Check if Word formatting can be changed with reference.docx.
+Auto-numbering appears in `Figure x.x` format in HTML and PDF, but `Figure x` format in MS Word. Note that Word formatting can be changed with reference.docx.
 
 Write R code-chunk labels that follow the image file name, and avoid duplicate labels across the book:
 
@@ -230,7 +234,7 @@ Small is defined as each side less than 300px, as shown in Figure \@ref(fig:tige
 ```
 
 ### R code-chunk for larger static image using out.width and PDF img {-}
-For larger images, where one side is greater than 300px, set the out.width to a pixel number for ideal display in the HTML edition. Also, if needed, copy the image, use Photoshop to create a smaller image size, and save with same file name but .pdf ending, ... as shown in Figure \@ref(fig:screenshot-tall).
+For larger images, where one side is greater than 300px, set the out.width to a pixel number for ideal display in the HTML edition. Also, if needed, copy the image, use Photoshop to create a smaller image size, and save with same file name and a .pdf extension for auto-substitution in the PDF output ...as shown in Figure \@ref(fig:screenshot-tall).
 
 (ref:screenshot-tall) Using out.width=200 and smaller PDF image size.
 
@@ -240,15 +244,13 @@ For larger images, where one side is greater than 300px, set the out.width to a 
 
 R code-chunks allow more complex conditional formatting, where an interactive map or animated GIF or YouTube video clip appears in the web version, and a static image with an embedded link appears in the PDF and MS Word outputs. To change the height of the default 400px iframe, add the new height to `include_url` as shown in the examples. However, to change the width of the default 675px iframe to less than 100 percent, add a line in a `custom-scripts.html` file.
 
-
 ### Demo: R code-chunk for HTML iframe and static image {-}
 ...as shown in Figure \@ref(fig:sample-map).
 
 (ref:sample-map) Caption here, and add embedded link to explore the [full-screen interactive map](https://handsondataviz.github.io/leaflet-maps-with-google-sheets)
 
-<!-- set iframe 600px height 100% width in custom-scripts.html -->
 ```{r sample-map, fig.pos='h', fig.cap="(ref:sample-map)"}
-if(knitr::is_html_output()) knitr::include_url("https://handsondataviz.github.io/leaflet-maps-with-google-sheets/") else knitr::include_graphics("images/sample-map.jpg")
+if(knitr::is_html_output()) knitr::include_url("https://handsondataviz.github.io/leaflet-maps-with-google-sheets/", height = "600px") else knitr::include_graphics("images/sample-map.jpg")
 ```
 
 ### Demo: R code-chunk for GIF animation and static image {-}
@@ -258,13 +260,6 @@ if(knitr::is_html_output()) knitr::include_url("https://handsondataviz.github.io
 
 ```{r sheets-option-drag, fig.pos='h', fig.cap="(ref:sheets-option-drag)"}
 if(knitr::is_html_output()) knitr::include_url("images/sheets-option-drag.gif", height = "250px") else knitr::include_graphics("images/sheets-option-drag.png")
-```
-
-### Demo: R code-chunk for YouTube video in HTML, with NO static image in PDF {-}
-(ref:video-sample2) Caption **only** for HTML version, with embedded link to the [YouTube video](https://youtu.be/w6dQ-RIQ5bc). How will this affect figure numbering in HTML vs PDF?
-
-```{r video-sample2, fig.pos='h', fig.cap="(ref:video-sample2)"}
-if(knitr::is_html_output()) knitr::include_url("https://www.youtube.com/embed/w6dQ-RIQ5bc")
 ```
 
 ### Demo: R code-chunk for Youtube video and static image {-}
@@ -278,6 +273,12 @@ Be sure to use the *embed* link from the YouTube *share* button.
 if(knitr::is_html_output()) knitr::include_url("https://www.youtube.com/embed/-nGdrzMuUnI") else knitr::include_graphics("images/video-sample.png")
 ```
 
+### Demo: R code-chunk for YouTube video in HTML, with NO static image in PDF {-}
+(ref:video-sample2) Caption **only** for HTML version, with embedded link to the [YouTube video](https://youtu.be/w6dQ-RIQ5bc). How will this affect figure numbering in HTML vs PDF?
+
+```{r video-sample2, fig.pos='h', fig.cap="(ref:video-sample2)"}
+if(knitr::is_html_output()) knitr::include_url("https://www.youtube.com/embed/w6dQ-RIQ5bc")
+```
 
 ## Tables {- #tables}
 Create tables in Markdown format, since it produces good output for HTML, PDF, Word, and Markdown. Use a tool such as [Tables Generator](https://www.tablesgenerator.com/markdown_tables) to import significant table data in CSV format, format the column alignment as desired, and press Generate button to create table in Markdown format. For significant table data, save the CSV version in a GitHub repo for potential later use.
