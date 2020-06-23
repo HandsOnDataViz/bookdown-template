@@ -416,11 +416,11 @@ add a line in a `custom-scripts.html` file.
 Figure 2: Testing how this appears without out.width.
 </p>
 
-### TESTING with out.width in HTML and PDF
+### TESTING with out.width=200 in HTML and PDF
 
 …as shown in Figure <a href="#fig:screenshot-tall2">3</a>.
 
-<img src="images/screenshot-tall.png" alt="Testing how this appears with out.width." width="350" />
+<img src="images/screenshot-tall.png" alt="Testing how this appears with out.width." width="200" />
 <p class="caption">
 Figure 3: Testing how this appears with out.width.
 </p>

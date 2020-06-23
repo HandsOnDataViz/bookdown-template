@@ -232,12 +232,12 @@ R code-chunks allow more complex conditional formatting, where an interactive ma
  knitr::include_graphics("images/screenshot-tall.png")
 ```
 
-### TESTING with out.width=20 in HTML and PDF
+### TESTING with out.width=200 in HTML and PDF
 ...as shown in Figure \@ref(fig:screenshot-tall2).
 
 (ref:screenshot-tall2) Testing how this appears with out.width.
 
-```{r screenshot-tall2, out.width=20, fig.cap="(ref:screenshot-tall2)"}
+```{r screenshot-tall2, out.width=200, fig.cap="(ref:screenshot-tall2)"}
  knitr::include_graphics("images/screenshot-tall.png")
 ```
 
