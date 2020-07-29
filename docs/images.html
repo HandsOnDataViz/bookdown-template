@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Images | Bookdown Template</title>
   <meta name="description" content="This is a book template" />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Images | Bookdown Template" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Ilya Ilyankou" />
 
 
-<meta name="date" content="2020-06-23" />
+<meta name="date" content="2020-07-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -107,11 +107,13 @@
             <section class="normal" id="section-">
 <div id="images" class="section level2 unnumbered" number="">
 <h2>Images</h2>
-<p>Create high-resolution color static images in .jpg or .png format, and animated .gif files, and save them into the <code>images</code> subfolder by chapter. Make sure that color images can be rendered into grayscale by the publisher for the print book. Write file names in lowercase with dashes (not spaces) and begin with keyword of relevant section to keep related images grouped together. Despite being in separate folders, avoid duplicate image file names across the book. Avoid numbering images since they may not match the final sequence. Add <code>-original</code> to the end of the file name prior to resizing or adding more text or artwork.</p>
-<p>Use Photoshop or a similar photo-editing tool (<em>not</em> Preview) to add any additional text or artwork if desired. Try to maintain a high resolution (300 dpi) and reduce size if desired to fit into the HTML book (measured in pixels) and PDF book (measured in inches). Save into the same folder with the same file name, minus <code>-original</code>, like this:</p>
-<pre><code>images/05-chart/design-no-junk-original.png
-images/05-chart/design-no-junk.png</code></pre>
-<p>When inserting image filenames into the text, use the version minus <code>-original</code>. If creating images to appear as the same size in sequence, add a code-comment with the image width, height, and resolution as a reminder to make others match up, like this:</p>
+<p>Create high-resolution color screenshots and other static images in .png or .jpg format, with tight cropping on a high-resolution Retina monitor, typically at 144 ppi. Save items into the <code>images</code> subfolder by chapter. Make sure that color images include high contrast and/or shading, because they will be converted to grayscale by the publisher for the print book. Write file names in lowercase with dashes (not spaces) and begin with keyword of relevant section to keep related images grouped together. Despite being in separate folders, avoid duplicate image file names across the book. Avoid numbering images since they may not match the final sequence.</p>
+<p>If a screenshot requires additional artwork or text for the HTML edition, make a copy of the original and add <code>-ann</code> to note that this version is annotated, save into the same folder with the same root file name, and use in the code-chunk image pathnames. The publisher will use the original image and add their own artwork for their editions.</p>
+<p>If an image is larger than approximately 300px on either side, one more option is to reduce the image size in the PDF version. Use Photoshop (<em>not</em> Preview) to reduce the image size, and save a copy with the same file name with the .pdf extension into the folder. In some cases, the folder will contain only one version of each image, but in other cases it may contain up to three versions of an image:</p>
+<pre><code>images/05-chart/design-no-junk.png
+images/05-chart/design-no-junk-ann.png
+images/05-chart/design-no-junk-ann.pdf</code></pre>
+<p>If creating images to appear as the same size in sequence, add a code-comment with the image width, height, and resolution as a reminder to make others match up, like this:</p>
 <p><code>&lt;!-- Images below are 200x200 at 300 resolution --&gt;</code></p>
 <p>In this book, use <em>Markdown formatting only for images that appear inside tables</em> or <em>do not require captions or figure numbering</em>, and leave the caption field blank, like this example:</p>
 <!-- Images below are 200x200 at 300 resolution -->
@@ -134,8 +136,10 @@ images/05-chart/design-no-junk.png</code></pre>
 </tbody>
 </table>
 <p>Although Markdown formatting offers a simple syntax that easily converts into other formats with Bookdown/Pandoc, there is no auto-numbering in the HTML edition, while auto-numbering appears in the PDF edition, and numbered figures are required by the publisher. Furthermore, Markdown formatting does not allow conditional output.</p>
+<div id="images-using-r-code-chunks" class="section level3 unnumbered" number="">
+<h3>Images using R code-chunks</h3>
 <p>For these reasons, this book <em>primarily uses R code-chunk formatting for images</em>. The syntax is more complex but supports auto-numbering in HTML and PDF, and conditional output for interactive and static images. Note that R code-chunk images do <em>not</em> easily convert with Pandoc from Markdown to AsciiDoc, but “Figure x Caption” appears as a placeholder.</p>
-<p>Auto-numbering appears in <code>Figure x.x</code> format in HTML and PDF, but <code>Figure x</code> format in MS Word. TODO: Check if Word formatting can be changed with reference.docx.</p>
+<p>Auto-numbering appears in <code>Figure x.x</code> format in HTML and PDF, but <code>Figure x</code> format in MS Word. Note that Word formatting can be changed with reference.docx.</p>
 <p>Write R code-chunk labels that follow the image file name, and avoid duplicate labels across the book:</p>
 <pre><code>ref:design-no-junk
 
@@ -146,6 +150,7 @@ images/05-chart/design-no-junk.png</code></pre>
 <pre><code>{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 options(knitr.graphics.auto_pdf = TRUE)</code></pre>
+</div>
 <div id="demo-r-code-chunk-for-small-static-image" class="section level3 unnumbered" number="">
 <h3>Demo: R code-chunk for small static image</h3>
 <p>Small is defined as each side less than 300px, as shown in Figure <a href="images.html#fig:tiger">1.1</a>.</p>
@@ -159,7 +164,7 @@ Figure 1.1: Caption here. Markdown embedded links are acceptable.
 </div>
 <div id="r-code-chunk-for-larger-static-image-using-out.width-and-pdf-img" class="section level3 unnumbered" number="">
 <h3>R code-chunk for larger static image using out.width and PDF img</h3>
-<p>For larger images, where one side is greater than 300px, set the out.width to a pixel number for ideal display in the HTML edition. Also, if needed, copy the image, use Photoshop to create a smaller image size, and save with same file name but .pdf ending, … as shown in Figure <a href="images.html#fig:screenshot-tall">1.2</a>.</p>
+<p>For larger images, where one side is greater than 300px, set the out.width to a pixel number for ideal display in the HTML edition. Also, if needed, copy the image, use Photoshop to create a smaller image size, and save with same file name and a .pdf extension for auto-substitution in the PDF output …as shown in Figure <a href="images.html#fig:screenshot-tall">1.2</a>.</p>
 
 <div class="figure"><span id="fig:screenshot-tall"></span>
 <img src="images/screenshot-tall.png" alt="Using out.width=200 and smaller PDF image size." width="200" />
@@ -173,9 +178,8 @@ Figure 1.2: Using out.width=200 and smaller PDF image size.
 <h3>Demo: R code-chunk for HTML iframe and static image</h3>
 <p>…as shown in Figure <a href="images.html#fig:sample-map">1.3</a>.</p>
 
-<!-- set iframe 600px height 100% width in custom-scripts.html -->
 <div class="figure"><span id="fig:sample-map"></span>
-<iframe src="https://handsondataviz.github.io/leaflet-maps-with-google-sheets/" width="672" height="400px">
+<iframe src="https://handsondataviz.github.io/leaflet-maps-with-google-sheets/" width="672" height="600px">
 </iframe>
 <p class="caption">
 Figure 1.3: Caption here, and add embedded link to explore the <a href="https://handsondataviz.github.io/leaflet-maps-with-google-sheets">full-screen interactive map</a>
@@ -194,6 +198,19 @@ Figure 1.4: Caption here, with embedded link to <a href="https://handsondataviz.
 </p>
 </div>
 </div>
+<div id="demo-r-code-chunk-for-youtube-video-and-static-image" class="section level3 unnumbered" number="">
+<h3>Demo: R code-chunk for Youtube video and static image</h3>
+<p>Be sure to use the <em>embed</em> link from the YouTube <em>share</em> button.</p>
+<p>…as shown in the video <a href="images.html#fig:video-sample">1.5</a>.</p>
+
+<div class="figure"><span id="fig:video-sample"></span>
+<iframe src="https://www.youtube.com/embed/-nGdrzMuUnI" width="672" height="400px">
+</iframe>
+<p class="caption">
+Figure 1.5: Caption here, with embedded link to the <a href="https://youtu.be/-nGdrzMuUnI">YouTube video</a>.
+</p>
+</div>
+</div>
 <div id="demo-r-code-chunk-for-youtube-video-in-html-with-no-static-image-in-pdf" class="section level3 unnumbered" number="">
 <h3>Demo: R code-chunk for YouTube video in HTML, with NO static image in PDF</h3>
 
@@ -201,20 +218,7 @@ Figure 1.4: Caption here, with embedded link to <a href="https://handsondataviz.
 <iframe src="https://www.youtube.com/embed/w6dQ-RIQ5bc" width="672" height="400px">
 </iframe>
 <p class="caption">
-Figure 1.5: Caption <strong>only</strong> for HTML version, with embedded link to the <a href="https://youtu.be/w6dQ-RIQ5bc">YouTube video</a>. How will this affect figure numbering in HTML vs PDF?
-</p>
-</div>
-</div>
-<div id="demo-r-code-chunk-for-youtube-video-and-static-image" class="section level3 unnumbered" number="">
-<h3>Demo: R code-chunk for Youtube video and static image</h3>
-<p>Be sure to use the <em>embed</em> link from the YouTube <em>share</em> button.</p>
-<p>…as shown in the video <a href="images.html#fig:video-sample">1.6</a>.</p>
-
-<div class="figure"><span id="fig:video-sample"></span>
-<iframe src="https://www.youtube.com/embed/-nGdrzMuUnI" width="672" height="400px">
-</iframe>
-<p class="caption">
-Figure 1.6: Caption here, with embedded link to the <a href="https://youtu.be/-nGdrzMuUnI">YouTube video</a>.
+Figure 1.6: Caption <strong>only</strong> for HTML version, with embedded link to the <a href="https://youtu.be/w6dQ-RIQ5bc">YouTube video</a>. How will this affect figure numbering in HTML vs PDF?
 </p>
 </div>
 </div>

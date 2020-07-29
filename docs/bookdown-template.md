@@ -1,9 +1,9 @@
 Preface
 =======
 
-<!-- R global options: R chunk images display without code (no echo); show PDF image over JPG/PNG when available -->
+<!-- R global options: R chunk images display without code (no echo); show PDF image over JPG/PNG when available in PDF output-->
 
-This test book was last updated on 23 Jun 2020
+This test book was last updated on 29 Jul 2020
 
 Insert additional preface items below (acknowledgements, etc.), with
 non-numbering symbols `{-}` to ensure that the preface is not numbered,
@@ -308,29 +308,37 @@ elements may vary across print and digital formats. *Avoid* using
 Images
 ------
 
-Create high-resolution color static images in .jpg or .png format, and
-animated .gif files, and save them into the `images` subfolder by
-chapter. Make sure that color images can be rendered into grayscale by
-the publisher for the print book. Write file names in lowercase with
-dashes (not spaces) and begin with keyword of relevant section to keep
-related images grouped together. Despite being in separate folders,
-avoid duplicate image file names across the book. Avoid numbering images
-since they may not match the final sequence. Add `-original` to the end
-of the file name prior to resizing or adding more text or artwork.
+Create high-resolution color screenshots and other static images in .png
+or .jpg format, with tight cropping on a high-resolution Retina monitor,
+typically at 144 ppi. Save items into the `images` subfolder by chapter.
+Make sure that color images include high contrast and/or shading,
+because they will be converted to grayscale by the publisher for the
+print book. Write file names in lowercase with dashes (not spaces) and
+begin with keyword of relevant section to keep related images grouped
+together. Despite being in separate folders, avoid duplicate image file
+names across the book. Avoid numbering images since they may not match
+the final sequence.
 
-Use Photoshop or a similar photo-editing tool (*not* Preview) to add any
-additional text or artwork if desired. Try to maintain a high resolution
-(300 dpi) and reduce size if desired to fit into the HTML book (measured
-in pixels) and PDF book (measured in inches). Save into the same folder
-with the same file name, minus `-original`, like this:
+If a screenshot requires additional artwork or text for the HTML
+edition, make a copy of the original and add `-ann` to note that this
+version is annotated, save into the same folder with the same root file
+name, and use in the code-chunk image pathnames. The publisher will use
+the original image and add their own artwork for their editions.
 
-    images/05-chart/design-no-junk-original.png
+If an image is larger than approximately 300px on either side, one more
+option is to reduce the image size in the PDF version. Use Photoshop
+(*not* Preview) to reduce the image size, and save a copy with the same
+file name with the .pdf extension into the folder. In some cases, the
+folder will contain only one version of each image, but in other cases
+it may contain up to three versions of an image:
+
     images/05-chart/design-no-junk.png
+    images/05-chart/design-no-junk-ann.png
+    images/05-chart/design-no-junk-ann.pdf
 
-When inserting image filenames into the text, use the version minus
-`-original`. If creating images to appear as the same size in sequence,
-add a code-comment with the image width, height, and resolution as a
-reminder to make others match up, like this:
+If creating images to appear as the same size in sequence, add a
+code-comment with the image width, height, and resolution as a reminder
+to make others match up, like this:
 
 `<!-- Images below are 200x200 at 300 resolution -->`
 
@@ -365,6 +373,8 @@ the HTML edition, while auto-numbering appears in the PDF edition, and
 numbered figures are required by the publisher. Furthermore, Markdown
 formatting does not allow conditional output.
 
+### Images using R code-chunks
+
 For these reasons, this book *primarily uses R code-chunk formatting for
 images*. The syntax is more complex but supports auto-numbering in HTML
 and PDF, and conditional output for interactive and static images. Note
@@ -372,8 +382,8 @@ that R code-chunk images do *not* easily convert with Pandoc from
 Markdown to AsciiDoc, but “Figure x Caption” appears as a placeholder.
 
 Auto-numbering appears in `Figure x.x` format in HTML and PDF, but
-`Figure x` format in MS Word. TODO: Check if Word formatting can be
-changed with reference.docx.
+`Figure x` format in MS Word. Note that Word formatting can be changed
+with reference.docx.
 
 Write R code-chunk labels that follow the image file name, and avoid
 duplicate labels across the book:
@@ -421,7 +431,8 @@ Figure 1: Caption here. Markdown embedded links are acceptable.
 For larger images, where one side is greater than 300px, set the
 out.width to a pixel number for ideal display in the HTML edition. Also,
 if needed, copy the image, use Photoshop to create a smaller image size,
-and save with same file name but .pdf ending, … as shown in Figure
+and save with same file name and a .pdf extension for auto-substitution
+in the PDF output …as shown in Figure
 <a href="#fig:screenshot-tall">2</a>.
 
 <img src="images/screenshot-tall.png" alt="Using out.width=200 and smaller PDF image size." width="200" />
@@ -441,9 +452,7 @@ add a line in a `custom-scripts.html` file.
 
 …as shown in Figure <a href="#fig:sample-map">3</a>.
 
-<!-- set iframe 600px height 100% width in custom-scripts.html -->
-
-<iframe src="https://handsondataviz.github.io/leaflet-maps-with-google-sheets/" width="100%" height="400px">
+<iframe src="https://handsondataviz.github.io/leaflet-maps-with-google-sheets/" width="100%" height="600px">
 </iframe>
 <p class="caption">
 Figure 3: Caption here, and add embedded link to explore the
@@ -462,27 +471,27 @@ Figure 4: Caption here, with embedded link to [animated
 GIF](https://handsondataviz.github.io/bookdown-template/images/sheets-option-drag.gif).
 </p>
 
+### Demo: R code-chunk for Youtube video and static image
+
+Be sure to use the *embed* link from the YouTube *share* button.
+
+…as shown in the video <a href="#fig:video-sample">5</a>.
+
+<iframe src="https://www.youtube.com/embed/-nGdrzMuUnI" width="100%" height="400px">
+</iframe>
+<p class="caption">
+Figure 5: Caption here, with embedded link to the [YouTube
+video](https://youtu.be/-nGdrzMuUnI).
+</p>
+
 ### Demo: R code-chunk for YouTube video in HTML, with NO static image in PDF
 
 <iframe src="https://www.youtube.com/embed/w6dQ-RIQ5bc" width="100%" height="400px">
 </iframe>
 <p class="caption">
-Figure 5: Caption **only** for HTML version, with embedded link to the
+Figure 6: Caption **only** for HTML version, with embedded link to the
 [YouTube video](https://youtu.be/w6dQ-RIQ5bc). How will this affect
 figure numbering in HTML vs PDF?
-</p>
-
-### Demo: R code-chunk for Youtube video and static image
-
-Be sure to use the *embed* link from the YouTube *share* button.
-
-…as shown in the video <a href="#fig:video-sample">6</a>.
-
-<iframe src="https://www.youtube.com/embed/-nGdrzMuUnI" width="100%" height="400px">
-</iframe>
-<p class="caption">
-Figure 6: Caption here, with embedded link to the [YouTube
-video](https://youtu.be/-nGdrzMuUnI).
 </p>
 
 Tables

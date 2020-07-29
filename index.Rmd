@@ -9,7 +9,8 @@ site: bookdown::bookdown_site
 documentclass: book
 bibliography: dataviz.bib
 citation-style: chicago-fullnote-bibliography.csl
-
+lot: yes
+lof: yes
 url: 'http\://handsondataviz.github.io/bookdown-template'
 github-repo: handsondataviz/bookdown-template
 description: 'This is a book template'
