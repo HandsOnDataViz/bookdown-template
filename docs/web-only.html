@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Custom Blocks | Bookdown Template</title>
+  <title>Web-only Section | Bookdown Template</title>
   <meta name="description" content="This is a book template" />
-  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Custom Blocks | Bookdown Template" />
+  <meta property="og:title" content="Web-only Section | Bookdown Template" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="http://handsondataviz.github.io/bookdown-template" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="handsondataviz/bookdown-template" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Custom Blocks | Bookdown Template" />
+  <meta name="twitter:title" content="Web-only Section | Bookdown Template" />
   
   <meta name="twitter:description" content="This is a book template" />
   
@@ -25,16 +25,16 @@
 <meta name="author" content="Ilya Ilyankou" />
 
 
-<meta name="date" content="2020-06-04" />
+<meta name="date" content="2020-09-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="notes.html"/>
-<link rel="next" href="supplements.html"/>
-<script src="libs/header-attrs-2.2/header-attrs.js"></script>
+<link rel="prev" href="acknowledgements.html"/>
+<link rel="next" href="bookdown.html"/>
+<script src="libs/header-attrs-2.3/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -52,6 +52,7 @@
 
 
 
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -71,14 +72,17 @@
 <li><strong><a href="./">Bookdown Template</a></strong></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="web-only.html"><a href="web-only.html"><i class="fa fa-check"></i>Web-only Section</a></li>
+</ul></li>
 <li class="chapter" data-level="1" data-path="bookdown.html"><a href="bookdown.html"><i class="fa fa-check"></i><b>1</b> Publishing with Bookdown</a>
 <ul>
 <li class="chapter" data-level="" data-path="style-guide.html"><a href="style-guide.html"><i class="fa fa-check"></i>Style Guide</a></li>
 <li class="chapter" data-level="" data-path="images.html"><a href="images.html"><i class="fa fa-check"></i>Images</a></li>
 <li class="chapter" data-level="" data-path="tables.html"><a href="tables.html"><i class="fa fa-check"></i>Tables</a></li>
 <li class="chapter" data-level="" data-path="notes.html"><a href="notes.html"><i class="fa fa-check"></i>Notes and Bibliography</a></li>
-<li class="chapter" data-level="" data-path="custom-blocks.html"><a href="custom-blocks.html"><i class="fa fa-check"></i>Custom Blocks</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="supplements.html"><a href="supplements.html"><i class="fa fa-check"></i><b>2</b> Supplements</a>
 <ul>
@@ -105,35 +109,17 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="custom-blocks" class="section level2 unnumbered" number="">
-<h2>Custom Blocks</h2>
-<p>NOTE: I commented-out custom blocks below and removed <code>index.Rmd</code> ref to <code>latex/preamble.tex</code> because it’s not currently working as expected, so custom blocks do NOT appear in PDF output.</p>
-<p>See Custom Blocks described in <a href="https://bookdown.org/yihui/bookdown/custom-blocks.html">Bookdown</a> and <a href="https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html">RMarkdown</a> to setup style and output options. Be sure to add <code>echo=TRUE</code> in each instance because of the global <code>echo=false</code> in <code>index.Rmd</code> for all R code-chunk images.</p>
-<p>Also add LaTeX code <code>preamble.tex</code> for PDF output, and include this in the <code>index.Rmd</code> PDF output, as described in <a href="https://bookdown.org/yihui/bookdown/yaml-options.html">Bookdown</a> and <a href="https://bookdown.org/yihui/rmarkdown-cookbook/latex-preamble.html">RMarkdown</a>.</p>
-<!--
-\BeginKnitrBlock{rmdnote}<div class="rmdnote">Here is a sample note.</div>\EndKnitrBlock{rmdnote}
+<div id="web-only" class="section level2 unnumbered" number="">
+<h2>Web-only Section</h2>
+<p>This section should appear only in the web edition, and perhaps attached to the Preface? Cupcake ipsum dolor sit amet jelly beans wafer pudding. Bear claw lemon drops carrot cake pie wafer chocolate jelly cheesecake. Chocolate cheesecake chocolate bar sugar plum sweet dessert tart. Tootsie roll bear claw chocolate bar wafer powder sugar plum tiramisu bear claw gummies. Tart macaroon pastry lemon drops candy tootsie roll chocolate candy canes lollipop. Pudding fruitcake bear claw sweet cake cupcake. Chupa chups pudding candy canes chupa chups powder jujubes chocolate cake cotton candy jelly.</p>
 
-\BeginKnitrBlock{rmdcaution}<div class="rmdcaution">Here is a sample caution.</div>\EndKnitrBlock{rmdcaution}
-
-\BeginKnitrBlock{rmdimportant}<div class="rmdimportant">Here is sample "Important" text.</div>\EndKnitrBlock{rmdimportant}
-
-\BeginKnitrBlock{rmdtip}<div class="rmdtip">Here is a sample tip.</div>\EndKnitrBlock{rmdtip}
-
-\BeginKnitrBlock{rmdwarning}<div class="rmdwarning">Here is a sample warning. Remember that if the last line is not a standard paragraph, add a blank line at the end.
-
-``` -->
-<div id="pandoc-conversion" class="section level3 unnumbered" number="">
-<h3>Pandoc Conversion</h3>
-<ul>
-<li>Download <a href="https://pandoc.org">Pandoc</a></li>
-<li>TODO: Ask Ilya about my Pandoc PATH and/or overwriting older version</li>
-<li>Set Bookdown to build the book as one large Markdown file (docs folder, suffix .md)</li>
-<li>Use command line to navigate to subfolder with <code>pwd</code> and <code>cd</code>.</li>
-<li>Convert with: <code>pandoc bookdown-template.md --from markdown --to asciidoc --standalone --output bookdown-template-modified.asciidoc</code></li>
-<li>Confirm if AsciiDoc file matches <a href="https://docs.atlas.oreilly.com/writing_in_asciidoc.html">O’Reilly Atlas import style</a>.</li>
-</ul>
-
+<div class="figure"><span id="fig:tiger4"></span>
+<img src="images/tiger.png" alt="Caption for sample static image using R code-chunk method. If this caption is truly part of the Preface, then 0-based caption number?"  />
+<p class="caption">
+Figure 0.1: Caption for sample static image using R code-chunk method. If this caption is truly part of the Preface, then 0-based caption number?
+</p>
 </div>
+
 </div>
 <!-- </div> -->
             </section>
@@ -141,8 +127,8 @@
           </div>
         </div>
       </div>
-<a href="notes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="supplements.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="acknowledgements.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bookdown.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -181,7 +167,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/handsondataviz/bookdown-template/edit/master/01-bookdown.Rmd",
+"link": "https://github.com/handsondataviz/bookdown-template/edit/master/00-web-only.Rmd",
 "text": null
 },
 "download": ["bookdown-template.pdf"],

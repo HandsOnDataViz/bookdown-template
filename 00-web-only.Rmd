@@ -1,0 +1,8 @@
+## Web-only Section {- #web-only}
+This section should appear only in the web edition, and perhaps attached to the Preface? Cupcake ipsum dolor sit amet jelly beans wafer pudding. Bear claw lemon drops carrot cake pie wafer chocolate jelly cheesecake. Chocolate cheesecake chocolate bar sugar plum sweet dessert tart. Tootsie roll bear claw chocolate bar wafer powder sugar plum tiramisu bear claw gummies. Tart macaroon pastry lemon drops candy tootsie roll chocolate candy canes lollipop. Pudding fruitcake bear claw sweet cake cupcake. Chupa chups pudding candy canes chupa chups powder jujubes chocolate cake cotton candy jelly.
+
+(ref:tiger4) Caption for sample static image using R code-chunk method. If this caption is truly part of the Preface, then 0-based caption number?
+
+```{r tiger4, fig.cap="(ref:tiger4)"}
+ knitr::include_graphics("images/tiger.png")
+```

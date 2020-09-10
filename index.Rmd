@@ -45,9 +45,6 @@ output:
     citation_package: default
     pandoc_args: [ "--csl", "chicago-fullnote-bibliography.csl" ]
 
-  bookdown::word_document2:
-    default
-
   bookdown::markdown_document2:
     default
 
@@ -65,6 +62,6 @@ Insert additional preface items below (acknowledgements, etc.), with non-numberi
 
 Reminder: Bookdown does not auto-number figures in the `index.Rmd` file, which serves as a "preface" file.
 
-### Acknowledgements {-}
+## Acknowledgements {- #acknowledgements}
 
-Cupcake ipsum dolor sit amet jelly beans wafer pudding. Bear claw lemon drops carrot cake pie wafer chocolate jelly cheesecake. Chocolate cheesecake chocolate bar sugar plum sweet dessert tart. Tootsie roll bear claw chocolate bar wafer powder sugar plum tiramisu bear claw gummies. Tart macaroon pastry lemon drops candy tootsie roll chocolate candy canes lollipop. Pudding fruitcake bear claw sweet cake cupcake. Chupa chups pudding candy canes chupa chups powder jujubes chocolate cake cotton candy jelly.
+This section appears in all editions and is part of the index file. Cupcake ipsum dolor sit amet jelly beans wafer pudding. Bear claw lemon drops carrot cake pie wafer chocolate jelly cheesecake. Chocolate cheesecake chocolate bar sugar plum sweet dessert tart. Tootsie roll bear claw chocolate bar wafer powder sugar plum tiramisu bear claw gummies. Tart macaroon pastry lemon drops candy tootsie roll chocolate candy canes lollipop. Pudding fruitcake bear claw sweet cake cupcake. Chupa chups pudding candy canes chupa chups powder jujubes chocolate cake cotton candy jelly.

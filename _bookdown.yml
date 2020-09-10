@@ -1,6 +1,15 @@
 output_dir: "docs"
+delete_merged_file: true
 book_filename: "bookdown-template"
 language:
   label:
     fig: "Figure "
 chapter_name: "Chapter "
+
+# comment-out below when building web book, un-comment for PDF and Markdown
+# rmd_files: [
+#   "index.Rmd",
+#   "01-bookdown.Rmd",
+#   "02-supplements.Rmd",
+#   "99-references.Rmd"
+# ]
