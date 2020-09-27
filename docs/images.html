@@ -25,7 +25,7 @@
 <meta name="author" content="Ilya Ilyankou" />
 
 
-<meta name="date" content="2020-09-10" />
+<meta name="date" content="2020-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -178,8 +178,8 @@ Figure 1.2: Using out.width=200 and smaller PDF image size.
 </div>
 <p>R code-chunks allow more complex conditional formatting, where an interactive map or animated GIF or YouTube video clip appears in the web version, and a static image with an embedded link appears in the PDF and MS Word outputs. To change the height of the default 400px iframe, add the new height to <code>include_url</code> as shown in the examples. However, to change the width of the default 675px iframe to less than 100 percent, add a line in a <code>custom-scripts.html</code> file.</p>
 </div>
-<div id="demo-r-code-chunk-for-html-iframe-and-static-image" class="section level3 unnumbered" number="">
-<h3>Demo: R code-chunk for HTML iframe and static image</h3>
+<div id="demo-r-code-chunk-for-html-iframe-and-static-image-for-pdf-markdown" class="section level3 unnumbered" number="">
+<h3>Demo: R code-chunk for HTML iframe and static image for PDF &amp; Markdown</h3>
 <p>…as shown in Figure <a href="images.html#fig:sample-map">1.3</a>.</p>
 
 <div class="figure"><span id="fig:sample-map"></span>
@@ -190,8 +190,8 @@ Figure 1.3: Caption here, and add embedded link to explore the <a href="https://
 </p>
 </div>
 </div>
-<div id="demo-r-code-chunk-for-gif-animation-and-static-image" class="section level3 unnumbered" number="">
-<h3>Demo: R code-chunk for GIF animation and static image</h3>
+<div id="demo-r-code-chunk-for-gif-animation-in-html-and-static-image-in-pdf-and-markdown" class="section level3 unnumbered" number="">
+<h3>Demo: R code-chunk for GIF animation in HTML and static image in PDF and Markdown</h3>
 <p>…as shown in Figure <a href="images.html#fig:sheets-option-drag">1.4</a>.</p>
 
 <div class="figure"><span id="fig:sheets-option-drag"></span>
@@ -202,8 +202,8 @@ Figure 1.4: Caption here, with embedded link to <a href="https://handsondataviz.
 </p>
 </div>
 </div>
-<div id="demo-r-code-chunk-for-youtube-video-and-static-image" class="section level3 unnumbered" number="">
-<h3>Demo: R code-chunk for Youtube video and static image</h3>
+<div id="demo-r-code-chunk-for-youtube-video-in-html-and-static-image-in-pdf-and-markdown" class="section level3 unnumbered" number="">
+<h3>Demo: R code-chunk for Youtube video in HTML and static image in PDF and Markdown</h3>
 <p>Be sure to use the <em>embed</em> link from the YouTube <em>share</em> button.</p>
 <p>…as shown in the video <a href="images.html#fig:video-sample">1.5</a>.</p>
 
@@ -250,13 +250,13 @@ gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": true,
-"facebook": true,
+"facebook": false,
 "twitter": true,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+"all": false
 },
 "fontsettings": {
 "theme": "white",

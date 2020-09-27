@@ -244,25 +244,25 @@ For larger images, where one side is greater than 300px, set the out.width to a 
 
 R code-chunks allow more complex conditional formatting, where an interactive map or animated GIF or YouTube video clip appears in the web version, and a static image with an embedded link appears in the PDF and MS Word outputs. To change the height of the default 400px iframe, add the new height to `include_url` as shown in the examples. However, to change the width of the default 675px iframe to less than 100 percent, add a line in a `custom-scripts.html` file.
 
-### Demo: R code-chunk for HTML iframe and static image {-}
+### Demo: R code-chunk for HTML iframe and static image for PDF & Markdown {-}
 ...as shown in Figure \@ref(fig:sample-map).
 
 (ref:sample-map) Caption here, and add embedded link to explore the [full-screen interactive map](https://handsondataviz.github.io/leaflet-maps-with-google-sheets)
 
-```{r sample-map, fig.pos='h', fig.cap="(ref:sample-map)"}
-if(knitr::is_html_output()) knitr::include_url("https://handsondataviz.github.io/leaflet-maps-with-google-sheets/", height = "600px") else knitr::include_graphics("images/sample-map.jpg")
+```{r sample-map, fig.cap="(ref:sample-map)"}
+if(knitr::is_html_output(excludes="markdown")) knitr::include_url("https://handsondataviz.github.io/leaflet-maps-with-google-sheets/", height = "600px") else knitr::include_graphics("images/sample-map.jpg")
 ```
 
-### Demo: R code-chunk for GIF animation and static image {-}
+### Demo: R code-chunk for GIF animation in HTML and static image in PDF and Markdown {-}
 ...as shown in Figure \@ref(fig:sheets-option-drag).
 
 (ref:sheets-option-drag) Caption here, with embedded link to [animated GIF](https://handsondataviz.github.io/bookdown-template/images/sheets-option-drag.gif).
 
 ```{r sheets-option-drag, fig.pos='h', fig.cap="(ref:sheets-option-drag)"}
-if(knitr::is_html_output()) knitr::include_url("images/sheets-option-drag.gif", height = "250px") else knitr::include_graphics("images/sheets-option-drag.png")
+if(knitr::is_html_output(excludes="markdown")) knitr::include_url("images/sheets-option-drag.gif", height = "250px") else knitr::include_graphics("images/sheets-option-drag.png")
 ```
 
-### Demo: R code-chunk for Youtube video and static image {-}
+### Demo: R code-chunk for Youtube video in HTML and static image in PDF and Markdown {-}
 Be sure to use the *embed* link from the YouTube *share* button.
 
 ...as shown in the video \@ref(fig:video-sample).
@@ -270,14 +270,14 @@ Be sure to use the *embed* link from the YouTube *share* button.
 (ref:video-sample) Caption here, with embedded link to the [YouTube video](https://youtu.be/-nGdrzMuUnI).
 
 ```{r video-sample, fig.pos='h', fig.cap="(ref:video-sample)"}
-if(knitr::is_html_output()) knitr::include_url("https://www.youtube.com/embed/-nGdrzMuUnI") else knitr::include_graphics("images/video-sample.png")
+if(knitr::is_html_output(excludes="markdown")) knitr::include_url("https://www.youtube.com/embed/-nGdrzMuUnI") else knitr::include_graphics("images/video-sample.png")
 ```
 
 ### Demo: R code-chunk for YouTube video in HTML, with NO static image in PDF {-}
 (ref:video-sample2) Caption **only** for HTML version, with embedded link to the [YouTube video](https://youtu.be/w6dQ-RIQ5bc). How will this affect figure numbering in HTML vs PDF?
 
 ```{r video-sample2, fig.pos='h', fig.cap="(ref:video-sample2)"}
-if(knitr::is_html_output()) knitr::include_url("https://www.youtube.com/embed/w6dQ-RIQ5bc")
+if(knitr::is_html_output(excludes="markdown")) knitr::include_url("https://www.youtube.com/embed/w6dQ-RIQ5bc")
 ```
 
 ## Tables {- #tables}

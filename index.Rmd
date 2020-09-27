@@ -35,9 +35,10 @@ output:
       view: https://github.com/handsondataviz/bookdown-template/edit/master/%s
       search: yes
       sharing:
-        facebook: yes
+        facebook: no
         github: yes
         twitter: yes
+        all: no
 
   bookdown::pdf_book:
     toc_depth: 2
